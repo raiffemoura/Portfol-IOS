@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderSpotify from '../../components/HeaderSpotify.jsx';
+import HeaderSpotify from '../../components/spotify/HeaderSpotify.jsx';
 import SpotifyUmaCoisa from '../../components/spotify/SpotifyUmaCoisa.jsx';
 import HomeButtonSticky2 from '../../components/HomeButtonSticky2.jsx';
 
@@ -9,9 +9,7 @@ const UmaCoisa = () => {
         <div className='container-spotify'>
             <div>
                 <div className="screen"> 
-                    <HeaderSpotify />
-                   
-                    
+                    <HeaderSpotify />                
                     <SpotifyUmaCoisa/>    
                     <HomeButtonSticky2 />
                 </div>

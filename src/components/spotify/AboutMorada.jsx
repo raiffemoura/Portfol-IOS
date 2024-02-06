@@ -1,10 +1,6 @@
-import React , { useState, useRef, useEffect } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
-import arrowBack from '../../assets/icons/arrow-back.png';
-import Morada from '../../assets/spotify-images/morada.jpg'
-import Twitter from '../../assets/icons/twitter.png'
-import Instagram from '../../assets/icons/instagram-white.png'
-import Facebook from '../../assets/icons/facebook-white.png'
+import iconConfig from '../iconConfig';
 // import HomeButtonSticky from '../HomeButtonSticky'
 
 const AboutMorada = () => {     
@@ -17,7 +13,7 @@ const AboutMorada = () => {
         
         <div className='spotify-page'>
             <div className='header-spotify'>
-                <Link to={"/Spotify/uma-coisa"} ><img style={{height: '18px'}} src={arrowBack} alt="arrowBack" /></Link>
+                <Link to={"/Spotify/uma-coisa"} ><img style={{height: '18px'}} src={iconConfig.arrowBack} alt="arrowBack" /></Link>
                 <p className='spotify-header-text'>MORADA</p>
                 <div></div> 
              </div> 
@@ -42,12 +38,12 @@ const AboutMorada = () => {
                         encorajado(a)! </p>
                        
                          <div className='artist-icon'>
-                           <img src={Morada} />
+                           <img src={iconConfig.Morada} />
                             <div> Posted by MORADA</div>
                         </div>
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://twitter.com/Moradaoficial"}>
-                               <img  src={Twitter}/>
+                               <img  src={iconConfig.Twitter}/>
                             </Link>
                             <Link target='_blank' to={"https://twitter.com/Moradaoficial"}>
                                 <div> X</div>
@@ -55,7 +51,7 @@ const AboutMorada = () => {
                         </div>
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://www.instagram.com/moradaoficial"}> 
-                                <img  src={Instagram}/>
+                                <img  src={iconConfig.Instagram}/>
                             </Link>
                             <Link target='_blank' to={"https://www.instagram.com/moradaoficial"}> 
                                 <div> Instagram</div>
@@ -63,7 +59,7 @@ const AboutMorada = () => {
                         </div>
                         <div className='social-icon'>
                         <Link target='_blank' to={"https://www.facebook.com/ministeriomorada"}> 
-                                <img  src={Facebook}/>
+                                <img  src={iconConfig.Facebook}/>
                             </Link>
                             <Link target='_blank' to={"https://www.facebook.com/ministeriomorada"}> 
                                 <div> Facebook</div>

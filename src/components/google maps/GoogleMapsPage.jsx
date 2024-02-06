@@ -14,7 +14,7 @@ const GoogleMapsPage = () => {
         <div className='maps-screen'>
             
            
-            <GoogleMapsHeader />
+            {/* <GoogleMapsHeader /> */}
             {/* <GoogleMapsTransports /> */}
             <GoogleMapsMap />
             {/* <GoogleMapsFooter/> */}

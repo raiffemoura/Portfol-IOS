@@ -1,19 +1,18 @@
 import React from 'react';
-import HeaderSpotify from '../../components/HeaderSpotify.jsx';
-import AboutMorada from '../../components/spotify/AboutMorada.jsx';
+import HeaderSpotify from '../../components/spotify/HeaderSpotify.jsx';
+import AboutAlessandro from '../../components/spotify/AboutAlessandro.jsx';
 import HomeButtonSticky2 from '../../components/HomeButtonSticky2.jsx';
 
 
-const SpotifyAboutMorada = () => {
+
+const SpotifyAboutAlessandro = () => {
     return ( 
         <div className='container-spotify'>
             <div>
                 <div className="screen">
                     <HeaderSpotify />
-                    
-                    <AboutMorada/>
-                    <HomeButtonSticky2 />   
-
+                    <AboutAlessandro/>   
+                    <HomeButtonSticky2 />                 
                 </div>
             </div>
             
@@ -22,4 +21,4 @@ const SpotifyAboutMorada = () => {
      );
 }
  
-export default SpotifyAboutMorada;
+export default SpotifyAboutAlessandro;

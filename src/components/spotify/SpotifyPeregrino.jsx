@@ -1,23 +1,6 @@
 import React , { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import arrow from '../../assets/icons/arrow-down.png';
-import dots from '../../assets/icons/dots.png';
-import liked from '../../assets/icons/check.png';
-import peregrino from '../../assets/songs/Alessandro-Vilas-Boas-Peregrino.mp3';
-import peregrinoOGG from '../../assets/songs/Alessandro-Vilas-Boas-Peregrino.ogg';
-import shuffle from '../../assets/icons/shuffle.png';
-import list from '../../assets/icons/list.png';
-import previus from '../../assets/icons/previus.png';
-import previusWhite from '../../assets/icons/previusWhite.png';
-import play from '../../assets/icons/play.png';
-import pause from '../../assets/icons/pause.png';
-import next from '../../assets/icons/next.png';
-import nextWhite from '../../assets/icons/nextwhite.png';
-import hidden from '../../assets/icons/hidden.png';
-import hiddenRed from '../../assets/icons/hiddenRed.png';
-import share from '../../assets/icons/share.png';
-import devices from '../../assets/icons/devices.png';
-import album from '../../assets/spotify-images/peregrino.jpeg'
+import iconConfig from '../iconConfig';
 const SpotifyPeregrino = () => {
     // State
             const [isPlaying, setIsPlaying] = useState(false);
@@ -107,25 +90,25 @@ const SpotifyPeregrino = () => {
     return (  
         <div className='spotify-page'>
             <div className='header-spotify'>
-                <Link to={"/"} ><img className='spotify-header-img' src={arrow} alt="arrow" /></Link>
+                <Link to={"/"} ><img className='spotify-header-img' src={iconConfig.arrow} alt="arrow" /></Link>
                 <p className='spotify-header-text'>Liked Songs</p>
-                <img className='spotify-header-img' src={dots} alt="more" />
+                <img className='spotify-header-img' src={iconConfig.dots} alt="more" />
             </div>
-            <div className='album'><img src={album} alt="album" /></div>
+            <div className='album'><img src={iconConfig.albumPeregrino} alt="album" /></div>
             <div>
                 <div className='title'>
                     <div>
                         <h3>Peregrino</h3>
                         <p>Alessandro Vilas Boas</p>
                     </div>
-                    <div><img className='liked' src={liked}  alt="liked" /></div>
+                    <div><img className='liked' src={iconConfig.liked}  alt="liked" /></div>
 
                 </div>
                 <div className='player'>
                 <div className='audio-container'>
                     <audio ref={audioPlayer} >
-                        <source src={peregrino} type="audio/mp3" />
-                        <source src={peregrinoOGG} type="audio/ogg" />
+                        <source src={iconConfig.peregrino} type="audio/mp3" />
+                        <source src={iconConfig.peregrinoOGG} type="audio/ogg" />
                             
                         Your browser does not support the audio element.
 
@@ -145,30 +128,30 @@ const SpotifyPeregrino = () => {
 
 
                     <div className='audio-buttons'>
-                        <button onClick={() => setIsShuffle(!isShuffle)}>{isShuffle ? <img className='shuffle-list' src={shuffle} alt="shuffle-list"  /> : <img className='shuffle-list' src={list} alt="shuffle"  />}</button>
+                        <button onClick={() => setIsShuffle(!isShuffle)}>{isShuffle ? <img className='shuffle-list' src={iconConfig.shuffle} alt="shuffle-list"  /> : <img className='shuffle-list' src={iconConfig.list} alt="shuffle"  />}</button>
                         <button
                             onMouseOver={() => setIsPreviusMouseOver(true)}
                             onMouseOut={() => setIsPreviusMouseOver(false)}>
                             {isPreviusMouseOver ? (
-                            <Link to={"/spotify/uma-coisa"}><img onClick={stop} className='previus' src={previusWhite} alt="previusWhite" /></Link>
+                            <Link to={"/spotify/uma-coisa"}><img onClick={stop} className='previus' src={iconConfig.previusWhite} alt="previusWhite" /></Link>
                             ) : (
-                            <img className='previus' src={previus} alt="previus" />
+                            <img className='previus' src={iconConfig.previus} alt="previus" />
                             )}
                         </button>
-                        <button onClick={togglePlayPause}>{isPlaying ? <img className='play-pause' src={pause} alt="play-pause"  /> : <img className='play-pause' src={play} alt="play-pause"  /> }</button>
+                        <button onClick={togglePlayPause}>{isPlaying ? <img className='play-pause' src={iconConfig.pause} alt="play-pause"  /> : <img className='play-pause' src={iconConfig.play} alt="play-pause"  /> }</button>
                         <button
                             onMouseOver={() => setIsNextMouseOver(true)}
                             onMouseOut={() => setIsNextMouseOver(false)}>
                             {isNextMouseOver ? (
-                            <Link to={"/spotify/uma-coisa"}><img onClick={stop} className='next' src={nextWhite} alt="nextWhite" /></Link>
+                            <Link to={"/spotify/uma-coisa"}><img onClick={stop} className='next' src={iconConfig.nextWhite} alt="nextWhite" /></Link>
                             ) : (
-                             <img className='next' src={next} alt="next" />
+                             <img className='next' src={iconConfig.next} alt="next" />
                             )}
                         </button>
                         <button onMouseOver={() => setIsHidden(true)} onMouseOut={() => setIsHidden(false)}>
-                            {isHidden ? (  <img className='hidden' src={hiddenRed} alt="hiddenRed" />
+                            {isHidden ? (  <img className='hidden' src={iconConfig.hiddenRed} alt="hiddenRed" />
                             ) : (
-                            <img className='hidden' src={hidden} alt="hidden" />
+                            <img className='hidden' src={iconConfig.hidden} alt="hidden" />
                             )}
                         </button>
                     </div>
@@ -177,11 +160,11 @@ const SpotifyPeregrino = () => {
                 </div>
                 <div className='bottom-buttons'>
                     <button className='bottom-buttons-left'>
-                        <img src={devices} alt="devices" />
+                        <img src={iconConfig.devices} alt="devices" />
                     </button>
                    
                     <button className='bottom-buttons-right'>
-                        <img src={share} alt="share" />
+                        <img src={iconConfig.share} alt="share" />
                     </button>
 
                 </div>
@@ -228,7 +211,7 @@ const SpotifyPeregrino = () => {
                     
                 </div>
             </div>                    
-
+            
         </div>
 
     );

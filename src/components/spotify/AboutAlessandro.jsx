@@ -1,10 +1,7 @@
-import React , { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import arrowBack from '../../assets/icons/arrow-back.png';
-import Alessandro from '../../assets/spotify-images/alessandro-icon.jpeg'
-import HomeButtonSticky from '../HomeButtonSticky'
-import Twitter from '../../assets/icons/twitter.png'
-import Instagram from '../../assets/icons/instagram-white.png'
+import iconConfig from '../iconConfig';
+
 
 const AboutAlessandro = () => {     
 
@@ -16,7 +13,7 @@ const AboutAlessandro = () => {
         
         <div className='spotify-page'>
             <div className='header-spotify'>
-                <Link to={"/Spotify"} ><img style={{height: '18px'}} src={arrowBack} alt="arrowBack" /></Link>
+                <Link to={"/Spotify/peregrino"} ><img style={{height: '18px'}} src={iconConfig.arrowBack} alt="arrowBack" /></Link>
                 <p className='spotify-header-text'>Alessandro Vilas Boas</p>
                 <div></div> 
              </div> 
@@ -53,12 +50,12 @@ const AboutAlessandro = () => {
                          his first album, 'Live At Home' with One Sounds, and since then has extended his work as a songwriter, minister, 
                          and artist. </p>
                          <div className='artist-icon'>
-                           <img src={Alessandro} />
+                           <img src={iconConfig.Alessandro} />
                             <div> Posted by Alessandro Vilas Boas</div>
                         </div>
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://twitter.com/ale_vilasboas1"}>
-                               <img  src={Twitter}/>
+                               <img  src={iconConfig.Twitter}/>
                             </Link>
                             <Link target='_blank' to={"https://twitter.com/ale_vilasboas1"}>
                                 <div> X</div>
@@ -66,7 +63,7 @@ const AboutAlessandro = () => {
                         </div>
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://www.instagram.com/alessandro_vilasboas/"}> 
-                                <img  src={Instagram}/>
+                                <img  src={iconConfig.Instagram}/>
                             </Link>
                             <Link target='_blank' to={"https://www.instagram.com/alessandro_vilasboas/"}> 
                                 <div> Instagram</div>
