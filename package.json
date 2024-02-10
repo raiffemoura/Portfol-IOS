@@ -1,46 +1,20 @@
 {
-  "name": "my-portfolio-app",
-  "version": "0.1.0",
-  "private": true,
   "dependencies": {
-    "@react-google-maps/api": "^2.19.2",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "create-react-app": "^5.0.1",
+    "date-fns": "^3.3.1",
     "dotenv": "^16.4.1",
-    "dragscroll": "^0.0.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-number-format": "^5.3.1",
-    "react-router-dom": "^6.21.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1",
+    "node": "^21.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run server\" \"npm run react\"",
+    "server": "node server.js",
+    "react": "cd Portfol-IOS && npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0"
   }
 }

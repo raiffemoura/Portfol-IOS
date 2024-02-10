@@ -1,0 +1,118 @@
+.container-feedback{
+    
+    background-image: url(../assets/iphone-cable-feedback.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+.feedback-header{
+    width: 99.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    color: #1a83a8;
+    padding: 15px ;
+    margin-bottom: 10px;
+}
+.feedback-header img{
+    height: 35px;
+    /* margin-top: 5px; */
+}
+#feedback-logo{
+    width: 160px;
+    height: auto;
+}
+
+.feedback-box-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.feedback-container{
+    /* border: 2px solid blue; */
+    /* border-radius: 46px; */
+    border-bottom-left-radius: 46px;
+    border-bottom-right-radius: 46px;
+    width: 100%;
+    height: 603px;
+    padding-bottom: 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    
+}
+.feedback-box{
+    color: black;
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    /* padding-left: 8px; */
+    margin-top: 15px;
+}
+.feedback-box p{
+    font-size: .9rem;
+    padding-left: 3px;
+}
+.feedback-question{
+    padding: 10px 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.tblack{
+    color: #000;
+}
+.feedback-rating{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+margin: auto;
+width: 80%;
+
+}
+.feedback-rating img{
+    height: 40px;
+}
+.feedback-person{
+    /* font-family: Arial; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 20px;
+}
+.feedback-person p{
+    font-weight: lighter;
+    font-size: .8rem;
+    color: gray;
+}
+.feedback-person img{
+ height: 60px;
+}
+.colorA{
+    background-color: #a2eead;
+
+}
+.colorB{
+    background-color: #f5d69d;
+
+}
+.colorC{
+    /* background-color: #ffeaeb; */
+    background-color: #f09a9a;
+
+}
