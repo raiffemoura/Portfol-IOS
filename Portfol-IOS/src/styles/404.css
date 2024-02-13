@@ -7,6 +7,8 @@
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
+    background-size: 350px;
+    height: 925px
   }
   .box{
     margin: 200px auto auto auto;
@@ -58,35 +60,9 @@
    
   }
 
-   /* ====== MEDIA QUERIES ====== */
-
-  @media screen and (max-width: 280px) {
-  
-    .container404{
-      background-size: 100%;
-        background-position: top ;
-        height: 730px;
-    
-    }
-}
-
-@media screen and (min-width: 280px) {
-   
-  .container404{
-    background-size: 280px;
-      background-position: top ;
-      height: 735px;
-      padding: 10px; 
-  
+  .header-space-error404{
+    width: 100%;
+    height: 10px;
   }
-}
 
-@media screen and (min-width: 370px) {
-    
-  .container404{
-    background-size: 350px;
-    background-position: top ;
-    height: 925px
-  
-  }
-}
+

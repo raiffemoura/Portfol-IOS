@@ -10,7 +10,7 @@ const feedbackSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  rating: { type: Number, default: 5 },
+  rating: { type: String, required: true },
   likes: { type: Number, default: 0 },
 });
 

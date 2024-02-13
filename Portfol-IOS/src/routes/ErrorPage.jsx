@@ -10,6 +10,7 @@ const ErrorPage = () => {
         <div className='container404'>
             <div>
                 <div className="screen">
+                    <div className='header-space-error404'></div>
                     <Header />
                     <BoxError/>                    
                 </div>

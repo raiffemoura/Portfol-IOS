@@ -16,14 +16,13 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", express.urlencoded({ extended: true }), async (req, res) => {
-  if (!req.body.name || !req.body.description) {
+  if (!req.body.name || !req.body.description || !req.body.rating) {
     return res
       .status(400)
-      .json({ error: "Name and description are required fields." });
+      .json({ error: "Name, description and rating are required fields." });
   }
 
   let feedbackDate = new Date();
-  // let formattedDate = `${getDate(feedbackDate)} de ${getMonth(feedbackDate,"MMMM",{ locale: ptBR })} de ${getYear(feedbackDate)}`;
   let options = { year: "numeric", month: "long", day: "numeric" };
   let formattedDate = feedbackDate.toLocaleDateString("pt-BR", options);
 
@@ -39,7 +38,7 @@ router.post("/", express.urlencoded({ extended: true }), async (req, res) => {
     res.json(savedFeedback);
   } catch (error) {
     console.error("Error saving feedback:", error);
-    res.status(500).json({ error: "Internal Server Error from cath" });
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 

@@ -44,20 +44,13 @@ const Notes = () => {
 
 
 
-    const limitTitle = (title, limit) => {
-        if (showAllNotes) {
-            if (title.length > limit) {
-                return title.substring(0, limit) + '...';
-            } else {
-                return title;
-            }        } else {
-            if (title.length > limit) {
+        const limitTitle = (title, limit) => {
+            if (!showAllNotes && title.length > limit) {
                 return title.substring(0, limit) + '...';
             } else {
                 return title;
             }
-        }
-    };
+        };
 
     const limitSubtitle = (subtitle, limit) => {
         if (showAllNotes) {
@@ -139,9 +132,9 @@ const Notes = () => {
                 { showAllNotes ? <div className='notes-title'><h1>Notes</h1></div> : null }
                 { showInput ? <div className='notes-title'>
                     <textarea className='notes-text-area-title' autoFocus rows={2} maxLength={50} 
-                    onChange={(e) =>  {setNewTitle(e.target.value); console.log(newTitle)}} type="text" placeholder="Enter a title" />
+                    onChange={(e) =>  {setNewTitle(e.target.value); }} type="text" placeholder="Enter a title" />
                     <textarea className='notes-text-area-body' type="text"  placeholder="Write your note here"
-                    onChange={(e) =>  {setNewSubtitle(e.target.value); console.log(newSubtitle)}} />
+                    onChange={(e) =>  {setNewSubtitle(e.target.value); }} />
                     </div> 
                     :
                     null }

@@ -93,7 +93,7 @@ const CalculatorBtn = () => {
         {insertMask(currentNumber)}
           
           </div>
-            <div className="calculator-container">
+            <div className="calculator-container"> 
         
                 <div className="gray-hover">
                     <button onClick={clear} className="calculator-btn gray">AC</button>

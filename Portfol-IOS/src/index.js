@@ -17,6 +17,8 @@ import GoogleMaps from "./routes/GoogleMaps";
 import NotesPage from "./routes/NotesPage";
 import Feedback from "./routes/Feedback";
 import FeedbackAdd from "./components/FeedbackAdd";
+import FeedbackStatistics from "./components/FeedbackStatistics";
+import Stocks from "./routes/Stocks";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -78,6 +80,14 @@ const router = createBrowserRouter([
   {
     path: "thanks-for-your-feedback",
     element: <FeedbackAdd />,
+  },
+  {
+    path: "/statistics",
+    element: <FeedbackStatistics />,
+  },
+  {
+    path: "/stocks",
+    element: <Stocks />,
   },
 ]);
 

@@ -74,6 +74,8 @@ import safariApp from "../assets/apps/safari.png";
 import messagesApp from "../assets/apps/messages.png";
 import whatsApp from "../assets/apps/whats.png";
 import phoneApp from "../assets/apps/phone.png";
+import ticTacToeApp from "../assets/apps/tic-tac-toe.png";
+import memoryGameApp from "../assets/apps/memory-game.png";
 import Call from "../assets/icons/phone.png";
 import Erase from "../assets/icons/erase.png";
 import EraseHover from "../assets/icons/erase-hover.png";
@@ -92,10 +94,17 @@ import closefeedback from "../assets/icons/close-feedback.png";
 import addFeedback from "../assets/icons/add-feedback.png";
 import feedbackLogo from "../assets/icons/feedback-logo2.png";
 import feedbackA from "../assets/icons/feedback-a.png";
+import feedbackASelected from "../assets/icons/feedback-a-selected.png";
 import feedbackB from "../assets/icons/feedback-b.png";
+import feedbackBSelected from "../assets/icons/feedback-b-selected.png";
 import feedbackC from "../assets/icons/feedback-c.png";
+import feedbackCSelected from "../assets/icons/feedback-c-selected.png";
 import avatar from "../assets/icons/avatar.png";
-
+import privateChat from "../assets/icons/private-chat.png";
+import statistics from "../assets/icons/statistics.png";
+import feedbackHome from "../assets/icons/feedback-home.png";
+import average from "../assets/icons/average.png";
+import more from "../assets/icons/more.png";
 const iconConfig = {
   startNavigate,
   carIcon,
@@ -172,6 +181,8 @@ const iconConfig = {
   messagesApp,
   whatsApp,
   phoneApp,
+  ticTacToeApp,
+  memoryGameApp,
   Call,
   Erase,
   EraseHover,
@@ -190,9 +201,17 @@ const iconConfig = {
   addFeedback,
   feedbackLogo,
   feedbackA,
+  feedbackASelected,
   feedbackB,
+  feedbackBSelected,
   feedbackC,
+  feedbackCSelected,
   avatar,
+  privateChat,
+  statistics,
+  feedbackHome,
+  average,
+  more,
 };
 
 export default iconConfig;
