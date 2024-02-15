@@ -106,7 +106,8 @@ import feedbackHome from "../assets/icons/feedback-home.png";
 import average from "../assets/icons/average.png";
 import more from "../assets/icons/more.png";
 import arrowBackRight from "../assets/icons/arrow-back-right.png";
-import bluetooth from "../assets/icons/bluetooth-icon.png";
+import bluetoothIcon from "../assets/icons/bluetooth-icon.png";
+import airplaneIconOrange from "../assets/icons/airplane-icon-orange.png";
 
 const iconConfig = {
   startNavigate,
@@ -216,7 +217,8 @@ const iconConfig = {
   feedbackHome,
   average,
   more,
-  bluetooth,
+  bluetoothIcon,
+  airplaneIconOrange,
 };
 
 export default iconConfig;
