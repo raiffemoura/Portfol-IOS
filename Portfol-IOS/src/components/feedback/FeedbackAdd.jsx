@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, redirect } from 'react-router-dom'
-import HeaderBlack from '../components/HeaderBlack'
-import '../styles/feedback.css'
+import HeaderBlack from '../HeaderBlack'
+import '../../styles/feedback.css'
 import axios from 'axios';
-import iconConfig from './iconConfig';
-import nice from './../assets/icons/nice.gif'
+import iconConfig from '../iconConfig';
+import nice from '../../assets/icons/nice.gif'
+import { useTranslation } from 'react-i18next'
+
 
 const Feedback = () => {
  
@@ -14,6 +16,9 @@ const Feedback = () => {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
    
+    const { t } = useTranslation();
+
+
     const handleImageClick = (rate) => {
         if (selectedRate === rate) {
             setSelectedRate(null); 
@@ -67,7 +72,7 @@ const Feedback = () => {
                     <div className={`feedback-modal ${success ? 'show' : ''}`}>
                         <div className="feedback-modal-content">
                                 <img src={nice} alt="nice" />
-                                <h3>Feedback submitted successfully!</h3>
+                                <h3>{t("feedbackSubmmited")}</h3>
                         
                         </div>
                     </div>
@@ -83,7 +88,7 @@ const Feedback = () => {
                     <div className='feedback-person tblack'>
                         <div>
                             <h3>Raiffe Moura</h3>
-                            <p>Full Stack Developer</p>
+                            <p>{t("fullStackDev")}</p>
                         </div>
                         <img src={iconConfig.avatar} alt="person" />
 
@@ -91,7 +96,7 @@ const Feedback = () => {
 
                     <div className='feedback-questions tblack'>
                         <div className='feedback-question'>
-                            <h3>--How was your experience?</h3>
+                            <h3>{t("howWasYourExperience")}</h3>
                             <div className='feedback-rating'>
                                 <img
                                     src={selectedRate === 'A' ? iconConfig.feedbackASelected : iconConfig.feedbackA}
@@ -115,14 +120,14 @@ const Feedback = () => {
                     
 
                     <div className='feedback-textarea-box tblack'>
-                        <p>Your honest feedback</p>
+                        <p>{t("yourHonestFeedback")}</p>
                         <textarea onChange={handleDescriptionChange} className='feedback-textarea tblack' placeholder='Enter your honest feedback here'></textarea>
-                        <p>Your name</p>
+                        <p>{t("yourName")}</p>
                         <input onChange={handleNameChange} className='feedback-input-name' type="text" maxLength={30} placeholder="Your name" />
                         
                         <div className='feedback-private'>
                             <Link to={"https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS..."}>
-                                <p>Private feedback?</p>
+                                <p>{t("privateFeedback")}</p>
                             </Link>
                             <Link to={"https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS..."}>
 
@@ -134,7 +139,7 @@ const Feedback = () => {
 
                     <div className='feedback-submit-box' >
                         
-                        <button onClick={handleSubmit} className='feedback-submit'>Send Feedback</button>
+                        <button onClick={handleSubmit} className='feedback-submit'>{t("sendFeedback")}</button>
                     </div>
 
 

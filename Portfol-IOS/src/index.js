@@ -16,9 +16,10 @@ import PhoneFavourites from "./routes/phone/PhoneFavourites";
 import GoogleMaps from "./routes/GoogleMaps";
 import NotesPage from "./routes/NotesPage";
 import Feedback from "./routes/Feedback";
-import FeedbackAdd from "./components/FeedbackAdd";
-import FeedbackStatistics from "./components/FeedbackStatistics";
+import FeedbackAdd from "./components/feedback/FeedbackAdd";
+import FeedbackStatistics from "./components/feedback/FeedbackStatistics";
 import Stocks from "./routes/Stocks";
+import Settings from "./routes/Settings";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
   {
     path: "/stocks",
     element: <Stocks />,
+  },
+  {
+    path: "/settings",
+    element: <Settings />,
   },
 ]);
 

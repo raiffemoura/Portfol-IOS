@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { GoogleMap, LoadScript, StandaloneSearchBox, DirectionsService, DirectionsRenderer, Marker } from "@react-google-maps/api";
 import { Link } from 'react-router-dom';
 import iconConfig from '../iconConfig.js'
+import { useTranslation } from 'react-i18next'
 const libraries = ["places"];
 
 const GoogleMapsMap = () => {
@@ -31,6 +32,8 @@ const GoogleMapsMap = () => {
     const [scrollLeft, setScrollLeft] = useState(0);
     const [selectedTransport, setSelectedTransport] = useState('DRIVING');
     const [mapLoaded, setMapLoaded] = useState(false);
+
+    const { t } = useTranslation();
     
     useEffect(() => {
         if (navigator.geolocation) {
@@ -137,8 +140,10 @@ const onPlacesChangedB = () => {
     const directionsCallback = React.useCallback((res) => {
         if (res !== null && res.status === "OK") {
             setResponse(res);
-            setDistance(res.routes[0].legs[0].distance.text);
+            setDistance(res.routes[0].legs[0].distance.text);            
             setDuration(res.routes[0].legs[0].duration.text); 
+          
+        
         } else {
             console.log(res);
         }
@@ -159,48 +164,6 @@ const onPlacesChangedB = () => {
         console.log("Transporte selecionado:", transport);
         traceRoute();
     };
-
-    // const onKeyPressA = (e) => {
-    //     if (e.key === 'Enter') {
-    //         e.preventDefault();
-    //         const places = searchBoxA.getPlaces();
-    //         if (places && places.length > 0) {
-    //             const place = places[0];
-    //             const location = {
-    //                 lat: place.geometry.location.lat(),
-    //                 lng: place.geometry.location.lng(),
-    //             };
-    //             setPointA(location);
-    //             setOrigin(null);
-    //             setDestination(null);
-    //             map?.panTo(location);
-    //             map?.setCenter(location);
-    //             setMapPosition(location);
-    //             setMarkerA(location);
-    //         }
-    //     }
-    // };
-
-    // const onKeyPressB = (e) => {
-    //     if (e.key === 'Enter') {
-    //         e.preventDefault();
-    //         const places = searchBoxB.getPlaces();
-    //         if (places && places.length > 0) {
-    //             const place = places[0];
-    //             const location = {
-    //                 lat: place.geometry.location.lat(),
-    //                 lng: place.geometry.location.lng(),
-    //             };
-    //             setPointB(location);
-    //             setOrigin(null);
-    //             setDestination(null);
-    //             map?.panTo(location);
-    //             map?.setCenter(location);
-    //             setMapPosition(location);
-    //             setMarkerB(location);
-    //         }
-    //     }
-    // };
 
     const handleMouseDown = (e) => {
         setIsMouseDown(true);
@@ -240,10 +203,10 @@ const onPlacesChangedB = () => {
             >
                 <input
                     className="addressField"
-                    placeholder="Your location"
+                    placeholder={t("yourLocation")}
                     value={inputValueA}
                     onChange={(e) => setInputValueA(e.target.value)}
-                    onkeydown={handleEnterKeyPress}
+                    onKeyDown={handleEnterKeyPress}
                 />
             </StandaloneSearchBox>
             <StandaloneSearchBox
@@ -252,7 +215,7 @@ const onPlacesChangedB = () => {
             >
                 <input
                     className="addressField"
-                    placeholder="Choose destination"
+                    placeholder={t("yourDestination")}                    
                     value={inputValueB}
                     onChange={(e) => setInputValueB(e.target.value)}
                     onKeyDown={handleEnterKeyPress}
@@ -324,32 +287,6 @@ const onPlacesChangedB = () => {
                         center={mapPosition}
                         zoom={14}
                     >
-                        {/* <div className="address">
-                            <StandaloneSearchBox
-                                onLoad={onLoadA}
-                                onPlacesChanged={onPlacesChangedA}
-                            >
-                                <input
-                                    className="addressField"
-                                    placeholder="Your location"
-                                    value={inputValueA}
-                                    onChange={(e) => setInputValueA(e.target.value)}
-                                    onkeydown={handleEnterKeyPress}
-                                />
-                            </StandaloneSearchBox>
-                            <StandaloneSearchBox
-                                onLoad={onLoadB}
-                                onPlacesChanged={onPlacesChangedB}
-                            >
-                                <input
-                                    className="addressField"
-                                    placeholder="Choose destination"
-                                    value={inputValueB}
-                                    onChange={(e) => setInputValueB(e.target.value)}
-                                    onKeyDown={handleEnterKeyPress}
-                                />
-                      </StandaloneSearchBox>
-                        </div> */}
 
                         {markerA && <Marker position={markerA} />}
                         {markerB && <Marker position={markerB} />}
@@ -372,13 +309,13 @@ const onPlacesChangedB = () => {
                 {distance !== null && duration !== null && (
                     <div className='route-info'>
                         <h1>{duration} ({distance})</h1> 
-                        <p>Fastest route now due to traffic conditions</p>
+                        <p>{t("fastestRoute")}</p>
                     </div>
                 )}
                 <div className='footer-btns'>
                     <button className='footer-btn-selected' onClick={traceRoute}>
                         <img src={iconConfig.startNavigate} alt="navigate" />
-                        Directions 
+                        {t("directions")} 
                     </button>
                 </div>  
             </div>

@@ -2,6 +2,8 @@ import React , { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import iconConfig from '../iconConfig';
 import "../../styles/spotify-uma-coisa.css"
+import { useTranslation } from 'react-i18next'
+
 
 const SpotifyPage = () => {
     // State
@@ -13,6 +15,8 @@ const SpotifyPage = () => {
             const [duration, setDuration] = useState(0);
             const [currentTime, setCurrentTime] = useState(0);
             const [isFollowing, setIsFollowing] = useState(false);
+            const { t } = useTranslation();
+
 
 
     // references
@@ -91,7 +95,7 @@ const SpotifyPage = () => {
         <div className='spotify-page-uma-coisa '>
             <div className='header-spotify'>
                 <Link to={"/"} ><img className='spotify-header-img' src={iconConfig.arrow} alt="arrow" /></Link>
-                <p className='spotify-header-text'>Liked Songs</p>
+                <p className='spotify-header-text'>{t("likedSongs")}</p>
                 <img className='spotify-header-img' src={iconConfig.dots} alt="more" />
             </div>
             <div className='album'><img src={iconConfig.albumUmaCoisa} alt="album" /></div>
@@ -169,7 +173,7 @@ const SpotifyPage = () => {
 
                 </div>
                 <div className='lycris-uma-coisa'>
-                        <h5 className='artist-title'>Lycris</h5>
+                        <h5 className='artist-title'>{t('lyrics')}</h5>
                         <div className='lycris'>
                             <div>
                                 <p>Uma coisa vou pedir</p>
@@ -248,47 +252,47 @@ const SpotifyPage = () => {
                         </div>
                         <div className='about-artist-card'>
                     <div className='artist-photo-morada'>
-                        <h5 className='artist-title'>About the artist</h5>
+                        <h5 className='artist-title'>{t("aboutArtist")}</h5>
                     </div>
                     <div className='artist-info'>
                         <div>
                             <h4>MORADA</h4>
-                            <p>2.4M monthly listeners</p>
+                            <p>2.4M {t("montlyListeners")}</p>
                             
                                
                         </div>
-                        <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? 'Following' : 'Follow'}</button>
+                        <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? t("following") : t('follow')}</button>
                     </div>
                     <div className='artist-description'>
 
                         <span >
                         O MORADA é uma banda que tem por ansioso "gritas nos telhados o que Deus Tem 
-                        sussurrado em seus ouvidos". Com pouco mais de 10 anos de estrada  </span> <Link to='/spotify/MORADA'><button  className='see-more'>...see more</button></Link>
+                        sussurrado em seus ouvidos". Com pouco mais de 10 anos de estrada  </span> <Link to='/spotify/MORADA'><button  className='see-more'>...{t("seeMore")}</button></Link>
                         
                     </div>
                     
                 </div>
                 <div className='about-artist-card'>
                         <div className='card-credit-title'>
-                            <h4>Credits</h4>
+                            <h4>{t("credits")}</h4>
                         </div>
                         <div className='card-credit'>
                             <div className='card-credit-text'>
                                 <h5>MORADA</h5>
-                                <p className='credit-text'>Main Artist</p>
+                                <p className='credit-text'>{t("mainArtist")}</p>
                             </div>
-                            <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? 'Following' : 'Follow'}</button>
+                            <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? t("following") : t('follow')}</button>
                         </div>
                         <div className='card-credit'>
                             <div className='card-credit-text'>
                                 <h5>Brunão Morada</h5>
-                                <p className='credit-text'>Composer, Producer</p>
+                                <p className='credit-text'>{t("composer")}, {t("producer")}</p>
                             </div>
                         </div>
                         <div className='card-credit'>
                             <div className='card-credit-text'>
                                 <h5>Felipe Henri</h5>
-                                <p className='credit-text'>Producer</p>
+                                <p className='credit-text'>{t("producer")}</p>
                             </div>
                         </div>
                     

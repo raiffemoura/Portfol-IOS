@@ -1,6 +1,8 @@
 import React , { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import iconConfig from '../iconConfig';
+import { useTranslation } from 'react-i18next'
+
 const SpotifyPeregrino = () => {
     // State
             const [isPlaying, setIsPlaying] = useState(false);
@@ -12,12 +14,16 @@ const SpotifyPeregrino = () => {
             const [currentTime, setCurrentTime] = useState(0);
             const [isFollowing, setIsFollowing] = useState(false);
             const [isFollowing2, setIsFollowing2] = useState(false);
+            const { t } = useTranslation();
+
 
 
     // references
     const audioPlayer = useRef(); // reference our audio component
     const progressBar = useRef(); // reference our progress bar
     const animationRef = useRef(); // reference the animation
+
+
 
     useEffect(() => {
         if (audioPlayer.current) {
@@ -91,7 +97,7 @@ const SpotifyPeregrino = () => {
         <div className='spotify-page'>
             <div className='header-spotify'>
                 <Link to={"/"} ><img className='spotify-header-img' src={iconConfig.arrow} alt="arrow" /></Link>
-                <p className='spotify-header-text'>Liked Songs</p>
+                <p className='spotify-header-text'>{t("likedSongs")}</p>
                 <img className='spotify-header-img' src={iconConfig.dots} alt="more" />
             </div>
             <div className='album'><img src={iconConfig.albumPeregrino} alt="album" /></div>
@@ -170,43 +176,43 @@ const SpotifyPeregrino = () => {
                 </div>
                 <div className='about-artist-card'>
                     <div className='about-artist-title'>
-                        <h5 className='artist-title'>About the artist</h5>
+                        <h5 className='artist-title'>{t("aboutArtist")}</h5>
                     </div>
                     <div className='artist-info'>
                         <div>
                             <h4>Alessandro Vilas Boas</h4>
-                            <p>1.2M monthly listeners</p>
+                            <p>1.2M {t("montlyListeners")}</p>
                             
                                
                         </div>
-                        <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? 'Following' : 'Follow'}</button>
+                        <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? t("following") : t('follow')}</button>
                     </div>
                     <div className='artist-description'>
 
                         <span >
                         Sua história começa no favor de Deus. Alessandro é um improvável, e como ama dizer "alguém comum". 
-                        Nascido dia 30 de Julho de 1993 em Itajubá -MG  </span> <Link to='/spotify/alessandro-vilas-boas'><button  className='see-more'>...see more</button></Link>
+                        Nascido dia 30 de Julho de 1993 em Itajubá -MG  </span> <Link to='/spotify/alessandro-vilas-boas'><button  className='see-more'>...{t("seeMore")}</button></Link>
                         
                     </div>
                     
                 </div>
                 <div className='about-artist-card'>
                         <div className='card-credit-title'>
-                            <h4>Credits</h4>
+                            <h4>{t("credits")}</h4>
                         </div>
                         <div className='card-credit'>
                             <div className='card-credit-text'>
                                 <h5>Alessandro Vilas Boas</h5>
-                                <p className='credit-text'>Main Artist, Composer</p>
+                                <p className='credit-text'>{t("mainArtist")}, {t("composer")}</p>
                             </div>
-                            <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? 'Following' : 'Follow'}</button>
+                            <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ?  t("following") : t('follow')}</button>
                         </div>
                         <div className='card-credit'>
                             <div className='card-credit-text'>
                                 <h5>One Sounds</h5>
-                                <p className='credit-text'>Main Artist</p>
+                                <p className='credit-text'>{t("mainArtist")}</p>
                             </div>
-                            <button className='follow-button' onClick={() => setIsFollowing2(!isFollowing2)}>{isFollowing2 ? 'Following' : 'Follow'}</button>
+                            <button className='follow-button' onClick={() => setIsFollowing2(!isFollowing2)}>{isFollowing2 ?  t("following") : t('follow')}</button>
                         </div>
                     
                 </div>

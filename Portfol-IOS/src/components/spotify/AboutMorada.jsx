@@ -1,9 +1,10 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
 import iconConfig from '../iconConfig';
-// import HomeButtonSticky from '../HomeButtonSticky'
+import { useTranslation } from 'react-i18next'
 
 const AboutMorada = () => {     
+    const { t } = useTranslation();
 
     return (  
         
@@ -23,7 +24,7 @@ const AboutMorada = () => {
                     </div>
                     <div className='artist-info-morada'>
                             <h2>2,359,202</h2>
-                            <p>monthly listeners</p>
+                            <p>{t("montlyListeners")}</p>
                     </div>
                     <div className='artist-description'>
 
@@ -39,7 +40,7 @@ const AboutMorada = () => {
                        
                          <div className='artist-icon'>
                            <img src={iconConfig.Morada} alt="Morada" />
-                            <div> Posted by MORADA</div>
+                            <div> {t("postedBy")} MORADA</div>
                         </div>
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://twitter.com/Moradaoficial"}>

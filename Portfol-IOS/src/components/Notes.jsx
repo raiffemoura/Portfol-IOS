@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import arrowBackYellow from '../assets/icons/arrow-back-yellow.png'
 import moreCircleIcon from '../assets/icons/more-circle-icon.png'
@@ -17,6 +18,7 @@ const Notes = () => {
     const [showHeader, setShowHeader] = useState(true);
     const [newTitle, setNewTitle] = useState('');
     const [newSubtitle, setNewSubtitle] = useState('');
+    const { t } = useTranslation();
     const [notes, setUpdatedNotes] = useState([
             { id: 0,
             title: "Apresentando Meu Portfól-IOS", 
@@ -119,22 +121,21 @@ const Notes = () => {
                         }
                         
                         { showAllNotes ? 
-                        <Link className='notes-back-link' to={'/'} ><h3>Folders</h3> </Link>
+                        <Link className='notes-back-link' to={'/'} ><h3>{t("folders")}</h3> </Link>
                         :
-                        <Link to={"#"} className='notes-back-link' ><h3 onClick={handleShowAllNotes}  >Notes</h3> </Link>
+                        <Link to={"#"} className='notes-back-link' ><h3 onClick={handleShowAllNotes}  >{t("notes")}</h3> </Link>
                         }
                     </div>
-                    {showInput ? <div className='notes-done' onClick={saveNote}>Done</div> : <img src={moreCircleIcon} alt="more" /> }
+                    {showInput ? <div className='notes-done' onClick={saveNote}>{t("done")}</div> : <img src={moreCircleIcon} alt="more" /> }
                     
                 </div>
 
                 
-                { showAllNotes ? <div className='notes-title'><h1>Notes</h1></div> : null }
+                { showAllNotes ? <div className='notes-title'><h1>{t("notes")}</h1></div> : null }
                 { showInput ? <div className='notes-title'>
                     <textarea className='notes-text-area-title' autoFocus rows={2} maxLength={50} 
-                    onChange={(e) =>  {setNewTitle(e.target.value); }} type="text" placeholder="Enter a title" />
-                    <textarea className='notes-text-area-body' type="text"  placeholder="Write your note here"
-                    onChange={(e) =>  {setNewSubtitle(e.target.value); }} />
+                    onChange={(e) =>  {setNewTitle(e.target.value); }} type="text" placeholder={t("enterTitle")} />
+                    <textarea className='notes-text-area-body' type="text"  placeholder={t("writeNote")}                    onChange={(e) =>  {setNewSubtitle(e.target.value); }} />
                     </div> 
                     :
                     null }
@@ -142,7 +143,7 @@ const Notes = () => {
                 
                 <div className='notes-body-container'>
                     <div className='notes-body-title'>
-                    { showAllNotes ? <h3>January</h3> : null }
+                    { showAllNotes ? <h3>{t("january")}</h3> : null }
         
                         
                     </div>
@@ -180,7 +181,7 @@ const Notes = () => {
             </div>
             {showAllNotes ? 
             <div className='notes-footer'>
-                <h5>{notes.length} Notes</h5>
+                <h5>{notes.length} {t("notes")}</h5>
                 <img src={newNote} onClick={handleNewNote} alt="" />
             </div>
             : null }

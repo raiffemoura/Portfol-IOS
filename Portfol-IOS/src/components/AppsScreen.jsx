@@ -3,11 +3,13 @@ import { PageContext } from '../context/PageContext';
 import { Link } from 'react-router-dom';
 import CalendarApp from '../components/CalendarApp';
 import iconConfig from './iconConfig';
+import { useTranslation } from 'react-i18next'
 
 
 
 const AppsScreen = () => {
 
+const {t} = useTranslation();
 
 function apps(app, appName){
     return(
@@ -16,7 +18,7 @@ function apps(app, appName){
                 <img src={app} alt={app} />
                 
             </div> 
-            <p className='apps-text'>{appName}</p>
+            <p className='apps-text'>{t(appName)}</p>
         </div>
         
     )
@@ -43,16 +45,16 @@ return (
             <div onClick={handleClick} className={`apps ${isSlided ? 'slide3' : 'slide'}`} id='APPS'>
                 <div className="apps-line">
                 <Link to={"/Mail"}>
-                    {apps(iconConfig.mailApp, "Mail" )}
+                    {apps(iconConfig.mailApp, "mail" )}
                 </Link>
                 <Link to={"/Calendar"}>
                     <CalendarApp />
                 </Link>
                 <Link to={"/Photos"}>
-                    {apps(iconConfig.photosApp, "Photos")}
+                    {apps(iconConfig.photosApp, "photos")}
                 </Link>
                 <Link to={"/Camera"}>
-                    {apps(iconConfig.cameraApp, "Camera")}
+                    {apps(iconConfig.cameraApp, "camera")}
                 </Link>
                 </div>
                 <div className="apps-line">
@@ -60,22 +62,22 @@ return (
                     {apps(iconConfig.facetimeApp, "FaceTime")}
                 </Link>
                 <Link to={"/Clock"}>
-                    {apps(iconConfig.clockApp, "Clock")}
+                    {apps(iconConfig.clockApp, "clock")}
                 </Link>
                 <Link to={"/Wather"}>
-                    {apps(iconConfig.weatherApp, "Weather")}
+                    {apps(iconConfig.weatherApp, "weather")}
                 </Link>
                 <Link to={"/Reminders"}>
-                    {apps(iconConfig.remindersApp, "Reminders")}
+                    {apps(iconConfig.remindersApp, "reminders")}
                 </Link>
 
                 </div>
                 <div className="apps-line">
                 <Link to={"/Notes"}>
-                    {apps(iconConfig.notesApp, "Notes")}
+                    {apps(iconConfig.notesApp, "notes")}
                 </Link>
                 <Link to={"/Stocks"}>
-                    {apps(iconConfig.stocksApp, "Stocks")}
+                    {apps(iconConfig.stocksApp, "stocks")}
                 </Link>
                 <Link to={"/AppStore"}>
                     {apps(iconConfig.appStoreApp, "App Store")}
@@ -86,16 +88,16 @@ return (
                 </div>
                 <div className="apps-line">
                 <Link to={"/Calculator"}>
-                    {apps(iconConfig.calculatorApp, "Calculator")}
+                    {apps(iconConfig.calculatorApp, "calculator")}
                 </Link>
                 <div onClick={handleGoogleMapsClick}>
                     {apps(iconConfig.googleMapsApp, "Google Maps")}
                 </div>
                 <Link to={"/phone/Contacts"}>
-                    {apps(iconConfig.contactsApp, "Contacts")}
+                    {apps(iconConfig.contactsApp, "contacts")}
                 </Link>
                 <Link to={"/Settings"}>
-                    {apps(iconConfig.settingsApp, "Settings")}
+                    {apps(iconConfig.settingsApp, "settings")}
                 </Link>
                 </div>
                 <div className="apps-line">

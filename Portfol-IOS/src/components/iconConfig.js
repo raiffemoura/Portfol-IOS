@@ -105,6 +105,9 @@ import statistics from "../assets/icons/statistics.png";
 import feedbackHome from "../assets/icons/feedback-home.png";
 import average from "../assets/icons/average.png";
 import more from "../assets/icons/more.png";
+import arrowBackRight from "../assets/icons/arrow-back-right.png";
+import bluetooth from "../assets/icons/bluetooth-icon.png";
+
 const iconConfig = {
   startNavigate,
   carIcon,
@@ -119,7 +122,6 @@ const iconConfig = {
   taxiIconBlack,
   airplaneIcon,
   airplaneIconBlack,
-  arrowBackBlack,
   locationImg,
   moreIcon,
   switchIcon,
@@ -129,7 +131,11 @@ const iconConfig = {
   camera,
   step,
   pin,
+  arrowBackBlack,
   arrow,
+  arrowBack,
+  arrowBackBlue,
+  arrowBackRight,
   dots,
   liked,
   umacoisa,
@@ -150,7 +156,6 @@ const iconConfig = {
   devices,
   albumUmaCoisa,
   albumPeregrino,
-  arrowBack,
   Morada,
   Alessandro,
   Twitter,
@@ -196,7 +201,6 @@ const iconConfig = {
   favouritesBlue,
   voicemail,
   voicemailBlue,
-  arrowBackBlue,
   closefeedback,
   addFeedback,
   feedbackLogo,
@@ -212,6 +216,7 @@ const iconConfig = {
   feedbackHome,
   average,
   more,
+  bluetooth,
 };
 
 export default iconConfig;

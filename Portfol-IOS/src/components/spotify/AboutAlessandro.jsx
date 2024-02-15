@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import iconConfig from '../iconConfig';
+import { useTranslation } from 'react-i18next'
+
 
 
 const AboutAlessandro = () => {     
+    const { t } = useTranslation();
 
     return (  
         
@@ -23,7 +26,7 @@ const AboutAlessandro = () => {
                     </div>
                     <div className='artist-info-alessandro'>
                             <h2>1,237,219</h2>
-                            <p>monthly listeners</p>
+                            <p>{t("montlyListeners")}</p>
                     </div>
                     <div className='artist-description'>
 
@@ -51,7 +54,7 @@ const AboutAlessandro = () => {
                          and artist. </p>
                          <div className='artist-icon'>
                            <img src={iconConfig.Alessandro} alt='alessandro'/>
-                            <div> Posted by Alessandro Vilas Boas</div>
+                            <div> {t("postedBy")} Alessandro Vilas Boas</div>
                         </div>
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://twitter.com/ale_vilasboas1"}>

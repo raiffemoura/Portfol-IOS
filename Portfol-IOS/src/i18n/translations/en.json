@@ -1,0 +1,91 @@
+{
+    "translation": {
+        "selectYourLanguage": "Select your language",
+
+        "home": "Home",
+        "statistics": "Statistics",
+        "feedbackDetails": "Feedback Details",
+        "great": "Great",
+        "good": "Good",
+        "notGood": "Not Good",
+        "average": "Average",
+        "youDidSomething" : "You did something awesome!",
+        "keepUpTheGoodWork" : "Keep up the good work!",
+        "somethingNeedsImprovement" : "Something needs improvement!",
+        "considering" : "Considering A=10, B=7, C=4",
+        "feedbackSubmmited": "Feedback submitted successfully!",
+        "fullStackDev": "Full Stack Developer",
+        "howWasYourExperience": "How was your experience?",
+        "yourHonestFeedback": "Your honest feedback",
+        "yourName": "Your name",
+        "privateFeedback": "Private feedback?",
+        "sendFeedback": "Send Feedback",
+
+        "fastestRoute": "Fastest route now due to traffic conditions",
+        "directions": "Directions",
+        "yourLocation" : "Your location",
+        "yourDestination" : "Your destination",
+
+        "likedSongs": "Liked Songs",
+        "aboutArtist": "About Artist",
+        "montlyListeners": "Monthly Listeners",
+        "follow" : "Follow",
+        "following": "Following",
+        "seeMore" : "See more",
+        "credits": "Credits",
+        "mainArtist": "Main Artist",
+        "composer": "Composer",
+        "lyrics" : "Lyrics",
+        "producer" : "Producer",
+        "postedBy" : "Posted by",
+
+        "folders" : "Folders",
+        "notes" : "Notes",
+        "done" : "done",
+        "enterTitle" : "Enter a title",
+        "writeNote" : "Write your note here",
+
+        "mail": "Mail",
+        "photos":"Photos",
+        "camera":"Camera",
+        "clock":"Clock",
+        "weather":"Weather",
+        "reminders":"Reminders",
+        "stocks":"Stocks",
+        "calculator":"Calculator",
+        "contacts":"Contacts",
+        "settings":"Settings",
+        "calendar" : "Calendar",
+
+        "january" : "January",
+        "february" : "February",
+        "march" : "March",
+        "april" : "April",
+        "may" : "May",
+        "june" : "June",
+        "july" : "July",
+        "august" : "August",
+        "september" : "September",
+        "october" : "October",
+        "november" : "November",
+        "december" : "December",
+
+        "USD/BRL" : "US Dollar/Brazilian Real",
+        "EUR/BRL" : "Euro/Brazilian Real",
+        "BTC/BRL" : "Bitcoin/Brazilian Real",
+        "ETH/BRL" : "Ethereum/Brazilian Real",
+        "BTC/USD" : "Bitcoin/US Dollar",
+        "ETH/USD" : "Ethereum/US Dollar",
+        "search" : "Search"
+
+
+
+
+
+
+
+
+        
+        
+    }
+}

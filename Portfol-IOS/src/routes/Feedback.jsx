@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderBlack from '../components/HeaderBlack'
 import '../styles/feedback.css'
-import Feedbacks from '../components/Feedbacks';
+import Feedbacks from '../components/feedback/Feedbacks';
 const Feedback = () => {  
     
     return (
@@ -12,6 +12,7 @@ const Feedback = () => {
                 <div className="screen ">
                     <HeaderBlack />
                     <Feedbacks />
+
                 </div>
             </div>
             

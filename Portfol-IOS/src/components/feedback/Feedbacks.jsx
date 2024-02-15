@@ -1,8 +1,10 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios';
-import iconConfig from '../components/iconConfig';
+import iconConfig from '../iconConfig';
 import { Link } from 'react-router-dom'
 import FeedbackFooter from './FeedbackFooter'
+import HomeButtonFeedback from './HomeButtonFeedback';
+
 
 const Feedbacks = () => {
     const [feedbacks, setFeedbacks] = useState([]);
@@ -43,19 +45,7 @@ const Feedbacks = () => {
             
                 
                 
-                {/* {feedbacks.map(feedback => (
-                    <div key={feedback._id} className={`feedback-box ${feedback.rating}`} onClick={() => handleFeedbackID(feedback._id)}>
-                                                <div className='feedback-box-header'>
-                        <h3>{limitString(feedback.name, 15)}</h3>
-                            <h6>{feedback.date}</h6>
-                        </div>
-                        <div className='feedback-box-text'>
-                            <p>
-                                {limitString(feedback.description, 80)}
-                            </p>
-                        </div>
-                    </div>
-                    ))} */}
+              
 
                 {showAllFeedbacks && (
                     feedbacks.map(feedback => (
@@ -100,6 +90,7 @@ const Feedbacks = () => {
             
             </div>
             <FeedbackFooter />
+            <HomeButtonFeedback />
         </div>
      );
 }

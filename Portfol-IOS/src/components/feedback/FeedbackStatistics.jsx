@@ -1,10 +1,12 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios';
 import { Link } from "react-router-dom" 
-import iconConfig from './iconConfig'
-
-import HeaderBlack from "./HeaderBlack"
+import iconConfig from '../iconConfig'
+import HeaderBlack from "../HeaderBlack"
 import FeedbackFooter from './FeedbackFooter';
+import HomeButtonFeedback from './HomeButtonFeedback';
+import { useTranslation } from 'react-i18next'
+
 const FeedbackStatistics = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     useEffect(() => {
@@ -24,11 +26,11 @@ const FeedbackStatistics = () => {
     const totalA = ratings.filter((rating) => rating === "A").length;
     const totalB = ratings.filter((rating) => rating === "B").length;
     const totalC = ratings.filter((rating) => rating === "C").length;
-    console.log("total ratings: "+ratings.length);
     const average = ((totalA*10) + (totalB * 7) + (totalC * 3)) / ratings.length;
     const roundedAverage = average.toFixed(2);
-    console.log("average: "+average);
-    console.log("rounded average: "+roundedAverage);
+   
+    const { t } = useTranslation();
+
     
 
 
@@ -44,14 +46,14 @@ const FeedbackStatistics = () => {
                     </div>
                     <div className='statistics'>
                         <div className='statistics-container'>
-                        <h4 className='tgray'>Feedback details</h4>
+                        <h4 className='tgray'>{t("feedbackDetails")}</h4>
                         <div className="statistic-box">
                             <div className='statistic-img'>
                                 <img src={iconConfig.feedbackA} alt="A" />
                             </div>
                             <div className='statistic-text'>
-                                <h2>Great</h2>
-                                <p>You did something awesome</p>
+                                <h2>{t("great")}</h2>
+                                <p>{t("youDidSomething")}</p>
                             </div>
                             <div className='statistics-rating'>
                             <h2>{totalA}</h2>
@@ -64,8 +66,8 @@ const FeedbackStatistics = () => {
                                 <img src={iconConfig.feedbackB} alt="B" />
                             </div>
                             <div className='statistic-text'>
-                                <h2>Good</h2>
-                                <p>Keep up the good work</p>
+                                <h2>{t("good")}</h2>
+                                <p>{t("keepUpTheGoodWork")}</p>
                             </div>
                             <div className='statistics-rating'>
                                 <h2>{totalB}</h2>
@@ -77,8 +79,8 @@ const FeedbackStatistics = () => {
                                 <img src={iconConfig.feedbackC} alt="C" />
                             </div>
                             <div className='statistic-text'>
-                                <h2>Not Good</h2>
-                                <p>Something needs improvement</p>
+                                <h2>{t("notGood")}</h2>
+                                <p>{t("somethingNeedsImprovement")}</p>
                             </div>
                             <div className='statistics-rating'>
                             <h2>{totalC}</h2>
@@ -90,8 +92,8 @@ const FeedbackStatistics = () => {
                                 <img src={iconConfig.average} alt="average" />
                             </div>
                             <div className='statistic-text'>
-                                <h2>Average</h2>
-                                <p>Considering A=10, B=7, C=4</p>
+                                <h2>{t("average")}</h2>
+                                <p>{t("considering")}</p>
                             </div>
                             <div className='statistics-rating'>
                             <h2>{roundedAverage === "NaN" ? 0 : roundedAverage}</h2>
@@ -104,6 +106,7 @@ const FeedbackStatistics = () => {
                         <div className='statistics-footer'>
                         <FeedbackFooter />
                         </div>
+                        <HomeButtonFeedback />
                     </div>
                 </div>
             </div>

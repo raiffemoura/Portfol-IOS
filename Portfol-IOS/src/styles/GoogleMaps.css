@@ -247,6 +247,10 @@ cursor: pointer ;
 transition: ease-in-out 0.2s;
 }
 
+input::placeholder {
+    color: #000;
+}
+
 
                 /* ======  MAP MEDIAS QUERIES ====== */
 

@@ -243,9 +243,8 @@ margin-top: 20px;
   }
 
 .feedback-footer{
-    /* border: 1px solid black; */
     position: relative;
-    top: -100px;
+    top: -99px;
     width: 100%;
     height: 100px;
     display: flex;
@@ -308,7 +307,18 @@ color: #808080 ;
     
 }
 
-
+.home-button-feedback{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    position: absolute;
+    top: 665px;
+    right: 118px;
+    left: 0;
+    margin: auto;
+  }
 
 
 

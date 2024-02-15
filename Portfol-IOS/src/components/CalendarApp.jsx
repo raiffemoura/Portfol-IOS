@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 const CalendarApp = () => {
     const days = ["Sunday", "Monday", "Tuesday", "WED", "Thursday", "Friday", "Saturday"]
     const day = new Date().getDay()
+    const {t} = useTranslation()
     return ( 
         <div>
             <div className='calendarAppHover'>
@@ -15,7 +17,7 @@ const CalendarApp = () => {
                 </Link>
             </div>            
             </div>
-            <p className='apps-text'>Calendar</p>
+            <p className='apps-text'>{t("calendar")}</p>
 
         </div>
         

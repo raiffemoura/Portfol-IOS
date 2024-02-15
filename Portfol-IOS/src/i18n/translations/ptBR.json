@@ -1,0 +1,89 @@
+{
+    "translation": {
+        "selectYourLanguage": "Selecione o seu idioma",
+
+        "home": "Inicio",
+        "statistics": "Estatisticas",
+        "feedbackDetails": "Detalhes dos comentários",
+        "great": "Ótimo",
+        "good": "Bom",
+        "notGood": "Ruim",
+        "average": "Média",
+        "youDidSomething" : "Você fez algo incrível!",
+        "keepUpTheGoodWork" : "Continue com o bom trabalho!",
+        "somethingNeedsImprovement" : "Algo precisa ser melhorado!",
+        "considering" : "Considerando A=10, B=7, C=4",
+        "feedbackSubmmited": "Comentário enviado com sucesso!",
+        "fullStackDev": "Desenvolvedor Full Stack",
+        "howWasYourExperience": "Como foi sua experiência?",
+        "yourHonestFeedback": "Seu honesto comentário",
+        "yourName": "Seu nome",
+        "privateFeedback": "Comentário privado?",
+        "sendFeedback": "Enviar comentário",
+
+        "fastestRoute": "Trajeto mais rápido devido às condições do trânsito",
+        "directions": "Direções",
+        "yourLocation" : "Sua localização",
+        "yourDestination" : "Seu destino",
+
+        "likedSongs": "Músicas Curtidas",
+        "aboutArtist": "Sobre o Artista",
+        "montlyListeners": "Assinantes Mensais",
+        "follow" : "Seguir",
+        "following": "Seguindo",
+        "seeMore" : "Veja mais",
+        "credits": "Créditos",
+        "mainArtist": "Artista Principal",
+        "composer": "Compositor",
+        "lyrics" : "Letra",
+        "producer" : "Produtor",
+        "postedBy" : "Postado por",
+
+        "folders" : "Pastas",
+        "notes" : "Notas",
+        "done" : "OK",
+        "enterTitle" : "Insira um título",
+        "writeNote" : "Escreva sua nota aqui",
+
+        "mail": "Email",
+        "photos":"Fotos",
+        "camera":"Câmera",
+        "clock":"Relógio",
+        "weather":"Tempo",
+        "reminders":"Lembretes",
+        "stocks":"Bolsa",
+        "calculator":"Calculadora",
+        "contacts":"Contatos",
+        "settings":"Configurações",
+        "calendar" : "Calendário",
+
+        "january" : "Janeiro",
+        "february" : "Fevereiro",
+        "march" : "Março",
+        "april" : "Abril",
+        "may" : "Maio",
+        "june" : "Junho",
+        "july" : "Julho",
+        "august" : "Agosto",
+        "september" : "Setembro",
+        "october" : "Outubro",
+        "november" : "Novembro",
+        "december" : "Dezembro",
+
+        "USD/BRL" : "Dólar Americano/Real Brasileiro",
+        "EUR/BRL" : "Euro/Real Brasileiro",
+        "BTC/BRL" : "Bitcoin/Real Brasileiro",
+        "ETH/BRL" : "Ethereum/Real Brasileiro",
+        "BTC/USD" : "Bitcoin/Dólar Americano",
+        "ETH/USD" : "Ethereum/Dólar Americano",
+        "search" : "Pesquisar"
+
+
+
+
+
+
+
+
+    }
+}
