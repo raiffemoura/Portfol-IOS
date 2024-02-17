@@ -79,7 +79,7 @@ const router = createBrowserRouter([
     element: <Feedback />,
   },
   {
-    path: "thanks-for-your-feedback",
+    path: "/thanks-for-your-feedback",
     element: <FeedbackAdd />,
   },
   {

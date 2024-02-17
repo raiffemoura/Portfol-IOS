@@ -3,7 +3,7 @@ import signal from '../assets/signal-reception-gif.gif';
 import wifi from '../assets/wifi-gif.gif';
 import battery from '../assets/battery/battery.gif';
 import camera from '../assets/camera.png';
-
+import Notifications from './Noifications';
     
 
 const Header = () => {
@@ -31,7 +31,7 @@ useEffect(() => {
         <div className='header'>
             <div id='time'>{currentTime}</div>
             <div className='header-camera'>
-              <img src={camera} alt="camera" />
+              <Notifications />
             </div>
             <div className='header-icons'>
                 <img src={signal} alt="signal reception icon" />

@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 * {
@@ -55,13 +54,7 @@ body {
   z-index: 3;
 
 }
-.header-camera img{
-  height: 32px;
-  padding-top: 6px;
-  margin-left: 32px;
-  z-index: 3;
-  position: relative;
-}
+
 .header-right{
   padding-right: 10px;
   height: 45px;

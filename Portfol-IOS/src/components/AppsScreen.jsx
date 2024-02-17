@@ -7,9 +7,14 @@ import { useTranslation } from 'react-i18next'
 
 
 
+
 const AppsScreen = () => {
 
 const {t} = useTranslation();
+
+
+const [isFirstPage, setIsFirstPage] = useState(true);
+const [isSlided] = useContext(PageContext);
 
 function apps(app, appName){
     return(
@@ -23,10 +28,6 @@ function apps(app, appName){
         
     )
 }
-
-const [isFirstPage, setIsFirstPage] = useState(true);
-const [isSlided] = useContext(PageContext);
-
 
 const handleClick = () => {
     setIsFirstPage(!isFirstPage);

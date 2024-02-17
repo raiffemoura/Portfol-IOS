@@ -108,6 +108,12 @@ import more from "../assets/icons/more.png";
 import arrowBackRight from "../assets/icons/arrow-back-right.png";
 import bluetoothIcon from "../assets/icons/bluetooth-icon.png";
 import airplaneIconOrange from "../assets/icons/airplane-icon-orange.png";
+import wifiIcon from "../assets/icons/wifi-icon.png";
+import cellularIcon from "../assets/icons/cellular-icon.png";
+import hotspotIcon from "../assets/icons/hotspot-icon.png";
+import settingsIcon from "../assets/icons/settings-icon.png";
+import settingsIcon2 from "../assets/icons/settings-icon2.png";
+import settingsList from "../assets/icons/settings-list.png";
 
 const iconConfig = {
   startNavigate,
@@ -219,6 +225,12 @@ const iconConfig = {
   more,
   bluetoothIcon,
   airplaneIconOrange,
+  wifiIcon,
+  cellularIcon,
+  hotspotIcon,
+  settingsIcon,
+  settingsList,
+  settingsIcon2,
 };
 
 export default iconConfig;

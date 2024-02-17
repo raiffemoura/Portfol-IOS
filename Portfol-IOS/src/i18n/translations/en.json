@@ -76,8 +76,17 @@
         "ETH/BRL" : "Ethereum/Brazilian Real",
         "BTC/USD" : "Bitcoin/US Dollar",
         "ETH/USD" : "Ethereum/US Dollar",
-        "search" : "Search"
+        "search" : "Search",
 
+        "english" : "English",
+        "portuguese" : "Portuguese",
+        "airplaneMode" : "Airplane Mode",
+        "cellular" : "Cellular",
+        "hotspot" : "Personal Hotspot",
+        "languageRegion": "Language & Region",
+        "AppleIDiCloudMediaPurchases" : "Apple ID, iCloud+, Media & Purchases",
+        "airplaneOn" : "airplane-mode",
+        "airplaneOff" : "signal"
 
 
 
