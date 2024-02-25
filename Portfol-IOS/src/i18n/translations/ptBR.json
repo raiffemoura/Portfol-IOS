@@ -86,7 +86,55 @@
         "languageRegion": "Idioma e Região",
         "AppleIDiCloudMediaPurchases" : "ID Apple, ICloud, Mídia e Compras",
         "airplaneOn" : "airplane-mode",
-        "airplaneOff" : "signal"
+        "airplaneOff" : "signal",
+
+        "heythere": "Iai, beleza? Apenas uma dica rápida: você pode alterar o idioma, o tema e muito mais no ",
+        "thanks": "Obrigado!",
+        "dontforget": "Por favor, não esqueça de deixar o seu feedback no ",
+
+        "darkTheme": "Tema Escuro",
+        "lightTheme": "Tema Claro",
+
+
+        "language" : "pt",
+        "high": "Max: ",
+        "low": "Min: ",
+        "condition": "Condição do tempo",
+        "hourlyForecast": "Previsão por hora",
+        "UV": "INDICE UV",
+        "UVLow": "BAIXO",
+        "UVModerate": "MODERADO",
+        "UVHigh": "ALTO",
+        "UVVeryHigh": "MUITO ALTO",
+        "UVExtreme" : "EXTREMO",
+        "feelsLike" : "SENSAÇÃO TÉRMICA",
+        "feelsLikeVeryHigh" : "Quente",
+        "feelsLikeHigh" : "Agradável",
+        "feelsLikeModerate" : "Confortável",
+        "feelsLikeLow" : "Fresco",
+        "feelsLikeVeryLow" : "Gelado",
+        "sunrise" : "Nascer do sol",
+        "sunset" : "Pôr do sol",
+        "visibility" : "VISIBILIDADE",
+        "visibilityVeryBad": "Visibilidade muito limitada",
+        "visibilityBad": "Visibilidade limitada",
+        "visibilityModerate": "Visibilidade razoável",
+        "visibilityGood": "Visibilidade moderada",
+        "visibilityVeryGood": "Visibilidade muito boa",
+        "humidity" : "UMIDADE",
+        "humidityVeryHigh": "Ambiente abafado, difícil se refrescar",
+        "humidityHigh": " Ar pesado, sensação de umidade",
+        "humidityModerate": "Condições equilibradas, geralmente confortáveis",
+        "humidityLow": "Confortável, mas pode ser desconfortável com calor",
+        "humidityVeryLow": "Ar seco, pele ressecada",
+        "precipitation" : "PRECIPITAÇÃO",
+        "precipitationToday" : " cm esperados no dia"
+
+
+                   
+
+
+
 
 
 

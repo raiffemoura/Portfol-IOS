@@ -20,6 +20,7 @@ import FeedbackAdd from "./components/feedback/FeedbackAdd";
 import FeedbackStatistics from "./components/feedback/FeedbackStatistics";
 import Stocks from "./routes/Stocks";
 import Settings from "./routes/Settings";
+import Weather from "./routes/Weather.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
   {
     path: "/settings",
     element: <Settings />,
+  },
+  {
+    path: "/weather",
+    element: <Weather />,
   },
 ]);
 

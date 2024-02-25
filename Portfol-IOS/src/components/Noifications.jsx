@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import iconConfig from './iconConfig';
 import '../styles/notifications.css'
+import { useTranslation } from 'react-i18next'
+
 const Notifications = () => {
+    const { t } = useTranslation();
     const [msg, setMsg] = useState(true);
     const [msgFeedback, setMsgFeedback] = useState(true);
     
@@ -36,7 +39,7 @@ useEffect(() => {
             
             tipShowed = 'false';
             localStorage.setItem('tipShowed', 'false');
-        }, 8800);
+        }, 5900);
     }
 
     if (tipShowed === 'true') {
@@ -46,7 +49,7 @@ useEffect(() => {
                 notificationFeedback();
                 localStorage.setItem('lastNotificationFeedback', currentTime);
                 localStorage.setItem('tipShowed', "false"); 
-            }, 9000);
+            }, 6000);
         }
     } else { 
         if (!lastNotificationTip || (currentTime - lastNotificationTip > 6 * 60 * 60 * 1000)) {
@@ -54,7 +57,7 @@ useEffect(() => {
                 notificationActiveTimer();
                 localStorage.setItem('lastNotificationTip', currentTime);
                 localStorage.setItem('tipShowed', "true");
-            }, 9000); 
+            }, 6000); 
         } 
     }
 }, []);
@@ -71,10 +74,10 @@ useEffect(() => {
                     {!msg ?<div className='notification-text'>
                         <p className={ msg ? "notification-text-desactived" : "notification-text-actived text-color "}>Raiffe Moura</p>
                         <p className={ msg ? "notification-text-desactived" : "notification-text-actived "}>
-                            Hey, there? Just a quick tip, you can change the language, theme, and more in the <b style={{color: 'orange'}}>Settings App!</b></p>
-                    </div>:""}
+                            {t("heythere")}<b style={{color: 'orange'}}>Settings App!</b></p></div>:""}
                     
                 </div>
+
                 <div  className={`notification ${msgFeedback ? 'desactived' : 'actived'}`}>
                     {!msgFeedback ?  
                     <div className='notification-icon '>
@@ -83,7 +86,7 @@ useEffect(() => {
                     {!msgFeedback ?<div className='notification-text'>
                         <p className={ msgFeedback ? "notification-text-desactived" : "notification-text-actived text-color "}>Raiffe Moura</p>
                         <p className={ msgFeedback ? "notification-text-desactived" : "notification-text-actived "}>
-                        Please, don't forget to leave your feedback on <b style={{color: 'orange'}}>Feedback App!</b> Thank you!</p>
+                        {t("dontforget")}<b style={{color: 'orange'}}>Feedback App!</b> {t("thanks")}</p>
                     </div>:""}
                 </div>
             </div>

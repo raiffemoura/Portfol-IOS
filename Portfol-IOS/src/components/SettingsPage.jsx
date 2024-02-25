@@ -6,6 +6,7 @@ import i18n from '../i18n/index.ts'
 const SettingsPage = () => {
     const [switchOn, setSwitchOn] = useState(false)
     const [showLanguage, setShowLanguage] = useState(false)
+    const [darkTheme, setDarkTheme] = useState(true)
     const { t } = useTranslation();
 
     const line = () => {
@@ -38,7 +39,7 @@ const SettingsPage = () => {
 
                     <div className='settings-box-top'>
                         <div className='img-icon'><img src={iconConfig.airplaneIconOrange} alt="" srcset="" /></div>
-                    <div className='settings-box-text img-arrow'>
+                        <div className='settings-box-text img-arrow'>
                         <p>{t("airplaneMode")}</p>
                         <div onClick={() => setSwitchOn(!switchOn)} className={ switchOn ? 'switch-on' : 'switch-off'}>
                             <div className={switchOn ? 'circle-on' : 'circle-off'}></div>
@@ -104,37 +105,49 @@ const SettingsPage = () => {
                             <img src={iconConfig.arrowBackRight} alt="" />
                         </div>
                     </div>
-                    {line()}
 
-                    
-                        <div className={`settings-box-middle  ${showLanguage ? '' : 'hidden'}`} onClick={() => i18n.changeLanguage("EN")}>
+                            {/* ===== Language Settings ===== */}
+                        <div className={`settings-box-middle  ${showLanguage ? 'active' : 'hidden'}`} onClick={() => i18n.changeLanguage("EN")}>
                         <div className='img-icon'>
-                            <img src={iconConfig.settingsList} alt="" />
+                            <img className={showLanguage ? 'img-icon-fade-in' : 'img-icon-fade-out'} src={iconConfig.settingsList} alt="" />
                         </div>
                         <div className='settings-box-text img-arrow'>
                             <p>{t("english")}</p>
                         </div>
 
                         </div>
-                        <div className={`settings-box-middle  ${showLanguage ? '' : 'hidden'}`} onClick={() => i18n.changeLanguage("ptBR")}>
+                        <div  className={`settings-box-middle  ${showLanguage ? 'active' : 'hidden'}`} onClick={() => i18n.changeLanguage("ptBR")}>
                         <div className='img-icon'>
-                            <img src={iconConfig.settingsList} alt="" />
+                            <img className={showLanguage ? 'img-icon-fade-in' : 'img-icon-fade-out'} src={iconConfig.settingsList} alt="" />
                         </div>
                         <div className='settings-box-text'>
                             <p>{t("portuguese")}</p>
                         </div>
-                        </div>
                         
+                        </div>
+                        {line()}
+                        {/* ===== Theme Settings ===== */}
                 
-                    <div className='settings-box-middle'>
-                        <div className='img-icon'><img src={iconConfig.cellularIcon} alt="" srcset="" /></div>
+                        <div className='settings-box-middle'>
+                        <div className='img-icon'><img src={iconConfig.themeIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
-                            <p>Cellular</p>
-                            <img src={iconConfig.arrowBackRight} alt="" />
+                            <p>{ darkTheme ? t("darkTheme") : t("lightTheme")}</p>
+                        <div onClick={() => setDarkTheme(!darkTheme)} className={ darkTheme ? 'switch-on' : 'switch-off'}>
+                            <div className={darkTheme ? 'circle-on' : 'circle-off'}></div>
                         </div>
                     </div>
 
+                    </div>
+
+                        {/* ===== FIM dark theme ===== */}
+
+                            
+                        
+
                     {line()}
+
+
+                    
 
                     <div className='settings-box-bottom'>
                     <div className='img-icon'><img src={iconConfig.hotspotIcon} alt="" srcset="" /></div>

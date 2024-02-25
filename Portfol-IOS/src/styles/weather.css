@@ -1,0 +1,290 @@
+.weather-screen{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 652px;
+    overflow: auto;
+    scrollbar-width: none;
+    }
+
+/* ========= WEATHERS COLORS ========= */
+
+:root{
+    --weather-day-color: #2a72b9;
+    --weather-night-color: #293255;
+    --weather-raining-color: #354452;
+    --weather-text-color: #999ca0a9;
+}
+
+/* ========= BACKGROUND WEATHERS ========= */
+
+.container-weather-day{
+    
+    background-image: url(../assets/iphone-cable-weather-day.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+.container-weather-night{
+    
+    background-image: url(../assets/iphone-cable-weather-night.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+.container-weather-raining{
+    
+    background-image: url(../assets/iphone-cable-weather-raining.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+   
+}
+
+.container-weather-cloudly{
+    
+    background-image: url(../assets/iphone-cable-weather-cloudly.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+/* =========  WEATHERS HEADER ========= */
+
+.weather-input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+        position: relative;
+
+}
+
+.weather-input input{
+    padding: 10px ;
+    width: 60%;
+    background: transparent;
+    border: 1px solid #ffffff57;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    font-size: 1.2rem;
+   
+}
+
+.search-icon {
+    position: absolute;
+    left: 220px;
+    top: 28%;
+    width: 25px;
+    height: 20px;
+    background-image: url(../assets/icons/weather-search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+.weather-input input::placeholder{
+    color: #ffffffb7;
+    text-align: center;
+
+}
+
+
+.weather-header{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 40px;
+margin-top: 10px;
+
+}
+.weather-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    gap: 7px;
+    height: fit-content;
+    margin-top: 10px;
+    min-height: fit-content;
+
+}
+
+.weather-box {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    padding: 5px 0 10px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    margin-bottom: 10px;
+    height: 100%;
+    gap: 10px;
+
+}
+
+.weather-box-night {
+    background-color: #3e46644d;
+}
+.weather-box-day {
+    background-color: #2a61974d;
+}
+.weather-box-raining {
+    background-color: #7e87914d;
+}
+
+/* ========= LINE INSIDE THE BOX ========= */
+
+
+.weather-border-line-box{
+    width: 100%;
+    height: 1px;
+
+}
+.weather-border-line{
+    border-bottom: 1px solid #c7c7c73b;
+
+}
+
+/* ========= HOURLY FORECAST ========= */
+
+.weather-condition {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 0px 0px 0;
+    gap: 5px;
+    color: var(--weather-text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.weather-condition-small {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 0px 0px 0px;
+    gap: 5px;
+    color: var(--weather-text-color);
+    font-weight: 500;
+    font-size: .8rem;
+}
+.font-size-1{
+    font-size: .7rem;
+
+}
+.font-size-2{
+    font-size: .8rem;
+}
+.weather-condition img, .weather-condition-small img{
+    width: 15px;
+}
+.sunrise-img img{
+    width: 106%;
+    margin-left: -10px;
+}
+.sunrise-img p{
+    font-size: .7rem;
+}
+
+.weather-hours{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+    cursor: pointer;
+    margin: 10px 0;
+    /* scroll-snap-type: x mandatory;  */
+    
+}
+.weather-hour{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 50px;
+    margin-right: 7px;
+    /* scroll-snap-align: start; */
+}
+.weather-hour img{
+    width: 25px;
+    margin:5px 0;
+}
+
+.weather-days{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.weather-day{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* ========= RANGE INPUT ========= */
+
+input[type="range"] {
+    -webkit-appearance: none; 
+    width: 100%; 
+    height: 8px; 
+    background: linear-gradient(to right, 
+                 #67e667 0%, 
+                 #d6d637 25%,
+                 #e4ac34 50%,
+                 #ce2e2e 75%, 
+                 #ae29d6 100%); 
+    border-radius: 5px; 
+    outline: none; 
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    width: 12px; 
+    height: 12px; 
+    background-color: #d8d0d0; 
+    border-radius: 50%; 
+    
+  }
+  
+  
+  /* ========= MORE ========= */
+
+  
+  .weather-adjust-home-button{
+    position: relative;
+    bottom:  706px;
+    right: 2px;
+}

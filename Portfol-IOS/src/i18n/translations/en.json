@@ -86,14 +86,49 @@
         "languageRegion": "Language & Region",
         "AppleIDiCloudMediaPurchases" : "Apple ID, iCloud+, Media & Purchases",
         "airplaneOn" : "airplane-mode",
-        "airplaneOff" : "signal"
+        "airplaneOff" : "signal",
+
+        "heythere": "Hey, there? Just a quick tip, you can change the language, theme, and more in the ",
+        "thanks": "Thank you!",
+        "dontforget": "Please, don't forget to leave your feedback on ",
+
+        "darkTheme": "Dark Appearance",
+        "lightTheme": "Light Appearance",
 
 
-
-
-
-
-
+        "language" : "en",
+        "high": "H:",
+        "low": "L:",
+        "condition": "Weather condition",
+        "hourlyForecast": "Hourly Forecast",
+        "UV": "UV INDEX",
+        "UVLow": "LOW",
+        "UVModerate": "MODERATE",
+        "UVHigh": "HIGH",
+        "UVVeryHigh": "VERY HIGH",
+        "UVExtreme" : "EXTREME",
+        "feelsLike" : "FEELS LIKE",
+        "feelsLikeVeryHigh" : "Hot",
+        "feelsLikeHigh" : "Pleasant",
+        "feelsLikeModerate" : "Comfortable",
+        "feelsLikeLow" : "Cool",
+        "feelsLikeVeryLow" : "Cold",
+        "sunrise" : "Sunrise",
+        "sunset" : "Sunset",
+        "visibility" : "VISIBILITY",
+        "visibilityVeryBad": "Very limited visibility",
+        "visibilityBad": "Limited visibility",
+        "visibilityModerate": "Reasonable visibility",
+        "visibilityGood": "Moderate visibility",
+        "visibilityVeryGood": "Visibility very good",
+        "humidity" : "HUMIDITY",
+        "humidityVeryHigh": "Stuffy environment, difficult to cool down",
+        "humidityHigh": "Heavy air, feeling of humidity",
+        "humidityModerate": "Balanced conditions, usually comfortable",
+        "humidityLow": "Comfortable but may feel uncomfortable with heat",
+        "humidityVeryLow": "Dry air, dry skin",
+        "precipitation" : "PRECIPITATION",
+        "precipitationToday" : " cm expected in Today"
         
         
     }

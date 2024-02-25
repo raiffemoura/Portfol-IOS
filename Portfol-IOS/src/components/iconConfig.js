@@ -114,6 +114,9 @@ import hotspotIcon from "../assets/icons/hotspot-icon.png";
 import settingsIcon from "../assets/icons/settings-icon.png";
 import settingsIcon2 from "../assets/icons/settings-icon2.png";
 import settingsList from "../assets/icons/settings-list.png";
+import themeIcon from "../assets/icons/theme-icon.png";
+import weatherWatch from "../assets/icons/weather-watch-icon.png";
+import sunset from "../assets/icons/sunset.png";
 
 const iconConfig = {
   startNavigate,
@@ -231,6 +234,9 @@ const iconConfig = {
   settingsIcon,
   settingsList,
   settingsIcon2,
+  themeIcon,
+  weatherWatch,
+  sunset,
 };
 
 export default iconConfig;

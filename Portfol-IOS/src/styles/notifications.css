@@ -42,7 +42,7 @@
     }
 
     .notification-text-actived{
-    display: block;
+    display: visible;
     animation: fadeIn .6s ease-in-out forwards ;
     
   }
@@ -54,7 +54,7 @@
       opacity: 0;
     }
     100% {
-      display: block;
+      display: visible;
       opacity: 1;
     }
   }

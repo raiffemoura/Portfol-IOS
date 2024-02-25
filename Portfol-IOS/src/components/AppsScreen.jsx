@@ -65,7 +65,7 @@ return (
                 <Link to={"/Clock"}>
                     {apps(iconConfig.clockApp, "clock")}
                 </Link>
-                <Link to={"/Wather"}>
+                <Link to={"/Weather"}>
                     {apps(iconConfig.weatherApp, "weather")}
                 </Link>
                 <Link to={"/Reminders"}>

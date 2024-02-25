@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    height: 923px;
+    height: 925px;
     padding: 10px;
     background-size: 350px;
 
@@ -244,8 +244,8 @@ margin-top: 20px;
 
 .feedback-footer{
     position: relative;
-    top: -99px;
-    width: 100%;
+    top: -100px;
+    width: 99.7%;
     height: 100px;
     display: flex;
     flex-direction: row;
