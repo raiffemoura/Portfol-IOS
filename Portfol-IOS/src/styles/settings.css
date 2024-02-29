@@ -12,14 +12,18 @@
 .settings-header{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px;
 
 }
 
-
+.settings-header img{
+    height: 22px;
+    margin-top: 3px;
+    margin-right: 10px;
+}
 .settings-box-header img{
     width: 50px;
     margin-left: 10px;
@@ -126,17 +130,16 @@
     padding: 5px 10px;
     transition: opacity 0.5s ease-in-out;
 }
-.img-icon-fade-in{
-    animation: fadeInImg .5s ease-in-out forwards ;
-}
-.img-icon-fade-out{
-    animation: fadeOutImg .5s ease-in-out forwards ;
-}
+
 .hidden { 
     animation: fadeOutLanguage .5s ease-in-out forwards ;
  }
 .active{
+
     animation: fadeInLanguage .5s ease-in-out forwards ;
+}
+.full-hidden{
+    display: none;
 }
 @keyframes fadeInImg {
     0% {

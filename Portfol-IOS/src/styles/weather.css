@@ -3,9 +3,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 652px;
+    height: 660px;
     overflow: auto;
     scrollbar-width: none;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-bottom: 20px;
     }
 
 /* ========= WEATHERS COLORS ========= */
@@ -14,14 +17,14 @@
     --weather-day-color: #2a72b9;
     --weather-night-color: #293255;
     --weather-raining-color: #354452;
-    --weather-text-color: #999ca0a9;
+    --weather-text-color: #b6b9bea9;
 }
 
 /* ========= BACKGROUND WEATHERS ========= */
 
 .container-weather-day{
     
-    background-image: url(../assets/iphone-cable-weather-day.png);
+    background-image: url(../assets/weather-app/iphone-cable-weather-day.png);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -32,7 +35,7 @@
 }
 .container-weather-night{
     
-    background-image: url(../assets/iphone-cable-weather-night.png);
+    background-image: url(../assets/weather-app/iphone-cable-weather-night.png);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -43,7 +46,7 @@
 }
 .container-weather-raining{
     
-    background-image: url(../assets/iphone-cable-weather-raining.png);
+    background-image: url(../assets/weather-app/iphone-cable-weather-raining.png);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -55,7 +58,41 @@
 
 .container-weather-cloudly{
     
-    background-image: url(../assets/iphone-cable-weather-cloudly.png);
+    background-image: url(../assets/weather-app/iphone-cable-weather-cloudly.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+
+.container-weather-snow{
+    
+    background-image: url(../assets/weather-app/iphone-cable-weather-cloudly.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+.container-weather-thunderstorm{
+    
+    background-image: url(../assets/weather-app/iphone-cable-weather-cloudly.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 923px;
+    padding: 10px;
+    background-size: 350px;
+
+}
+.container-weather-temp{
+    
+    background-image: url(../assets/weather-app/iphone-cable-weather-temp.png);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -73,7 +110,8 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-        position: relative;
+    position: relative;
+    
 
 }
 
@@ -86,6 +124,7 @@
     color: #fff;
     outline: none;
     font-size: 1.2rem;
+    padding-right: 42px;
    
 }
 
@@ -123,10 +162,22 @@ margin-top: 10px;
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    margin: 0 auto;
+    margin: 0px auto 10px auto;
     gap: 7px;
     height: fit-content;
     margin-top: 10px;
+    min-height: fit-content;
+
+}
+.weather-container-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto 0px auto;
+    gap: 7px;
+    height: fit-content;
     min-height: fit-content;
 
 }
@@ -142,7 +193,6 @@ margin-top: 10px;
     padding: 5px 0 10px 10px;
     border-radius: 10px;
     backdrop-filter: blur(4px);
-    margin-bottom: 10px;
     height: 100%;
     gap: 10px;
 
@@ -285,6 +335,52 @@ input[type="range"] {
   
   .weather-adjust-home-button{
     position: relative;
-    bottom:  706px;
+    bottom:  712px;
     right: 2px;
+}
+
+  /* ========= MOON ========= */
+
+.moon-phase-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 5px;
+}
+.moon-phase-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%; 
+}
+.moon-phase-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    
+}
+.moon-phase-img img{
+    height: 120px;
+}
+.moon-phase-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: .9rem;
+
+}
+
+.moon-phase-text-info{
+    color: var(--weather-text-color);
+    font-weight: 500;
+    font-size: 1rem;
+
 }

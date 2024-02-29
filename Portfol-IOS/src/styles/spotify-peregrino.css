@@ -35,6 +35,10 @@
   display: none;
 }
 
+.header-camera-spotify{
+  padding-top: 6px;
+}
+
 
 
 
@@ -271,7 +275,7 @@
   .next{
     height: 23px;
   }
-  .hidden{
+  .spotify-hidden{
     height: 20px;
   }
 

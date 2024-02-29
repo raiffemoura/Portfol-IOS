@@ -12,7 +12,6 @@ const GoogleMaps = () => {
                 <div className="screen">
                     <HeaderBlack />
                     <GoogleMapsPage />
-
                 </div>
             </div>
             

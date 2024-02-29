@@ -2,14 +2,8 @@ import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import arrowBackYellow from '../assets/icons/arrow-back-yellow.png'
-import moreCircleIcon from '../assets/icons/more-circle-icon.png'
-import newNote from '../assets/icons/new-note.png'
-import pencilIcon from '../assets/icons/pencil.png'
-import trashIcon from '../assets/icons/trash-icon.png'
-import cameraIcon from '../assets/icons/camera.png'
-import listIcon from '../assets/icons/list-notes.png'
-import shareNotesIcon from '../assets/icons/share-notes.png'
+import iconConfig from './iconConfig'
+
 
 const Notes = () => {
     const [expandedNoteId, setExpandedNoteId] = useState(null); 
@@ -42,8 +36,10 @@ const Notes = () => {
             },
             
         ]);
+        
 
 
+       
 
 
         const limitTitle = (title, limit) => {
@@ -108,16 +104,18 @@ const Notes = () => {
         handleShowAllNotes();
 
     }
+
+    
     return ( 
          
-            <div className='notes-container'>
+            <div className='notes-container'> 
                 
                 <div className='notes-header-container'>
                     <div className='notes-header'>
                         {showAllNotes ? 
-                        <Link className='notes-back-link' to={'/'}> <img src={arrowBackYellow}  alt="back" /> </Link>
+                        <Link className='notes-back-link' to={'/'}> <img src={iconConfig.arrowBackYellow}  alt="back" /> </Link>
                             :
-                        <Link to={"#"} > <img src={arrowBackYellow} onClick={handleShowAllNotes}  alt="back" /> </Link>
+                        <Link to={"#"} > <img src={iconConfig.arrowBackYellow} onClick={handleShowAllNotes}  alt="back" /> </Link>
                         }
                         
                         { showAllNotes ? 
@@ -126,7 +124,7 @@ const Notes = () => {
                         <Link to={"#"} className='notes-back-link' ><h3 onClick={handleShowAllNotes}  >{t("notes")}</h3> </Link>
                         }
                     </div>
-                    {showInput ? <div className='notes-done' onClick={saveNote}>{t("done")}</div> : <img src={moreCircleIcon} alt="more" /> }
+                    {showInput ? <div className='notes-done' onClick={saveNote}>{t("done")}</div> : <img src={iconConfig.moreCircleIcon} alt="more" /> }
                     
                 </div>
 
@@ -143,7 +141,9 @@ const Notes = () => {
                 
                 <div className='notes-body-container'>
                     <div className='notes-body-title'>
-                    { showAllNotes ? <h3>{t("january")}</h3> : null }
+                    
+
+                    { showAllNotes ? <h3>{t("January")}</h3> : null }
         
                         
                     </div>
@@ -170,11 +170,11 @@ const Notes = () => {
                             </div>
                         ))}
                         <div className='notes-footer-expanded'>
-                            <img src={listIcon} alt="list" />
-                            <img src={cameraIcon} alt="camera" />
-                            <img src={pencilIcon} alt="pencil" />
-                            <img src={shareNotesIcon} alt="share" />
-                            <img src={trashIcon} onClick={() => deleteNote(expandedNoteId)} alt="" />
+                            <img src={iconConfig.listIcon} alt="list" />
+                            <img src={iconConfig.cameraIcon} alt="camera" />
+                            <img src={iconConfig.pencilIcon} alt="pencil" />
+                            <img src={iconConfig.shareNotesIcon} alt="share" />
+                            <img src={iconConfig.trashIcon} onClick={() => deleteNote(expandedNoteId)} alt="" />
                         </div>
                     </div>
                 )}
@@ -182,7 +182,7 @@ const Notes = () => {
             {showAllNotes ? 
             <div className='notes-footer'>
                 <h5>{notes.length} {t("notes")}</h5>
-                <img src={newNote} onClick={handleNewNote} alt="" />
+                <img src={iconConfig.newNote} onClick={handleNewNote} alt="" />
             </div>
             : null }
         </div> 

@@ -6,9 +6,7 @@ import '../styles/weather.css'
 import iconConfig from '../components/iconConfig';
 
 
-
 const Weather = () => {
-
     const [city, setCity] = useState('')
     const [weatherForecast, setWeatherForecast] = useState(null)
     const [cityLoaded, setCityLoaded] = useState(false);
@@ -38,6 +36,7 @@ const Weather = () => {
         
         }
     }, []);
+    
 
     useEffect(() => {
         if (cityLoaded) {
@@ -63,14 +62,15 @@ const Weather = () => {
         }
     };
     const handleSearch = () => {
-        fetch(`http://api.weatherapi.com/v1/forecast.json?key=5d97fe619b214861ae5171040242302&q=${city}&lang=${t("language")}`)
+        fetch(`http://api.weatherapi.com/v1/forecast.json?key=5d97fe619b214861ae5171040242302&q=${city}&lang=en`)
         .then((response) => {
             if (response.status === 200) {
                 return response.json();
+            } else if (response.status === 404 || response.status === 400) {
+                alert('City not found, please try again!');
             }
         })
         .then((data)=>{
-            console.log(data);
             setWeatherForecast(data); 
         })
     }
@@ -101,16 +101,138 @@ const Weather = () => {
         weatherHoursRef.current.scrollLeft = scrollLeft - walk;
     };
 
+    
+    const moonPhases = () => {
+        if (weatherForecast) {
+            
+                
+            const moon_phase = weatherForecast.forecast.forecastday[0].astro.moon_phase;
+            
+            if (moon_phase === "New Moon" || moon_phase === "New") {
+                return iconConfig.moonNew;
+            } 
+            else if (moon_phase === "Waxing Crescent") {
+                return iconConfig.moonWaxingCrescent;
+            }
+            else if (moon_phase === "First Quarter") {
+                return iconConfig.moonFirstQuarter;
+            }
+            else if (moon_phase === "Waxing Gibbous") {
+                return iconConfig.moonWaxingGibbous;
+            }
+            else if (moon_phase === "Waning Gibbous") {
+                return iconConfig.wanningGibbous;
+            }
+            else if (moon_phase === "Third Quarter") {
+                return iconConfig.moonThirdQuarter;
+            }
+            else if (moon_phase === "Waning Crescent") {
+                return iconConfig.moonWaningCrescent;
+            } else {
+                return iconConfig.moonFull;
+            }
+        }
+    }
+
+    const now = new Date().getHours();
+    const formatWeather = (weatherCondition) => {
+        return weatherCondition ? weatherCondition.toLowerCase().trim() : weatherCondition;
+    };
+    const weatherbackground = () => {
+        const condition = formatWeather(weatherForecast?.current?.condition?.text) 
+        if (condition === "cloudy" || 
+            condition === "mostly cloudy" ||
+            condition === "overcast" ||
+            condition === "patchy rain nearby" ||
+            condition === "mist" ||
+            condition === "fog" ||
+            condition === "partly cloudy") {
+                return "cloudly"
+        }
+        else if (condition === "rain" ||
+            condition === "raining" ||
+            condition === "cloudy with rain" ||
+            condition === "light rain" ||
+            condition === "light rain shower" ||
+
+            condition === "moderate rain" ||
+            condition === "heavy rain" ||
+            condition === "drizzle" ||
+            condition === "showers" ||
+            condition === "thunderstorms and rain" ||
+            condition === "freezing rain") { 
+                return "raining"
+        }
+        else if (condition === "thunderstorm" ||
+            condition === "storm" ||
+            condition === "severe thunderstorm" ||
+            condition === "thunderstorms and hail" ||
+            condition === "hailstorm" ||
+            condition === "tornardo" ||
+            condition === "hurricane" ) {
+            return "thunderstorm"            
+        }
+        else if (condition === "snow" ||
+            condition === "snowing" || 
+            condition === "sleet" ||
+            condition === "sleetstorm" ||
+            condition === "hail" ||
+            condition === "hailstorm" ||
+            condition === "light snow" ||
+            condition === "moderate snow" ||
+            condition === "heavy snow" ||
+            condition === "thunderstorms and snow" ||
+            condition === "blowing snow" ||
+            condition === "snowstorm") {
+            return "snow"                        
+        }
+        else if (condition === "clear sky" ||
+                condition === "mostly clear" ||
+                condition === "sunny" || 
+                condition === "mostly sunny" ||
+                condition === "partly sunny" ||
+                condition === "fair" 
+                ) {
+            return "day"    
+        }
+        else if (condition === "clear night" ||
+                condition === "mostly clear night" ||
+                condition === "clear" ||
+                condition === "cloudy night" ||
+                condition === "overcast night" || 
+                condition === "partly cloudy night" ||
+                condition === "night" ||
+                condition === "mostly cloudy night") {
+            return "night"   
+                                                        
+            
+        }
+        else {
+            return "temp"
+        }
+    }
+    
+    const handlePlaceChanged = () => {
+        const [place] = inputRef.current.getPlaces();
+         if (place) {
+             console.log(place.formatted_address);
+             console.log(place.geometry.location.lat());
+             console.log(place.geometry.location.lng());
+
+         }
+    }
     return ( 
-        <div className='container-weather-cloudly '>
+        <div className={`container-weather-${weatherbackground()}`}>
             <div>
                 <div className="screen">
                     <Header />
                     <div className='weather-screen'>
                         <div className='weather-input'>
+
+                            
                             <input 
                             className='weather-input-search' 
-                            type="text" placeholder='Search' 
+                            type="text" placeholder={t("search")} 
                             ref={inputRef} 
                             onChange={handleChange}
                             onKeyPress={handleKeyPress}
@@ -122,8 +244,9 @@ const Weather = () => {
                         </div>
                         <div className='weather-header'>
                             {weatherForecast?.location?.name? <h1>{weatherForecast?.location?.name}</h1> : "--"}
+                            {weatherForecast?.location?.country? <p>{weatherForecast?.location?.region}, {weatherForecast?.location?.country}</p> : "--"}
                             {weatherForecast?.current?.temp_c? <h1>{weatherForecast?.current?.temp_c}°</h1> : "--"}
-                            {weatherForecast?.current?.condition?.text? <p>{weatherForecast?.current?.condition?.text}</p> : "--"}
+                            {weatherForecast?.current?.condition?.text? <p>{t(formatWeather(weatherForecast?.current?.condition?.text))}</p> : "--"}
                             <p>{t("high")} {weatherForecast ? weatherForecast.forecast.forecastday[0].day.maxtemp_c : "--"} {t("low")} {weatherForecast ? weatherForecast.forecast.forecastday[0].day.mintemp_c : "--"}</p>
                         </div>
                         <div className='weather-box weather-box-night'>
@@ -140,7 +263,7 @@ const Weather = () => {
                         onMouseMove={handleMouseMove}>
                             {weatherForecast? weatherForecast.forecast.forecastday[0].hour.map((hour, index) => (
                                 <div className='weather-hour' key={index}>
-                                    <div>{hour.time.slice(11, 13)}</div>
+                                    <div>{hour.time.slice(11, 13) === now? t("now") : hour.time.slice(11, 13)}</div>
                                     <img src={hour.condition.icon} alt="weather condition" />
                                     <div>{hour.temp_c}°</div>
                                     
@@ -151,37 +274,10 @@ const Weather = () => {
                     
                         </div>
                         </div>
-
-                        {/* <div className='weather-box weather-box-night'> <p>3 days forecast</p>
-                        {line()}
-                        <div className='weather-days'>
-                            <div className='weather-day'>
-                            <div>day</div>
-                                <div>0°</div>
-                                <div>0°</div>
-                            </div>
-                            {line()}
-
-                            <div className='weather-day'>
-                            <div>day</div>
-                                <div>0°</div>
-                                <div>0°</div>
-                            </div>
-                            {line()}
-
-                            <div className='weather-day'>
-                                <div>day</div>
-                                <div>0°</div>
-                                <div>0°</div>
-                            </div>
-                         
-                        </div>
-                        </div> */}
-
-                        <div className='weather-container'>
+                        <div  className='weather-container-center'>
                             <div className='weather-box weather-box-night'>
                                 <div className='weather-condition-small'>
-                                    <img src={iconConfig.weatherWatch} alt="" />
+                                    <img src={iconConfig.weatherWatch} alt="icon" />
                                     <p>{t("UV")}</p>
                                 </div>
                                 
@@ -202,7 +298,7 @@ const Weather = () => {
 
                             <div className='weather-box weather-box-night'>
                                 <div className='weather-condition-small'>
-                                    <img src={iconConfig.weatherWatch} alt="" />
+                                    <img src={iconConfig.weatherWatch} alt="icon" />
                                     <p>{t("sunrise")}</p>
                                 </div>
                                 
@@ -223,12 +319,12 @@ const Weather = () => {
                         <div className='weather-container'>
                         <div className='weather-box weather-box-night'>
                                 <div className='weather-condition-small'>
-                                    <img src={iconConfig.weatherWatch} alt="" />
+                                    <img src={iconConfig.weatherWatch} alt="icon" />
                                     <p className='font-size-1'>{t("feelsLike")}</p>
                                 </div>
                                 
                                     <h1>{weatherForecast? weatherForecast.current.feelslike_c + "°" : "0"}</h1>
-                                    <h3>
+                                    <p className='font-size-2'>
                                     {weatherForecast ? (
                                             weatherForecast.current.feelslike_c <= 0 ? t("feelsLikeVeryLow")
                                             : weatherForecast.current.feelslike_c <= 10 ? t("feelsLikeLow")
@@ -236,38 +332,80 @@ const Weather = () => {
                                             : weatherForecast.current.feelslike_c <= 20 ? t("feelsLikeHigh")
                                             : t("feelsLikeVeryHigh")
                                         ) : "0"}
-                                    </h3>  
-                                
-                            </div>
-
-
-                            <div className='weather-box weather-box-night'>
-                                <div className='weather-condition-small'>
-                                    <img src={iconConfig.weatherWatch} alt="" />
-                                    <p className='font-size-1'>{t("visibility")}</p>
-                                </div>
-                                
-                                    <h1>{weatherForecast? weatherForecast.current.vis_km + " km" : "0km"}</h1>
-                                    <p className='font-size-2'>
-                                    {weatherForecast ? (
-                                            weatherForecast.current.vis_km <= 1 ? t("visibilityVeryBad")
-                                            : weatherForecast.current.vis_km <= 2 ? t("visibilityBad")
-                                            : weatherForecast.current.vis_km <= 5 ? t("visibilityModerate")
-                                            : weatherForecast.current.vis_km <= 10 ? t("visibilityGood")
-                                            : t("visibilityVeryGood")
-                                        ) : " -- "}
                                     </p>  
                                 
-                            </div>
+                        </div>
 
+
+                        <div className='weather-box weather-box-night'>
+                            <div className='weather-condition-small'>
+                                <img src={iconConfig.weatherWatch} alt="icon" />
+                                <p className='font-size-1'>{t("visibility")}</p>
+                            </div>
                             
+                                <h1>{weatherForecast? weatherForecast.current.vis_km + " km" : "0km"}</h1>
+                                <p className='font-size-2'>
+                                {weatherForecast ? (
+                                        weatherForecast.current.vis_km <= 1 ? t("visibilityVeryBad")
+                                        : weatherForecast.current.vis_km <= 2 ? t("visibilityBad")
+                                        : weatherForecast.current.vis_km <= 5 ? t("visibilityModerate")
+                                        : weatherForecast.current.vis_km <= 10 ? t("visibilityGood")
+                                        : t("visibilityVeryGood")
+                                    ) : " -- "}
+                                </p>  
                             
+                        </div>
+
+                        </div>
+
+                        <div className='weather-box weather-box-night'>
+                            <div className='weather-condition'>
+                                <img src={iconConfig.weatherWatch} alt="watch" />
+                                <p>{t("moonPhase")}
+                               
+                                {weatherForecast ? (
+                                              weatherForecast.forecast.forecastday[0].astro.moon_phase == "Waning Crescent" ? t("moonWaningCrescent")
+                                            : weatherForecast.forecast.forecastday[0].astro.moon_phase == "Waxing Crescent" ? t("moonWaxingCrescent")
+                                            : weatherForecast.forecast.forecastday[0].astro.moon_phase == "First Quarter" ? t("moonFirstQuarter")
+                                            : weatherForecast.forecast.forecastday[0].astro.moon_phase == "Waxing Gibbous" ? t("moonWaxingGibbous")
+                                            : weatherForecast.forecast.forecastday[0].astro.moon_phase == "Full Moon" ? t("moonFull")
+                                            : weatherForecast.forecast.forecastday[0].astro.moon_phase == "Waning Gibbous" ? t("moonWaningGibbous")
+                                            : weatherForecast.forecast.forecastday[0].astro.moon_phase == "Third Quarter" ? t("moonThirdQuarter")
+                                            : t("moonNew")
+                                        ) : " -- "}
+                                </p>
+                            </div>
+                            {line()}
+                            <div className='moon-phase-container'>
+                                    <div className='moon-phase-box'>
+                                        <div className='moon-phase-text '>
+                                            <p>{t("illumination")}</p>
+                                            <p className='moon-phase-text-info'>{weatherForecast? weatherForecast.forecast.forecastday[0].astro.moon_illumination + "%" : " -- "}</p>
+                                        </div>
+                                        {line()}
+
+                                        <div className='moon-phase-text'>
+                                            <p>{t("moonrise")}</p>
+                                            <p className='moon-phase-text-info'>{weatherForecast? weatherForecast.forecast.forecastday[0].astro.moonrise.slice(0, 5) : " -- "}</p>
+                                        </div>
+                                        {line()}
+
+                                        <div className='moon-phase-text'>
+                                            <p>{t("moonset")}</p>
+                                            <p className='moon-phase-text-info'>{weatherForecast? weatherForecast.forecast.forecastday[0].astro.moonset.slice(0, 5) : " -- "}</p>
+                                        </div>                                    
+                                    </div>
+                                    <div className='moon-phase-img'>
+                                        {weatherForecast? <img src={moonPhases()} alt="moon" /> : ""}
+                                    </div>
+                            </div>       
+                        
                         </div>
 
                         <div className='weather-container'>
                             <div className='weather-box weather-box-night'>
                                 <div className='weather-condition-small'>
-                                    <img src={iconConfig.weatherWatch} alt="" />
+                                    <img src={iconConfig.weatherWatch} alt="icon" />
                                     <p className='font-size-1'>{t("humidity")}</p>
                                 </div>
                                 
@@ -286,7 +424,7 @@ const Weather = () => {
 
                             <div className='weather-box weather-box-night'>
                                 <div className='weather-condition-small'>
-                                    <img src={iconConfig.weatherWatch} alt="" />
+                                    <img src={iconConfig.weatherWatch} alt="icon" />
                                     <p>{t("precipitation")}</p>
                                 </div>
                                 
@@ -294,8 +432,8 @@ const Weather = () => {
                                 {weatherForecast ? ((weatherForecast.current.precip_mm / 10).toFixed(2) + " cm") : "0"}
                                 </h2>
                                 
-                                    <p>
-                                    {weatherForecast ? ((weatherForecast.forecast.forecastday[0].day.totalprecip_mm / 10).toFixed(2) + t("precipitationToday")) : "0"}
+                                    <p className='font-size-2'>
+                                    {weatherForecast ? ((weatherForecast.forecast.forecastday[0].day.totalprecip_mm / 10).toFixed(2) + t("precipitationToday")) : "--"}
                                     </p>
                                 
                                     
@@ -303,10 +441,7 @@ const Weather = () => {
                             </div>
                             
                         </div>
-                        
-                            
-
-                            
+                                 
                     </div>
                     <div className='weather-adjust-home-button'>
                         <HomeButton />

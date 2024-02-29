@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@reach/combobox": "^0.18.0",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "create-react-app": "^5.0.1",
@@ -9,7 +10,9 @@
     "i18next": "^23.8.2",
     "mongoose": "^8.1.1",
     "node": "^21.2.0",
-    "react-i18next": "^14.0.5"
+    "react-google-places-autocomplete": "^4.0.1",
+    "react-i18next": "^14.0.5",
+    "use-places-autocomplete": "^4.0.1"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run react\"",

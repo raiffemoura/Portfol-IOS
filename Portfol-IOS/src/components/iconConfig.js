@@ -117,6 +117,22 @@ import settingsList from "../assets/icons/settings-list.png";
 import themeIcon from "../assets/icons/theme-icon.png";
 import weatherWatch from "../assets/icons/weather-watch-icon.png";
 import sunset from "../assets/icons/sunset.png";
+import waxingCrescent from "../assets/weather-app/11.png";
+import firstQuarter from "../assets/weather-app/22.png";
+import waxingGibbous from "../assets/weather-app/33.png";
+import fullMoon from "../assets/weather-app/44.png";
+import wanningGibbous from "../assets/weather-app/55.png";
+import thirdQuarter from "../assets/weather-app/66.png";
+import wanningCrescent from "../assets/weather-app/77.png";
+import newMoon from "../assets/weather-app/88.png";
+import arrowBackYellow from "../assets/icons/arrow-back-yellow.png";
+import moreCircleIcon from "../assets/icons/more-circle-icon.png";
+import newNote from "../assets/icons/new-note.png";
+import pencilIcon from "../assets/icons/pencil.png";
+import trashIcon from "../assets/icons/trash-icon.png";
+import cameraIcon from "../assets/icons/camera.png";
+import listIcon from "../assets/icons/list-notes.png";
+import shareNotesIcon from "../assets/icons/share-notes.png";
 
 const iconConfig = {
   startNavigate,
@@ -237,6 +253,22 @@ const iconConfig = {
   themeIcon,
   weatherWatch,
   sunset,
+  waxingCrescent,
+  firstQuarter,
+  waxingGibbous,
+  fullMoon,
+  wanningGibbous,
+  thirdQuarter,
+  wanningCrescent,
+  newMoon,
+  arrowBackYellow,
+  moreCircleIcon,
+  newNote,
+  pencilIcon,
+  trashIcon,
+  cameraIcon,
+  listIcon,
+  shareNotesIcon,
 };
 
 export default iconConfig;

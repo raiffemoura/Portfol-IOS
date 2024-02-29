@@ -1,11 +1,17 @@
 .App {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   text-align: center;
+  width: auto;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* background-color: #000; */
 }
 
 body {
@@ -16,15 +22,15 @@ body {
   background-image: url(./assets/back.png);
   background-position: bottom;
   background-repeat: no-repeat;
-  
+  background-size: 2840px ;  
+  background-color: #000;
 }
 .container{
   background-image: url(./assets/iphone-cable.png);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  padding: 15px;
-
+ padding: 7px 20px;
 }
 
 

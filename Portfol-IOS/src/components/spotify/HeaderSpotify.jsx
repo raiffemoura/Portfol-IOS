@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import iconConfig from '../../components/iconConfig';
+import Notifications from '../Noifications';
 
     
 
@@ -27,8 +28,9 @@ useEffect(() => {
     return ( 
         <div className='header-app-spotify'>
             <div id='time'>{currentTime}</div>
-            <div className='header-camera'>
-              <img src={iconConfig.camera} alt="camera" />
+            <div className='header-camera-spotify'>
+              {/* <img src={iconConfig.camera} alt="camera" /> */}
+              <Notifications />
             </div>
             <div className='header-icons'>
                 <img src={iconConfig.signal} alt="signal reception icon" />

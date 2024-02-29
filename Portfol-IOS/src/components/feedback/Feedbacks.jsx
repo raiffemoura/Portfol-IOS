@@ -34,6 +34,8 @@ const Feedbacks = () => {
             setShowAllFeedbacks(!showAllFeedbacks);
             setFeedbackID(feedbackID);
         }
+
+        
     return ( 
         <div>
             <div className='feedback-header'>
@@ -51,7 +53,7 @@ const Feedbacks = () => {
                     feedbacks.map(feedback => (
                         <div key={feedback._id} className={`feedback-box ${feedback.rating}`} onClick={() => handleFeedbackID(feedback._id)}>
                             <div className='feedback-box-header'>
-                                <h3>{limitString(feedback.name, 14)}</h3>
+                                <h3>{limitString(feedback.name, 12)}</h3>
                                 <h6>{feedback.date}</h6>
                             </div>
                             <div className='feedback-box-text'>
@@ -69,7 +71,7 @@ const Feedbacks = () => {
                             <div key={feedback._id} className={`feedback-box ${feedback.rating}`} onClick={() => handleFeedbackID(feedback._id)}>
                                 <div className='feedback-header-expanded'>
                                     <div className='feedback-box-header-expanded'>
-                                        <h3>{feedback.name}</h3>
+                                        <h3 className='feedback-title-name'>{feedback.name}</h3>
                                         <h6>{feedback.date}</h6>
                                     </div>
                                     <div className='feedback-box-rating'>

@@ -155,9 +155,9 @@ const SpotifyPeregrino = () => {
                             )}
                         </button>
                         <button onMouseOver={() => setIsHidden(true)} onMouseOut={() => setIsHidden(false)}>
-                            {isHidden ? (  <img className='hidden' src={iconConfig.hiddenRed} alt="hiddenRed" />
+                            {isHidden ? (  <img className='spotify-hidden' src={iconConfig.hiddenRed} alt="hiddenRed" />
                             ) : (
-                            <img className='hidden' src={iconConfig.hidden} alt="hidden" />
+                            <img className='spotify-hidden' src={iconConfig.hidden} alt="hidden" />
                             )}
                         </button>
                     </div>

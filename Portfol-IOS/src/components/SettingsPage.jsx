@@ -1,13 +1,18 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import iconConfig from './iconConfig';
 import { useTranslation } from 'react-i18next'
 import i18n from '../i18n/index.ts'
+import { Link } from 'react-router-dom';
 
 const SettingsPage = () => {
     const [switchOn, setSwitchOn] = useState(false)
     const [showLanguage, setShowLanguage] = useState(false)
     const [darkTheme, setDarkTheme] = useState(true)
+    const [fullHidden , setFullHidden] = useState(false)
     const { t } = useTranslation();
+
+
+
 
     const line = () => {
         return (
@@ -15,10 +20,15 @@ const SettingsPage = () => {
                 <div className='border-line'></div>
             </div>
         )}
+    const handleLanguageChange = (Lang) => {
+        i18n.changeLanguage(Lang)
+        localStorage.setItem('language', Lang)
+    }
 
     return ( 
         <div className='settings-container'>
                 <div className='settings-header'>
+                    <Link to={"/"}><img src={iconConfig.arrowBack} alt="back" /></Link>
                     <h1>Settings</h1>
                 </div>
                 <div className='settings-box'>
@@ -98,8 +108,10 @@ const SettingsPage = () => {
                 </div>
 
                 <div className='settings-box'>
-                    <div className='settings-box-top' onClick={() => setShowLanguage(!showLanguage)}>
-                        <div className='img-icon'><img src={iconConfig.settingsIcon} alt="" srcset="" /></div>
+                    <div className='settings-box-top' onClick={() => {setShowLanguage(!showLanguage); setFullHidden(true) }}>
+                        <div className='img-icon'>
+                            <img src={iconConfig.settingsIcon} alt="" srcset="" />
+                        </div>
                         <div className='settings-box-text img-arrow'>
                             <p>{t("languageRegion")}</p>
                             <img src={iconConfig.arrowBackRight} alt="" />
@@ -107,18 +119,22 @@ const SettingsPage = () => {
                     </div>
 
                             {/* ===== Language Settings ===== */}
-                        <div className={`settings-box-middle  ${showLanguage ? 'active' : 'hidden'}`} onClick={() => i18n.changeLanguage("EN")}>
+                        <div className={`settings-box-middle   ${fullHidden? showLanguage ? 'active' :  'hidden' : "full-hidden"}`} 
+                        onClick={() => {
+                            handleLanguageChange("EN")}}>
                         <div className='img-icon'>
-                            <img className={showLanguage ? 'img-icon-fade-in' : 'img-icon-fade-out'} src={iconConfig.settingsList} alt="" />
+                            <img  src={iconConfig.settingsList} alt="" />
                         </div>
                         <div className='settings-box-text img-arrow'>
                             <p>{t("english")}</p>
                         </div>
 
                         </div>
-                        <div  className={`settings-box-middle  ${showLanguage ? 'active' : 'hidden'}`} onClick={() => i18n.changeLanguage("ptBR")}>
+                        <div  className={`settings-box-middle  ${fullHidden? showLanguage ? 'active'  : 'hidden' : "full-hidden"}`} 
+                        onClick={() => {
+                            handleLanguageChange("ptBR")}}>
                         <div className='img-icon'>
-                            <img className={showLanguage ? 'img-icon-fade-in' : 'img-icon-fade-out'} src={iconConfig.settingsList} alt="" />
+                            <img  src={iconConfig.settingsList} alt="" />
                         </div>
                         <div className='settings-box-text'>
                             <p>{t("portuguese")}</p>

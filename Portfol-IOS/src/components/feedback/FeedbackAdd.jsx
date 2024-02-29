@@ -123,7 +123,7 @@ const Feedback = () => {
                         <p>{t("yourHonestFeedback")}</p>
                         <textarea onChange={handleDescriptionChange} className='feedback-textarea tblack' placeholder='Enter your honest feedback here'></textarea>
                         <p>{t("yourName")}</p>
-                        <input onChange={handleNameChange} className='feedback-input-name' type="text" maxLength={30} placeholder="Your name" />
+                        <input onChange={handleNameChange} className='feedback-input-name' type="text" maxLength={20} placeholder="Your name" />
                         
                         <div className='feedback-private'>
                             <Link to={"https://api.whatsapp.com/send?phone=5583991669951&text=Ol%C3%A1%20Raiffe%2C%20cheguei%20aqui%20atrav%C3%A9s%20do%20seu%20portfol-IOS..."}>

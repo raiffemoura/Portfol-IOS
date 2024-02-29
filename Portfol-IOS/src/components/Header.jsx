@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import signal from '../assets/signal-reception-gif.gif';
-import wifi from '../assets/wifi-gif.gif';
-import battery from '../assets/battery/battery.gif';
-import camera from '../assets/camera.png';
 import Notifications from './Noifications';
+import iconConfig from './iconConfig';
+
     
 
 const Header = () => {
@@ -34,9 +32,9 @@ useEffect(() => {
               <Notifications />
             </div>
             <div className='header-icons'>
-                <img src={signal} alt="signal reception icon" />
-                <img src={wifi} alt="wifi icon" />
-                <img src={battery} alt="battery icon" />
+                <img src={iconConfig.signal} alt="signal reception icon" />
+                <img src={iconConfig.wifi} alt="wifi icon" />
+                <img src={iconConfig.battery} alt="battery icon" />
             </div>
         </div>
      );

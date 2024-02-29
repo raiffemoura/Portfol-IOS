@@ -13,7 +13,7 @@ const Stocks = () => {
     const currentDate = new Date();
     const monthName = currentDate.toLocaleString('en', { month: 'long' });
     const day = currentDate.getDate();
-    const translatedMonthName = t(monthName.toLowerCase()); 
+    const translatedMonthName = t(monthName); 
     console.log("translatedMonthName ==>", translatedMonthName);
     console.log("monthName ==>", monthName);
 
