@@ -86,13 +86,13 @@
 
 .notes-footer{
     position: absolute;
-    bottom: -9px;
-    left: -16px;
+    bottom: -10px;
+    left: -11px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 110%;
+    width: 325px;
     height: 70px;
     gap: 84px;
     background-color: rgba(33,32,33,0.8);

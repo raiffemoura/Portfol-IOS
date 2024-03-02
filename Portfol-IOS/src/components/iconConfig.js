@@ -18,6 +18,8 @@ import moreIcon from "../assets/icons/more-icon.png";
 import switchIcon from "../assets/icons/switch-icon.png";
 import signal from "../assets/signal-reception-gif.gif";
 import wifi from "../assets/wifi-gif.gif";
+import signalBlack from "../assets/signal-reception-black-gif.gif";
+import wifiBlack from "../assets/wifi-black-gif.gif";
 import battery from "../assets/battery/battery.gif";
 import camera from "../assets/camera.png";
 import step from "../assets/icons/step.png";
@@ -133,7 +135,13 @@ import trashIcon from "../assets/icons/trash-icon.png";
 import cameraIcon from "../assets/icons/camera.png";
 import listIcon from "../assets/icons/list-notes.png";
 import shareNotesIcon from "../assets/icons/share-notes.png";
-
+import weatherMoon from "../assets/icons/weather-moon.png";
+import weatherUV from "../assets/icons/weather-uv.png";
+import weatherSunrise from "../assets/icons/weather-sunrise.png";
+import weatherFeelsLike from "../assets/icons/weather-feelslike.png";
+import weatherHumidity from "../assets/icons/weather-humidity.png";
+import weatherPrecipitation from "../assets/icons/weather-precipitation.png";
+import weatherVisibility from "../assets/icons/weather-visibility.png";
 const iconConfig = {
   startNavigate,
   carIcon,
@@ -153,6 +161,8 @@ const iconConfig = {
   switchIcon,
   signal,
   wifi,
+  signalBlack,
+  wifiBlack,
   battery,
   camera,
   step,
@@ -269,6 +279,13 @@ const iconConfig = {
   cameraIcon,
   listIcon,
   shareNotesIcon,
+  weatherMoon,
+  weatherUV,
+  weatherSunrise,
+  weatherFeelsLike,
+  weatherHumidity,
+  weatherPrecipitation,
+  weatherVisibility,
 };
 
 export default iconConfig;

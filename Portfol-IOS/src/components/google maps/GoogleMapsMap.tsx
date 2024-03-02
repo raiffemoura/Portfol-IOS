@@ -34,7 +34,7 @@ const GoogleMapsMap = () => {
     const [mapLoaded, setMapLoaded] = useState(false);
 
     const { t } = useTranslation();
-    
+    // Hook useEffect para obter a localização atual do usuário ao carregar o componente.    
     useEffect(() => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -44,7 +44,7 @@ const GoogleMapsMap = () => {
             });
         }
     }, []);
-
+    // Função para carregar o mapa quando estiver pronto.
     const onMapLoad = (map: google.maps.Map) => {
         setMap(map);
     };
@@ -78,47 +78,47 @@ const GoogleMapsMap = () => {
     }
 };
 
-const onPlacesChangedA = () => {
-  if (searchBoxA) {
-      const places = searchBoxA.getPlaces();
-      const place = places && places.length > 0 ? places[0] : null;
-      if (place) {
-          const location = {
-              lat: place.geometry?.location?.lat() || 0,
-              lng: place.geometry?.location?.lng() || 0,
-          };
-          setPointA(location);
-          setOrigin(null);
-          setDestination(null);
-          map?.panTo(location);
-          map?.setCenter(location);
-          setMapPosition(location);
-          setMarkerA(location);
-          setInputValueA(place.formatted_address || '');
-      }
-  }
-};
+    const onPlacesChangedA = () => {
+    if (searchBoxA) {
+        const places = searchBoxA.getPlaces();
+        const place = places && places.length > 0 ? places[0] : null;
+        if (place) {
+            const location = {
+                lat: place.geometry?.location?.lat() || 0,
+                lng: place.geometry?.location?.lng() || 0,
+            };
+            setPointA(location);
+            setOrigin(null);
+            setDestination(null);
+            map?.panTo(location);
+            map?.setCenter(location);
+            setMapPosition(location);
+            setMarkerA(location);
+            setInputValueA(place.formatted_address || '');
+        }
+    }
+    };
 
-const onPlacesChangedB = () => {
-  if (searchBoxB) {
-      const places = searchBoxB.getPlaces();
-      const place = places && places.length > 0 ? places[0] : null;
-      if (place) {
-          const location = {
-              lat: place.geometry?.location?.lat() || 0,
-              lng: place.geometry?.location?.lng() || 0,
-          };
-          setPointB(location);
-          setOrigin(null);
-          setDestination(null);
-          map?.panTo(location);
-          map?.setCenter(location);
-          setMapPosition(location);
-          setMarkerB(location);
-          setInputValueB(place.formatted_address || '');
-      }
-  }
-};
+    const onPlacesChangedB = () => {
+    if (searchBoxB) {
+        const places = searchBoxB.getPlaces();
+        const place = places && places.length > 0 ? places[0] : null;
+        if (place) {
+            const location = {
+                lat: place.geometry?.location?.lat() || 0,
+                lng: place.geometry?.location?.lng() || 0,
+            };
+            setPointB(location);
+            setOrigin(null);
+            setDestination(null);
+            map?.panTo(location);
+            map?.setCenter(location);
+            setMapPosition(location);
+            setMarkerB(location);
+            setInputValueB(place.formatted_address || '');
+        }
+    }
+    };
 
     const traceRoute = () => {
         if (pointA && pointB) {
@@ -187,16 +187,33 @@ const onPlacesChangedB = () => {
         itemsRef.current.scrollLeft = scrollLeft - walk;
     };
 
+    const translateTime = (time) => {
+        if (localStorage.getItem('language') === 'EN') {
+            time = time.replace(/\bminutos\b/g, "minutes");
+            time = time.replace(/\bhora\b/g, "hour");
+            time = time.replace(/\bhoras\b/g, "hours");
+
+            return time;
+        } else {
+            return time
+        }
+            
+    }
+
     return (
       <div> 
+            {/* Estrutura do cabeçalho */}
         <div className='map-header'>
             <div className='map-header-icon-start'>
             <Link to={"/"}> <img id='arrow-back' src={iconConfig.arrowBackBlack} alt='arrow'/> </Link>
             <img id='location-icon' src={iconConfig.locationImg} alt="location" /> 
 
         </div>
+            {/* Componentes de pesquisa de endereço */}
         {mapLoaded && (
             <div className="address">
+                {/* Componentes StandaloneSearchBox para os locais A e B */}
+
             <StandaloneSearchBox
                 onLoad={onLoadA}
                 onPlacesChanged={onPlacesChangedA}
@@ -224,6 +241,7 @@ const onPlacesChangedB = () => {
 
         </div>
         )}
+            {/* Ícones no final do cabeçalho */}
         <div className='map-header-icon-end'>
             <button><img id='more-icon' src={iconConfig.moreIcon} alt="more"  /></button>
 
@@ -231,13 +249,14 @@ const onPlacesChangedB = () => {
         </div>
     </div >
         
-
+            {/* Contêiner para os modos de transporte */}
     <div className='map-transport-container '
       ref={itemsRef}
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}>
+                {/* Botões para selecionar os modos de transporte */}
           <button onClick={() => handleTransportSelect('DRIVING')} className={selectedTransport === 'DRIVING' ? 'map-transport-selected' : 'map-transport'}>
           <img src={selectedTransport === 'DRIVING' ? iconConfig.carIcon : iconConfig.carIconBlack} alt="" />
               <p>{selectedTransport === 'DRIVING' ? duration : '--' }</p>
@@ -270,10 +289,11 @@ const onPlacesChangedB = () => {
               </div>
 
 
-              {/* ================================== MAP ===================================== */}
+            {/* Mapa renderizado */}
 
 
             <div className="map">
+                {/* Componente LoadScript para carregar a API do Google Maps */}
                 <LoadScript
                     googleMapsApiKey={REACT_APP_GOOGLE_MAPS_API_KEY}
                     libraries={libraries}
@@ -287,10 +307,11 @@ const onPlacesChangedB = () => {
                         center={mapPosition}
                         zoom={14}
                     >
+                    {/* Componentes Marker para os pontos A e B */}
 
                         {markerA && <Marker position={markerA} />}
                         {markerB && <Marker position={markerB} />}
-
+                    {/* Componentes DirectionsService e DirectionsRenderer para traçar a rota */}
                         {origin && destination && (
                             <DirectionsService
                                 options={directionsServiceOptions}
@@ -304,15 +325,19 @@ const onPlacesChangedB = () => {
                     </GoogleMap>
                 </LoadScript>
             </div>
-
+            {/* Informações sobre a rota */}
             <div className='map-footer-info'>
-                {distance !== null && duration !== null && (
+                {/* Informações sobre a distância e duração da rota */}
+                {distance !== null && duration !== null && (                   
                     <div className='route-info'>
-                        <h1>{duration} ({distance})</h1> 
+                    {/* Tempo de duração e distância */}
+                    <h1>{duration? translateTime(duration) : ""} ({distance})</h1> 
                         <p>{t("fastestRoute")}</p>
                     </div>
                 )}
+                {/* Botão para iniciar a navegação */}
                 <div className='footer-btns'>
+                    {/* Botão de navegação */}
                     <button className='footer-btn-selected' onClick={traceRoute}>
                         <img src={iconConfig.startNavigate} alt="navigate" />
                         {t("directions")} 

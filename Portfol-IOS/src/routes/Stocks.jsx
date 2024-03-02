@@ -10,6 +10,8 @@ const Stocks = () => {
     const [loading, setLoading] = useState(true)
     const { t } = useTranslation();
 
+
+    // Obter a data atual e formatá-la
     const currentDate = new Date();
     const monthName = currentDate.toLocaleString('en', { month: 'long' });
     const day = currentDate.getDate();
@@ -19,7 +21,7 @@ const Stocks = () => {
 
     const formattedDate = `${day} ${translatedMonthName}`;
 
-     
+    // Função para buscar os dados das ações
     useEffect(() => {
         const fetchStocks = async () => {
             try {
@@ -48,7 +50,11 @@ const Stocks = () => {
             <div>
                 <div className="screen ">
                     <Header />
+                    {/* Cabeçalho das ações */}
+                    
                     <div className='stocks-header'>
+                        {/* Título das ações e data */}
+
                         <div>
                             <h3>{t("stocks")}</h3>
                             <h4>{formattedDate}</h4>
@@ -57,10 +63,12 @@ const Stocks = () => {
                             <img src={iconConfig.more} alt="" />
                         </div>
                     </div>
+                    {/* Caixa de entrada de pesquisa */}
+
                     <div className='stocks-input-box'>
                         <input className='stocks-input' type="text" placeholder={t("search")} />
                     </div>
-
+                    {/* Container das ações */}
                     <div className='stocks-container'>
 
                        

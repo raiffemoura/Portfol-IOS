@@ -16,12 +16,12 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 5px; 
+    top: 0px; 
     right: -13px;
     margin-left: auto;
     margin-right: auto;
-   
     z-index: 5;
+    margin-top: 5px;
   }
   
   .notification-text-desactived{
@@ -80,17 +80,17 @@
     z-index: 4;
     
   }
-  .actived{
+  .actived{ 
     height: 70px;
     width: 310%;
-    margin-left: 5px;
+    margin-left: 4px;
     border-radius: 35px;
   
     position: absolute;
     
     background-color: #000000;
   
-    transform: translate(0px, 15px);
+    transform: translate(0px, 20px);
     transition: ease-in-out 0.5s;
   }
 

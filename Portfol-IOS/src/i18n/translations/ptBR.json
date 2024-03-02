@@ -59,7 +59,7 @@
 
         "January" : "Janeiro",
         "February" : "Fevereiro",
-        "Mrch" : "Março",
+        "March" : "Março",
         "April" : "Abril",
         "May" : "Maio",
         "June" : "Junho",
@@ -113,7 +113,7 @@
         "feelsLikeModerate" : "Confortável",
         "feelsLikeLow" : "Fresco",
         "feelsLikeVeryLow" : "Gelado",
-        "sunrise" : "Nascer do sol",
+        "sunrise" : "NASCER DO SOL",
         "sunset" : "Pôr do sol",
         "visibility" : "VISIBILIDADE",
         "visibilityVeryBad": "Visibilidade muito limitada",

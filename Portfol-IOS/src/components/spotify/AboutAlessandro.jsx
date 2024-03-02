@@ -9,27 +9,29 @@ const AboutAlessandro = () => {
     const { t } = useTranslation();
 
     return (  
-        
-        
-        
-        
-        
         <div className='spotify-page'>
+            {/* Cabeçalho */}
             <div className='header-spotify'>
                 <Link to={"/Spotify/peregrino"} ><img style={{height: '18px'}} src={iconConfig.arrowBack} alt="arrowBack" /></Link>
                 <p className='spotify-header-text'>Alessandro Vilas Boas</p>
                 <div></div> 
              </div> 
+            {/* Conteúdo */}
             <div>
+                {/* Card de informações sobre o artista */}
+
                 <div className='about-artist-card'>
                     <div className='about-artist-title'>
                     </div>
+                    {/* Informações sobre o artista */}
                     <div className='artist-info-alessandro'>
                             <h2>1,237,219</h2>
                             <p>{t("montlyListeners")}</p>
                     </div>
+                    {/* Descrição do artista */}
+                    
                     <div className='artist-description'>
-
+                    {/* Parágrafos de descrição */}
                        <p>
                        Sua história começa no favor de Deus. Alessandro é um improvável, e como ama dizer "alguém comum". 
                        Nascido dia 30 de Julho de 1993 em Itajubá - MG, Vilas Boas teve sua primeira experiência com o 
@@ -52,10 +54,12 @@ const AboutAlessandro = () => {
                         his adolescence. Alessandro is irrevocably ignited with tears and passion for Jesus. In 2015, he recorded
                          his first album, 'Live At Home' with One Sounds, and since then has extended his work as a songwriter, minister, 
                          and artist. </p>
+                    {/* Ícone do artista e informações */}                         
                          <div className='artist-icon'>
                            <img src={iconConfig.Alessandro} alt='alessandro'/>
                             <div> {t("postedBy")} Alessandro Vilas Boas</div>
                         </div>
+                    {/* Ícones de redes sociais */}                        
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://twitter.com/ale_vilasboas1"}>
                                <img  src={iconConfig.Twitter} alt='twitter'/>

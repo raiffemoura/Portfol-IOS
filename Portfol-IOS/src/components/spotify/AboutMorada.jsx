@@ -7,27 +7,27 @@ const AboutMorada = () => {
     const { t } = useTranslation();
 
     return (  
-        
-        
-        
-        
-        
         <div className='spotify-page'>
+            {/* Cabeçalho */}
             <div className='header-spotify'>
                 <Link to={"/Spotify/uma-coisa"} ><img style={{height: '18px'}} src={iconConfig.arrowBack} alt="arrowBack" /></Link>
                 <p className='spotify-header-text'>MORADA</p>
                 <div></div> 
              </div> 
+            {/* Conteúdo */}
             <div>
                 <div className='about-artist-card'>
+                {/* Card de informações sobre o artista */}
                     <div className='artist-photo-morada'>
                     </div>
+                    {/* Informações sobre o artista */}                
                     <div className='artist-info-morada'>
                             <h2>2,359,202</h2>
                             <p>{t("montlyListeners")}</p>
                     </div>
+                    {/* Descrição do artista */}
                     <div className='artist-description'>
-
+                    {/* Parágrafos de descrição */}
                        <p>
                         O <b style={{color: 'white'}}>MORADA</b> é uma banda que tem por ansioso
                         "gritar nos telhados o que Deus tem sussurrado em seus ouvidos".
@@ -37,11 +37,12 @@ const AboutMorada = () => {
                         à diversidade musical que a banda possui e o cuidado que tem de sempre fazer um som 
                         que tocou a todos. Seu último lançamento foi o álbum <b style={{color: 'white'}}>Lembre-se 2000's</b>. Ouça e seja
                         encorajado(a)! </p>
-                       
+                    {/* Ícone do artista e informações */}                                     
                          <div className='artist-icon'>
                            <img src={iconConfig.Morada} alt="Morada" />
                             <div> {t("postedBy")} MORADA</div>
                         </div>
+                    {/* Ícones de redes sociais */}                        
                         <div className='social-icon'>
                             <Link target='_blank' to={"https://twitter.com/Moradaoficial"}>
                                <img  src={iconConfig.Twitter} alt='Twitter'/>

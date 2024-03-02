@@ -29,7 +29,6 @@ useEffect(() => {
         <div className='header-app-spotify'>
             <div id='time'>{currentTime}</div>
             <div className='header-camera-spotify'>
-              {/* <img src={iconConfig.camera} alt="camera" /> */}
               <Notifications />
             </div>
             <div className='header-icons'>

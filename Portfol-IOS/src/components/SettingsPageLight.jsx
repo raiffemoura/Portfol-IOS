@@ -23,8 +23,8 @@ const SettingsPage = ({ setTheme }) => {
     
     const line = () => {
         return (
-            <div className='border-line-box'>
-                <div className='border-line'></div>
+            <div className='border-line-box-light'>
+                <div className='border-line-light'></div>
             </div>
         )}
     // Função para lidar com a mudança de idioma
@@ -34,21 +34,21 @@ const SettingsPage = ({ setTheme }) => {
     }
 
     return ( 
-        <div className='settings-container'>
+        <div className='settings-container color-font-light'>
             {/* Cabeçalho da página de configurações */}
                 <div className='settings-header'>
-                    <Link to={"/"}><img src={iconConfig.arrowBack} alt="back" /></Link>
+                    <Link to={"/"}><img src={iconConfig.arrowBackBlack} alt="back" /></Link>
                     <h1>Settings</h1>
                 </div>
                 <div className='settings-box'>
                 {/* Cabeçalho do Usuario */}
 
-                    <div className='settings-box-header'>
+                    <div className='settings-box-header-light'>
                         <div>
                             <img src={iconConfig.avatar}  alt="arrow" />
                         </div>
                         <div className='settings-box-header-info img-arrow'>
-                            <div className='settings-box-header-info-text'>
+                            <div className='settings-box-header-info-text-light'>
                                 <p>Raiffe Moura</p>
                                 <sub className='color-font'>{t("AppleIDiCloudMediaPurchases")}</sub>
                             </div>
@@ -60,11 +60,11 @@ const SettingsPage = ({ setTheme }) => {
                 {/* Configurações individuais */}
                     {/* Modo Avião */}
 
-                    <div className='settings-box-top'>
+                    <div className='settings-box-top-light'>
                         <div className='img-icon'><img src={iconConfig.airplaneIconOrange} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                         <p>{t("airplaneMode")}</p>
-                        <div onClick={() => setSwitchOn(!switchOn)} className={ switchOn ? 'switch-on' : 'switch-off'}>
+                        <div onClick={() => setSwitchOn(!switchOn)} className={ switchOn ? 'switch-on-light' : 'switch-off-light'}>
                             <div className={switchOn ? 'circle-on' : 'circle-off'}></div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const SettingsPage = ({ setTheme }) => {
                     </div>
                     {line()}
                     {/* Wi-Fi */}                 
-                    <div className='settings-box-middle'>
+                    <div className='settings-box-middle-light'>
                         <div className='img-icon'><img src={iconConfig.wifiIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                             <p>Wi-Fi</p>
@@ -87,7 +87,7 @@ const SettingsPage = ({ setTheme }) => {
                     {line()}
                     {/* Bluetooth */}                 
 
-                    <div className='settings-box-middle'>
+                    <div className='settings-box-middle-light'>
                         <div className='img-icon'><img src={iconConfig.bluetoothIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                             <p>Buetooth</p>
@@ -101,7 +101,7 @@ const SettingsPage = ({ setTheme }) => {
                     {line()}
                     {/* Cellular */}                 
 
-                    <div className='settings-box-middle'>
+                    <div className='settings-box-middle-light'>
                         <div className='img-icon'><img src={iconConfig.cellularIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                             <p>{t("cellular")}</p>
@@ -113,7 +113,7 @@ const SettingsPage = ({ setTheme }) => {
 
                     {/* Hotspot */}                 
 
-                    <div className='settings-box-bottom'>
+                    <div className='settings-box-bottom-light'>
                     <div className='img-icon'><img src={iconConfig.hotspotIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                             <p>{t("hotspot")}</p>
@@ -125,7 +125,7 @@ const SettingsPage = ({ setTheme }) => {
             {/* Configurações de idioma e tema */}
                 <div className='settings-box'>
                 {/* Mudança de idioma */}                    
-                    <div className='settings-box-top' onClick={() => {setShowLanguage(!showLanguage); setFullHidden(true) }}>
+                    <div className='settings-box-top-light' onClick={() => {setShowLanguage(!showLanguage); setFullHidden(true) }}>
                         <div className='img-icon'>
                             <img src={iconConfig.settingsIcon} alt="" srcset="" />
                         </div>
@@ -136,7 +136,7 @@ const SettingsPage = ({ setTheme }) => {
                     </div>
                 {/* Opções de idioma */}
                 {/* Inglês */}
-                        <div className={`settings-box-middle   ${fullHidden? showLanguage ? 'active' :  'hidden' : "full-hidden"}`} 
+                        <div className={`settings-box-middle-light   ${fullHidden? showLanguage ? 'active' :  'hidden' : "full-hidden"}`} 
                         onClick={() => {
                             handleLanguageChange("EN")}}>
                         <div className='img-icon'>
@@ -148,7 +148,7 @@ const SettingsPage = ({ setTheme }) => {
 
                         </div>
                 {/* Português */}
-                        <div  className={`settings-box-middle  ${fullHidden? showLanguage ? 'active'  : 'hidden' : "full-hidden"}`} 
+                        <div  className={`settings-box-middle-light  ${fullHidden? showLanguage ? 'active'  : 'hidden' : "full-hidden"}`} 
                         onClick={() => {
                             handleLanguageChange("ptBR")}}>
                         <div className='img-icon'>
@@ -161,11 +161,11 @@ const SettingsPage = ({ setTheme }) => {
                         </div>
                         {line()}
                 {/* Configuração de tema */}
-                        <div className='settings-box-middle'>
+                        <div className='settings-box-middle-light'>
                         <div className='img-icon'><img src={iconConfig.themeIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                             <p>{ darkTheme ? t("darkTheme") : t("lightTheme")}</p>
-                        <div onClick={() => changeTheme()} className={ darkTheme ? 'switch-on' : 'switch-off'}>
+                        <div onClick={() => changeTheme()} className={ darkTheme ? 'switch-on-light' : 'switch-off-light'}>
                             <div className={darkTheme ? 'circle-on' : 'circle-off'}></div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ const SettingsPage = ({ setTheme }) => {
                     </div>
                 {/* Informações da memoria */}
                     {line()}
-                    <div className='settings-box-bottom'>
+                    <div className='settings-box-bottom-light'>
                     <div className='img-icon'><img src={iconConfig.hotspotIcon} alt="" srcset="" /></div>
                         <div className='settings-box-text img-arrow'>
                             <p>iPhone Storage</p>

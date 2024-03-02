@@ -253,23 +253,14 @@ body {
   z-index: 0;
 }
 
+
+
 .back-btn:hover{
   background-color: #c9c0c0;
   cursor: pointer ;
 }
 
-.home-button-sticky{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 65%;
-  position: sticky;
-  top: 0px;
-  right: 318px;
-  bottom: -300px;
-  left: 0;
- 
-}
+
 .home-button-sticky2{
   display: flex;
   flex-direction: row;
@@ -278,7 +269,6 @@ body {
   right: 0px;
   left: 0px;
   bottom: 90px;
-  /* margin-top: -93px; */
   margin-right: 120px;
   z-index: 1;
 
@@ -293,7 +283,7 @@ body {
 /* =====================================================================*/
 /* =====================================================================*/
 /* =====================================================================*/
-@media screen and (max-width: 369px) {
+/* @media screen and (max-width: 369px) {
 .App {
   text-align: center;
 }
@@ -327,10 +317,10 @@ body {
 
 
 
-                    
+                     */
 
                     /* ======  PHONE HEADER ====== */
-.header{
+/* .header{
   padding: 16px;
   display: flex;
   flex-direction: row;
@@ -339,9 +329,9 @@ body {
   font-weight: 600; 
   color: #fff;
   z-index:3 ;
-}
+} */
 /* class black-text for component HeaderBlack.jsx*/
-.black-text{
+/* .black-text{
   color: #000;
 }
 
@@ -352,13 +342,8 @@ body {
   z-index: 3;
 
 }
-.header-camera img{
-  height: 32px;
-  padding-top: 6px;
-  margin-left: 32px;
-  z-index: 3;
-  position: relative;
-}
+
+
 .header-right{
   padding-right: 10px;
   height: 45px;
@@ -374,11 +359,11 @@ body {
 
 
 
-}
+} */
 
                     /* ====== APPS AND PAGES ====== */
 
-.apps{
+/* .apps{
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -473,10 +458,10 @@ body {
   margin-top: -7px;
   
 }
-
+ */
 
 /* Slider and buttons animations */
-.slide{
+/* .slide{
   transform: translate(-312px, 0px);
   transition: ease-in-out 0.4s;}
 
@@ -525,10 +510,10 @@ body {
   transition: 150ms linear;
 }
 
-
+ */
 
                     /* ====== HOME BUTTON ====== */
-.home-button{
+/* .home-button{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -575,9 +560,9 @@ body {
   position: relative;
   right: 0px;
   left: 0px;
-  bottom: 90px;
+  bottom: 90px; */
   /* margin-top: -93px; */
-  margin-right: 120px;
+  /* margin-right: 120px;
   z-index: 1;
 
  
@@ -620,13 +605,7 @@ body {
   padding-left: 30px;
   font-size: 16px;
 }
-.header-camera img{
-  height: 32px;
-  padding-top: 6px;
-  margin-left: 32px;
-  z-index: 3;
-  position: relative;
-}
+
 .apps{
   margin-top: 30px;
 }
@@ -656,7 +635,7 @@ body {
 }
 
 }
-
+ */
 
 /* =====================================================================*/
 /* =====================================================================*/
@@ -693,17 +672,11 @@ body {
 }
 
 #time{
-  margin-top: 9px;
+  margin-top: 5px;
   padding-left: 30px;
   font-size: 16px;
 }
-.header-camera img{
-  height: 32px;
-  padding-top: 6px;
-  margin-left: 32px;
-  z-index: 3;
-  position: relative;
-}
+
 .apps{
   margin-top: 30px;
 }

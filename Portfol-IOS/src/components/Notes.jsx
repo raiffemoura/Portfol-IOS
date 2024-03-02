@@ -13,6 +13,7 @@ const Notes = () => {
     const [newTitle, setNewTitle] = useState('');
     const [newSubtitle, setNewSubtitle] = useState('');
     const { t } = useTranslation();
+    // Array de notas
     const [notes, setUpdatedNotes] = useState([
             { id: 0,
             title: "Apresentando Meu Portfól-IOS", 
@@ -36,12 +37,7 @@ const Notes = () => {
             },
             
         ]);
-        
-
-
-       
-
-
+    // Função para limitar o título da nota
         const limitTitle = (title, limit) => {
             if (!showAllNotes && title.length > limit) {
                 return title.substring(0, limit) + '...';
@@ -50,6 +46,7 @@ const Notes = () => {
             }
         };
 
+    // Função para limitar o subtítulo da nota
     const limitSubtitle = (subtitle, limit) => {
         if (showAllNotes) {
             return subtitle.substring(0, limit) + '...';
@@ -62,27 +59,26 @@ const Notes = () => {
         }
     };
 
- 
-
+    // Expande ou recolhe a nota clicada
     const handleNoteClick = (noteId) => {
         setExpandedNoteId(noteId);
         setShowAllNotes(!showAllNotes);
     };
-
+    // Função para mostrar todas as notas ou apenas uma
     const handleShowAllNotes = () => {
         setShowAllNotes(!showAllNotes); 
         setShowHeader(!showHeader);
         setShowInput(false);
     };
 
-    
+    // Função para adicionar uma nova nota
     const handleNewNote =()=>{
        handleShowAllNotes(!showAllNotes);
        setExpandedNoteId(null)
        setShowInput(true);
     }
 
-
+    // Função para excluir uma nota
     const deleteNote = (noteId) =>{
         const updatedNotes = notes.filter((note) => note.id !== noteId);
         setUpdatedNotes(updatedNotes);
@@ -93,7 +89,7 @@ const Notes = () => {
 
     }
 
-
+    // Função para salvar uma nova nota
     const saveNote = () =>{
         const newNote = {
             id: notes.length ,
@@ -109,6 +105,7 @@ const Notes = () => {
     return ( 
          
             <div className='notes-container'> 
+                {/* Cabeçalho */}
                 
                 <div className='notes-header-container'>
                     <div className='notes-header'>
@@ -130,6 +127,7 @@ const Notes = () => {
 
                 
                 { showAllNotes ? <div className='notes-title'><h1>{t("notes")}</h1></div> : null }
+                {/* Título da página de notas */}
                 { showInput ? <div className='notes-title'>
                     <textarea className='notes-text-area-title' autoFocus rows={2} maxLength={50} 
                     onChange={(e) =>  {setNewTitle(e.target.value); }} type="text" placeholder={t("enterTitle")} />
@@ -138,7 +136,8 @@ const Notes = () => {
                     :
                     null }
                     
-                
+                {/* Corpo da página de notas */}
+
                 <div className='notes-body-container'>
                     <div className='notes-body-title'>
                     
@@ -179,12 +178,14 @@ const Notes = () => {
                     </div>
                 )}
             </div>
+            {/* Rodapé da página de notas */}
+
             {showAllNotes ? 
             <div className='notes-footer'>
                 <h5>{notes.length} {t("notes")}</h5>
                 <img src={iconConfig.newNote} onClick={handleNewNote} alt="" />
             </div>
-            : null }
+            : null } 
         </div> 
         );
 }

@@ -15,7 +15,7 @@ overflow: hidden;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-height: 652px;
+height: 653px;
 }
 
                 /* ======  MAP HEADER ====== */
@@ -170,8 +170,6 @@ background: linear-gradient(
 width: 323px;
 height: 132px;
 padding: 10px;
-border-top-right-radius: 10px ;
-border-top-left-radius: 10px ;
 border-bottom-left-radius: 50px ;
 border-bottom-right-radius: 50px ;
 box-shadow:  2px 0px 3px 3px #00000046; 

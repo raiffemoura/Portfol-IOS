@@ -38,18 +38,19 @@ const Feedbacks = () => {
         
     return ( 
         <div>
+            {/* Cabeçalho */}
             <div className='feedback-header'>
                 <Link to={"/"}> <img src={iconConfig.arrowBackBlue} alt="back" /></Link>
                 <img id='feedback-logo' src={iconConfig.feedbackLogo} alt="logo" />
                 <Link to ={'/thanks-for-your-feedback'}><img src={iconConfig.addFeedback} alt="add-feedback" /></Link>
             </div>
+            {/* Container de feedbacks */}
             <div className='feedback-container'>
-            
-                
-                
-              
+                {/* Renderização condicional dos feedbacks */}
 
                 {showAllFeedbacks && (
+                    // Mapeamento e exibição dos feedbacks
+                    
                     feedbacks.map(feedback => (
                         <div key={feedback._id} className={`feedback-box ${feedback.rating}`} onClick={() => handleFeedbackID(feedback._id)}>
                             <div className='feedback-box-header'>
@@ -66,6 +67,7 @@ const Feedbacks = () => {
                 )}
 
                 {!showAllFeedbacks && (
+                    // Mapeamento e exibição de um feedback específico
                     feedbacks.map(feedback =>(
                         feedback._id === feedbackID && (
                             <div key={feedback._id} className={`feedback-box ${feedback.rating}`} onClick={() => handleFeedbackID(feedback._id)}>
@@ -91,6 +93,7 @@ const Feedbacks = () => {
             
             
             </div>
+            {/* Rodapé e botão de home */}            
             <FeedbackFooter />
             <HomeButtonFeedback />
         </div>

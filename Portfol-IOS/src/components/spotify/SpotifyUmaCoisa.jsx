@@ -19,10 +19,10 @@ const SpotifyPage = () => {
 
 
 
-    // references
-    const audioPlayer = useRef(); // reference our audio component
-    const progressBar = useRef(); // reference our progress bar
-    const animationRef = useRef(); // reference the animation
+    // Referências
+    const audioPlayer = useRef(); // Referência para o componente de áudio
+    const progressBar = useRef(); // Referência para a barra de progresso
+    const animationRef = useRef(); // Referência para a animação
 
     useEffect(() => {
         if (audioPlayer.current) {
@@ -36,7 +36,7 @@ const SpotifyPage = () => {
     
 
 
-
+    // Calcula o tempo no formato MM:SS
     const calculateTime = (secs) => {
         const minutes = Math.floor(secs / 60);
         const seconds = Math.floor(secs % 60);
@@ -46,7 +46,7 @@ const SpotifyPage = () => {
 
         return `${returnedMinutes}:${returnedSeconds}`;
     }
-
+    // Alterna entre reprodução e pausa
     const togglePlayPause = () => {
        const prevValue = isPlaying;
         setIsPlaying(!prevValue);
@@ -58,14 +58,14 @@ const SpotifyPage = () => {
             cancelAnimationFrame(animationRef.current);
         }
     }
-
+    // Para a reprodução
     const stop = () => {
         setIsPlaying(false);
         audioPlayer.current.pause();
         cancelAnimationFrame(animationRef.current);
 
     }
-
+    // Atualiza a barra de progresso e o tempo enquanto reproduz
     const whilePlaying = () => {
         progressBar.current.value = audioPlayer.current.currentTime;
         changePlayerCurrentTime();
@@ -73,12 +73,12 @@ const SpotifyPage = () => {
 
 
     } 
-        
+    // Atualiza a posição da reprodução e o tempo
     const changeRange = () => {
         audioPlayer.current.currentTime = progressBar.current.value;
        changePlayerCurrentTime();
     }
-
+    // Altera o tempo atual da reprodução
     const changePlayerCurrentTime = () => {
         progressBar.current.style.setProperty("--seek-before-width", `${(progressBar.current.value / duration) * 100}%`);
         setCurrentTime(progressBar.current.value);
@@ -93,7 +93,9 @@ const SpotifyPage = () => {
 
     return (  
         <div className='spotify-page-uma-coisa '>
+            {/* Cabeçalho */}
             <div className='header-spotify'>
+            {/* Capa do álbum */}
                 <Link to={"/"} ><img className='spotify-header-img' src={iconConfig.arrow} alt="arrow" /></Link>
                 <p className='spotify-header-text'>{t("likedSongs")}</p>
                 <img className='spotify-header-img' src={iconConfig.dots} alt="more" />
@@ -109,30 +111,31 @@ const SpotifyPage = () => {
 
                 </div>
                 <div className='player'>
+                        {/* Container de áudio */}
                 <div className='audio-container'>
+                            {/* Áudio */}
                     <audio ref={audioPlayer} >
+                                {/* Fontes do áudio */}
                         <source src={iconConfig.umacoisa} type="audio/mp3" />
                         <source src={iconConfig.umacoisaOGG} type="audio/ogg" />
                             
                         Your browser does not support the audio element.
 
                     </audio>
-                        {/* progress bar */}
+                        {/* Barra de progresso */}
                     <input className="progressBar" type="range" defaultValue="0" ref={progressBar} onChange={changeRange}/>
-                      
+                        {/* Controles do áudio */}                      
                     <div className='audio-progress-container' >
-                         {/* Current time  */}
+                            {/* Tempo atual */}
                         <div className='audio-progress'>{calculateTime(currentTime)}</div>
-                        {/* Duration  */}
+                            {/* Duration  */}
                         <div className='audio-duration'>{(duration && !isNaN(duration)) ? calculateTime(duration) : '0:00'}</div>
 
                     </div>
-
-                    
-
-
+                            {/* Botões do controle de reprodução */}
                     <div className='audio-buttons'>
                         <button onClick={() => setIsShuffle(!isShuffle)}>{isShuffle ? <img className='shuffle-list' src={iconConfig.shuffle} alt="shuffle-list"  /> : <img className='shuffle-list' src={iconConfig.list} alt="shuffle"  />}</button>
+                                {/* Botão de faixa anterior */}                                                
                         <button
                             onMouseOver={() => setIsPreviusMouseOver(true)}
                             onMouseOut={() => setIsPreviusMouseOver(false)}>
@@ -142,7 +145,9 @@ const SpotifyPage = () => {
                             <img className='previus' src={iconConfig.previus} alt="previus" />
                             )}
                         </button>
+                                {/* Botão de reprodução/pausa */}
                         <button onClick={togglePlayPause}>{isPlaying ? <img className='play-pause' src={iconConfig.pause} alt="play-pause"  /> : <img className='play-pause' src={iconConfig.play} alt="play-pause"  /> }</button>
+                                {/* Botão de próxima faixa */}                        
                         <button
                             onMouseOver={() => setIsNextMouseOver(true)}
                             onMouseOut={() => setIsNextMouseOver(false)}>
@@ -152,6 +157,7 @@ const SpotifyPage = () => {
                             <img className='next' src={iconConfig.next} alt="next" />
                             )}
                         </button>
+                                {/* Botão de ocultar */}
                         <button onMouseOver={() => setIsHidden(true)} onMouseOut={() => setIsHidden(false)}>
                             {isHidden ? (  <img className='spotify-hidden' src={iconConfig.hiddenRed} alt="hiddenRed" />
                             ) : (
@@ -162,6 +168,7 @@ const SpotifyPage = () => {
 
                 </div>
                 </div>
+                {/* Botões inferiores */}
                 <div className='bottom-buttons'>
                     <button className='bottom-buttons-left'>
                         <img src={iconConfig.devices} alt="devices" />
@@ -172,6 +179,7 @@ const SpotifyPage = () => {
                     </button>
 
                 </div>
+                {/* Lyricas */}
                 <div className='lycris-uma-coisa'>
                         <h5 className='artist-title'>{t('lyrics')}</h5>
                         <div className='lycris'>
@@ -249,8 +257,9 @@ const SpotifyPage = () => {
                                 <p>Queremos queimar! Queremos queimar!</p>
                             </div>
                         </div>
-                        </div>
-                        <div className='about-artist-card'>
+                </div>
+                {/* Sobre o artista */}                
+                <div className='about-artist-card'>
                     <div className='artist-photo-morada'>
                         <h5 className='artist-title'>{t("aboutArtist")}</h5>
                     </div>
@@ -261,17 +270,19 @@ const SpotifyPage = () => {
                             
                                
                         </div>
+                        {/* Botão de seguir */}
                         <button className='follow-button' onClick={() => setIsFollowing(!isFollowing)}>{isFollowing ? t("following") : t('follow')}</button>
                     </div>
+                    {/* Descrição do artista */}
                     <div className='artist-description'>
-
+                        {/* Descrição */}
                         <span >
                         O MORADA é uma banda que tem por ansioso "gritas nos telhados o que Deus Tem 
                         sussurrado em seus ouvidos". Com pouco mais de 10 anos de estrada  </span> <Link to='/spotify/MORADA'><button  className='see-more'>...{t("seeMore")}</button></Link>
-                        
                     </div>
                     
                 </div>
+                {/* Créditos */}
                 <div className='about-artist-card'>
                         <div className='card-credit-title'>
                             <h4>{t("credits")}</h4>

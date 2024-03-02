@@ -1,3 +1,20 @@
+.container-dark{
+    background-image: url(../assets/iphone-cable-dark.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 350px;
+    height: 925px;
+    padding: 10px;
+}
+.container-light{
+    background-image: url(../assets/iphone-cable-light.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 350px;
+    height: 925px;
+    padding: 10px;
+}
+
 .settings-container{
     width: 100%;
     padding: 5px 10px;
@@ -19,18 +36,20 @@
 
 }
 
-.settings-header img{
+.settings-header img {
+
     height: 22px;
     margin-top: 3px;
     margin-right: 10px;
 }
-.settings-box-header img{
+.settings-box-header img,.settings-box-header-light img{
+
     width: 50px;
     margin-left: 10px;
 
 }
 
-.settings-box-header{
+.settings-box-header,.settings-box-header-light{
     background-color: #27282b;
     padding: 3px 0px;
     border-radius: 10px;
@@ -38,6 +57,10 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
+.settings-box-header-light{
+    background-color: #fff;
+    
 }
 .settings-box-header-info{
     display: flex;
@@ -63,11 +86,11 @@
     margin-right: 10px;
 
 }
-.settings-box-header-info  p{
+.settings-box-header-info p, .settings-box-header-info-light p{
     font-size: 1.2rem;
 
 }
-.settings-box-header-info-text{
+.settings-box-header-info-text,.settings-box-header-info-text-light{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +98,10 @@
     margin-left: 10px;
     color: #fff;
 }
-.settings-box-header-info-text{
+.settings-box-header-info-text-light{
+    color: #000;
+}
+.settings-box-header-info-text,.settings-box-header-info-text-light{
     font-size: 0.9rem;
 }
 
@@ -85,14 +111,21 @@
 .color-font{
     color: #a7a4a4;
 }
+.color-font-light{
+    color: #000;
 
-
-.box-hoover:hover{
-    background-color: #3c3e42;
 }
+
+
+
 .settings-box-header:hover{
     background-color: #3c3e42;
 }
+.settings-box-header-light:hover{
+    background-color: #e6e4eb;}
+
+
+
 
 .border-line-box{
     background-color: #27282b;
@@ -101,10 +134,17 @@
     border-bottom: 1px solid #a7a4a469;
     margin-left: 55px;
 }
+.border-line-box-light{
+    background-color: #fff;
+}
+.border-line-light{
+    border-bottom: 1px solid #a7a4a469;
+    margin-left: 55px;
+}
 
 
 
-.settings-box-top{
+.settings-box-top,.settings-box-top-light{
     background-color: #27282b;
     margin-top: 30px;
     width: 100%;
@@ -118,8 +158,11 @@
     padding: 5px 10px;
 
 }
+.settings-box-top-light{
+    background-color: #fff;
+}
+.settings-box-middle,.settings-box-middle-light{
 
-.settings-box-middle{
     background-color: #27282b;
     width: 100%;
     height: 50px;
@@ -129,6 +172,24 @@
     align-items: center;
     padding: 5px 10px;
     transition: opacity 0.5s ease-in-out;
+}
+.settings-box-middle-light{
+    background-color: #fff;
+}
+.settings-box-bottom,.settings-box-bottom-light{
+    background-color: #27282b;
+    width: 100%;
+    height: 50px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+}
+.settings-box-bottom-light{
+    background-color: #fff;
 }
 
 .hidden { 
@@ -203,18 +264,6 @@
  
 
 
-.settings-box-bottom{
-    background-color: #27282b;
-    width: 100%;
-    height: 50px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px 10px;
-}
 
 .settings-box-text{
     width: 100%;
@@ -225,7 +274,7 @@
     margin-left: 15px;
 }
 
-.switch-off{
+.switch-off, .switch-off-light{
     width: 50px;
     height: 35px;
     background-color: #3c3e42;
@@ -239,7 +288,11 @@
     transition: ease-in-out 0.2s;
 
 }
-.switch-on{
+.switch-off-light{
+    background-color: #e8e9e8;
+    border: none;
+}
+.switch-on, .switch-on-light{
     width: 50px;
     height: 35px;
     background-color: #31d057;
@@ -253,12 +306,16 @@
     transition: ease-in-out 0.2s;
 
 }
+.switch-on-light{
+    background-color: #31d057;
+    border: none;
+}
 .circle-off{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #fff;
-    transform: translate(0px, 0px);
+    transform: translate(2px, 0px);
     transition: ease-in-out 0.2s;
 }
 .circle-on{
@@ -266,18 +323,15 @@
     height: 30px;
     border-radius: 50%;
     background-color: #fff;
-    transform: translate(20px, 0px);
+    transform: translate(18px, 0px);
     transition: ease-in-out 0.2s;
 }
 
-.settings-box-top:hover{
+.settings-box-bottom:hover,.settings-box-middle:hover, .settings-box-top:hover {
     background-color: #3c3e42;
 }
-.settings-box-middle:hover{
-    background-color: #3c3e42;
-}
-.settings-box-bottom:hover{
-    background-color: #3c3e42;
+.settings-box-bottom-light:hover,.settings-box-middle-light:hover, .settings-box-top-light:hover {
+    background-color: #e6e4eb;
 }
 
 
@@ -288,5 +342,42 @@
     align-items: center;
     gap: 10px;
 }
+.adjust-settings-homebutton{
+    position: absolute;
+    top: -2px;
+    right: 0;   
+    left: 0;
 
+}
+
+
+.home-button-settings-black{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    position: absolute;
+    top: 667px;
+    right: 118px;
+    left: 0;
+    margin: auto;
+  }
+  .back-btn-settings-black{
+    background-color: #000000;
+    height: 5px;
+    width: 115px; 
+    margin-top: 36px;
+    border-style: none;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 0;
+  }
+  
+  
+  
+  .back-btn:hover{
+    background-color: #c9c0c0;
+    cursor: pointer ;
+  }
 

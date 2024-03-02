@@ -14,7 +14,7 @@ const Notifications = () => {
                 setMsg(false);
                 setTimeout(() => {
                     setMsg(true);
-                }, 12000);
+                }, 13000);
         }, 500);
 
     };
@@ -24,7 +24,7 @@ const Notifications = () => {
             setMsgFeedback(false);
             setTimeout(() => {
                 setMsgFeedback(true);
-            }, 12000);
+            }, 13000);
     }, 500);
 };
 
@@ -64,7 +64,7 @@ useEffect(() => {
 
 
     return ( 
-        <div>
+        
             <div className='notification-container'>
                 <div  className={`notification ${msg ? 'desactived' : 'actived'}`}>
                     {!msg ?  
@@ -90,7 +90,7 @@ useEffect(() => {
                     </div>:""}
                 </div>
             </div>
-        </div>
+        
      );
 }
  

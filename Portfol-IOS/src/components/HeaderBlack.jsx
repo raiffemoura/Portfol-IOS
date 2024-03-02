@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import signal from '../assets/signal-reception-black-gif.gif';
-import wifi from '../assets/wifi-black-gif.gif';
-import battery from '../assets/battery/battery.gif';
-import camera from '../assets/camera.png';
-
+import Notifications from './Noifications';
+import iconConfig from './iconConfig';
     
 
 const HeaderBlack = () => {
@@ -31,12 +28,13 @@ useEffect(() => {
         <div className='header black-text'>
             <div id='time'>{currentTime}</div>
             <div className='header-camera'>
-              <img src={camera} alt="camera" />
+            <Notifications />
+
             </div>
             <div className='header-icons'>
-                <img src={signal} alt="signal reception icon" />
-                <img src={wifi} alt="wifi icon" />
-                <img src={battery} alt="battery icon" />
+                <img src={iconConfig.signalBlack} alt="signal reception icon" />
+                <img src={iconConfig.wifiBlack} alt="wifi icon" />
+                <img src={iconConfig.battery} alt="battery icon" />
             </div>
         </div>
      );
