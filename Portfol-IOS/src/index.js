@@ -21,6 +21,7 @@ import FeedbackStatistics from "./components/feedback/FeedbackStatistics";
 import Stocks from "./routes/Stocks";
 import Settings from "./routes/Settings";
 import Weather from "./routes/Weather.jsx";
+import MemoryGame from "./routes/MemoryGame";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
   {
     path: "/weather",
     element: <Weather />,
+  },
+  {
+    path: "/Memory-game",
+    element: <MemoryGame />,
   },
 ]);
 

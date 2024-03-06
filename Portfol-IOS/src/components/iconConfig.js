@@ -142,6 +142,27 @@ import weatherFeelsLike from "../assets/icons/weather-feelslike.png";
 import weatherHumidity from "../assets/icons/weather-humidity.png";
 import weatherPrecipitation from "../assets/icons/weather-precipitation.png";
 import weatherVisibility from "../assets/icons/weather-visibility.png";
+import memoryGame from "../assets/apps/memory-game.png";
+import bootstrapIcon from "../assets/memory game/bootstrap.png";
+import jqueryIcon from "../assets/memory game/jquery.png";
+import reactIcon from "../assets/memory game/react.png";
+import cssIcon from "../assets/memory game/css.png";
+import electronIcon from "../assets/memory game/electron.png";
+import nodeIcon from "../assets/memory game/node.png";
+import mongoIcon from "../assets/memory game/mongo.png";
+import firebaseIcon from "../assets/memory game/firebase.png";
+import htmlIcon from "../assets/memory game/html.png";
+import javascriptIcon from "../assets/memory game/javascript.png";
+import btc from "../assets/icons/btc.png";
+import eth from "../assets/icons/eth.png";
+import dayClear from "../assets/weather-app/clear.mp4";
+import cloudy from "../assets/weather-app/cloudy.mp4";
+import night from "../assets/weather-app/night.mp4";
+import rain from "../assets/weather-app/rain.mp4";
+import snow from "../assets/weather-app/snow.mp4";
+import daySunny from "../assets/weather-app/sunny.mp4";
+import thunder from "../assets/weather-app/thunder.mp4";
+
 const iconConfig = {
   startNavigate,
   carIcon,
@@ -286,6 +307,26 @@ const iconConfig = {
   weatherHumidity,
   weatherPrecipitation,
   weatherVisibility,
+  memoryGame,
+  bootstrapIcon,
+  cssIcon,
+  electronIcon,
+  firebaseIcon,
+  htmlIcon,
+  javascriptIcon,
+  jqueryIcon,
+  mongoIcon,
+  nodeIcon,
+  reactIcon,
+  btc,
+  eth,
+  dayClear,
+  daySunny,
+  cloudy,
+  night,
+  rain,
+  snow,
+  thunder,
 };
 
 export default iconConfig;

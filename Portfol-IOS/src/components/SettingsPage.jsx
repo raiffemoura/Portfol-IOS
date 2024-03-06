@@ -38,7 +38,7 @@ const SettingsPage = ({ setTheme }) => {
             {/* Cabeçalho da página de configurações */}
                 <div className='settings-header'>
                     <Link to={"/"}><img src={iconConfig.arrowBack} alt="back" /></Link>
-                    <h1>Settings</h1>
+                    <h1>{t("settings") }</h1>
                 </div>
                 <div className='settings-box'>
                 {/* Cabeçalho do Usuario */}
