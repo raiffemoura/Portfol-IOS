@@ -162,6 +162,23 @@ import rain from "../assets/weather-app/rain.mp4";
 import snow from "../assets/weather-app/snow.mp4";
 import daySunny from "../assets/weather-app/sunny.mp4";
 import thunder from "../assets/weather-app/thunder.mp4";
+import magnifier from "../assets/icons/magnifier.png";
+import magnifierBlue from "../assets/icons/magnifier-blue.png";
+import photosAlbums from "../assets/icons/photos-albums.png";
+import photosAlbumsBlue from "../assets/icons/photos-albums-blue.png";
+import photosForyou from "../assets/icons/photos-foryou.png";
+import photosForyouBlue from "../assets/icons/photos-foryou-blue.png";
+import photosLibrary from "../assets/icons/photos-library.png";
+import photosLibraryBlue from "../assets/icons/photos-library-blue.png";
+import photoReact from "../assets/photosApp/react.png";
+import photoNode from "../assets/photosApp/node.png";
+import photoMongo from "../assets/photosApp/mongo.png";
+import photoJS from "../assets/photosApp/js.png";
+import photoJS2 from "../assets/photosApp/js2.png";
+import photoHTML from "../assets/photosApp/html.png";
+import photoHTML2 from "../assets/photosApp/html2.png";
+import photoPS from "../assets/photosApp/ps.png";
+import photoCSS from "../assets/photosApp/css.png";
 
 const iconConfig = {
   startNavigate,
@@ -327,6 +344,23 @@ const iconConfig = {
   rain,
   snow,
   thunder,
+  magnifier,
+  magnifierBlue,
+  photosAlbums,
+  photosAlbumsBlue,
+  photosForyou,
+  photosForyouBlue,
+  photosLibrary,
+  photosLibraryBlue,
+  photoReact,
+  photoNode,
+  photoMongo,
+  photoJS,
+  photoJS2,
+  photoHTML,
+  photoPS,
+  photoHTML2,
+  photoCSS,
 };
 
 export default iconConfig;

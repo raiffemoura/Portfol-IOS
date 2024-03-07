@@ -22,6 +22,7 @@ import Stocks from "./routes/Stocks";
 import Settings from "./routes/Settings";
 import Weather from "./routes/Weather.jsx";
 import MemoryGame from "./routes/MemoryGame";
+import Photos from "./routes/Photos";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -103,6 +104,14 @@ const router = createBrowserRouter([
   {
     path: "/Memory-game",
     element: <MemoryGame />,
+  },
+  {
+    path: "/photos",
+    element: <Photos />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 

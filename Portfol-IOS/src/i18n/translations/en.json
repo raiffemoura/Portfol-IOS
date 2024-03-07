@@ -193,7 +193,12 @@
         "partly cloudy night": "Partly cloudy night",
         "night": "Night",
         "mostly cloudy night": "Mostly cloudy night",
-        "fog": "Fog"
+        "fog": "Fog", 
+
+        "library" : "Library",
+        "foryou" : "For you",
+        "select" : "Select",
+        "albums" : "Albums"
         
         
     }

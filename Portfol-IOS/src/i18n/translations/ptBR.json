@@ -193,7 +193,12 @@
         "partly cloudy night": "Noite Parcialmente Nublada",
         "night": "Noite",
         "mostly cloudy night": "Noite Principalmente Nublada",
-        "fog": "Neblina"
+        "fog": "Neblina", 
+
+        "library" : "Biblioteca",
+        "foryou" : "Para você",
+        "select" : "Selecionar",
+        "albums" : "Albuns"
 
 
 

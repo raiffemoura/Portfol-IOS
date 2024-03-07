@@ -15,6 +15,18 @@
 .stocks-header img{
     width: 32px;
 }
+.stocks-back{
+    display: flex;
+}
+.stocks-back span{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 7px ;
+}
+.stocks-back img{
+    width: 16px;
+}
 .stocks-input-box{
     padding: 0px 10px;
     
