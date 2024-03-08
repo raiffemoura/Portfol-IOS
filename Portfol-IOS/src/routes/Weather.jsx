@@ -24,7 +24,36 @@ const Weather = () => {
   const [conditionChanged, setConditionChanged] = useState(false);
 
   const { t } = useTranslation();
+  // Pré-carrega os videos quando o componente weather for montado
+  useEffect(() => {
+    const videosToPreload = [
+      dayClear,
+      cloudy,
+      night,
+      rain,
+      snow,
+      daySunny,
+      thunder,
+    ];
+    videosToPreload.forEach((videoSrc) => {
+      const video = document.createElement("video");
+      video.src = videoSrc;
+      video.preload = "auto";
+      video.style.display = "none";
+      document.body.appendChild(video);
+    });
 
+    return () => {
+      // Limpar os vídeos pré-carregados quando o componente for desmontado
+      videosToPreload.forEach((videoSrc) => {
+        const video = document.querySelector(`video[src="${videoSrc}"]`);
+        if (video) {
+          document.body.removeChild(video);
+        }
+      });
+    };
+  }, []);
+  // Busca a localização do usuário e atualiza o estado de cityLoaded para fazer a pesquisa
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async function (position) {
@@ -92,7 +121,7 @@ const Weather = () => {
   // Função para realizar uma busca com base na cidade selecionada
 
   const handleSearch = (selectedCity) => {
-    if (selectedCity.length > 2) {
+    if (selectedCity && selectedCity.length > 2) {
       fetch(
         `http://api.weatherapi.com/v1/forecast.json?key=5d97fe619b214861ae5171040242302&q=${selectedCity}&lang=en`
       )
@@ -100,7 +129,7 @@ const Weather = () => {
           if (response.status === 200) {
             return response.json();
           } else if (response.status === 404 || response.status === 400) {
-            // alert('City not found, please try again!');
+            alert("City not found, please try again!");
           }
         })
         .then((data) => {
@@ -195,7 +224,7 @@ const Weather = () => {
         "freezing fog",
         "partly cloudy",
       ],
-      raining: [
+      rain: [
         "rain",
         "raining",
         "cloudy with rain",
@@ -293,8 +322,21 @@ const Weather = () => {
       }
     }
 
-    return "temp";
+    return "night";
   };
+
+  // Função para rolar para o horário correto
+  const scrollToNow = (hour) => {
+    const weatherHours = weatherHoursRef.current;
+    if (weatherHours) {
+      const hourWidth = 57;
+      const newScrollLeft = hour * hourWidth;
+      weatherHours.scrollLeft = newScrollLeft;
+    }
+  };
+  useEffect(() => {
+    scrollToNow(now);
+  }, [weatherForecast]);
 
   return (
     // <div className={`container-weather-${weatherBackground()}`}>
@@ -307,7 +349,13 @@ const Weather = () => {
             <Header />
             <div className="weather-screen">
               {weatherForecast ? (
-                <video autoPlay loop muted className="weather-video">
+                <video
+                  key={weatherBackground()}
+                  autoPlay
+                  loop
+                  muted
+                  className="weather-video"
+                >
                   <source
                     src={
                       weatherBackground() === "cloudy"
@@ -325,7 +373,11 @@ const Weather = () => {
                     type="video/mp4"
                   />
                 </video>
-              ) : null}
+              ) : (
+                <video autoPlay loop muted className="weather-video">
+                  <source src={night} type="video/mp4" />
+                </video>
+              )}
 
               <div className="weather-input">
                 {/* Campo de busca */}
@@ -436,7 +488,7 @@ const Weather = () => {
                         (hour, index) => (
                           <div className="weather-hour" key={index}>
                             <div>
-                              {hour.time.slice(11, 13) === now
+                              {hour.time.slice(11, 13) == now
                                 ? t("now")
                                 : hour.time.slice(11, 13)}
                             </div>

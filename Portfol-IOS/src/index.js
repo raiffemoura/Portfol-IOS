@@ -8,11 +8,7 @@ import Peregrino from "./routes/spotify/Peregrino";
 import SpotifyAboutAlessandro from "./routes/spotify/SpotifyAboutAlessandro";
 import Umacoisa from "./routes/spotify/UmaCoisa";
 import SpotifyAboutMorada from "./routes/spotify/SpotifyAboutMorada";
-import Phone from "./routes/phone/Phone";
-import PhoneVoicemail from "./routes/phone/PhoneVoicemail";
-import PhoneContacts from "./routes/phone/PhoneContacts";
-import PhoneRecents from "./routes/phone/PhoneRecents";
-import PhoneFavourites from "./routes/phone/PhoneFavourites";
+import Phone from "./routes/Phone";
 import GoogleMaps from "./routes/GoogleMaps";
 import NotesPage from "./routes/NotesPage";
 import Feedback from "./routes/Feedback";
@@ -20,9 +16,10 @@ import FeedbackAdd from "./components/feedback/FeedbackAdd";
 import FeedbackStatistics from "./components/feedback/FeedbackStatistics";
 import Stocks from "./routes/Stocks";
 import Settings from "./routes/Settings";
-import Weather from "./routes/Weather.jsx";
+import Weather from "./routes/Weather";
 import MemoryGame from "./routes/MemoryGame";
 import Photos from "./routes/Photos";
+import Mail from "./routes/Mail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,22 +49,6 @@ const router = createBrowserRouter([
   {
     path: "/phone",
     element: <Phone />,
-  },
-  {
-    path: "/phone/voicemail",
-    element: <PhoneVoicemail />,
-  },
-  {
-    path: "/phone/contacts",
-    element: <PhoneContacts />,
-  },
-  {
-    path: "/phone/recents",
-    element: <PhoneRecents />,
-  },
-  {
-    path: "/phone/favourites",
-    element: <PhoneFavourites />,
   },
   {
     path: "/google-maps",
@@ -108,6 +89,10 @@ const router = createBrowserRouter([
   {
     path: "/photos",
     element: <Photos />,
+  },
+  {
+    path: "/mail",
+    element: <Mail />,
   },
   {
     path: "*",

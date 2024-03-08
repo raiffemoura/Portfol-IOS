@@ -16,10 +16,10 @@ export default function Photos() {
   };
 
   const photos = [
+    iconConfig.photoConnect,
     iconConfig.photoMongo,
     iconConfig.photoJS,
     iconConfig.photoNode,
-    iconConfig.photoPS,
     iconConfig.photoHTML,
     iconConfig.photoJS2,
     iconConfig.photoHTML2,
@@ -42,7 +42,7 @@ export default function Photos() {
         <div className="photos-container">
           <div className="photos-header">
             <div className="photos-header-flex">
-              <Link>
+              <Link to="/">
                 <img src={iconConfig.arrowBack} alt="" />
               </Link>
               <h3>{t("photos")}</h3>

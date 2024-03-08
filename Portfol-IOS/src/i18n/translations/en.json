@@ -198,7 +198,12 @@
         "library" : "Library",
         "foryou" : "For you",
         "select" : "Select",
-        "albums" : "Albums"
+        "albums" : "Albums",
+
+        "favourites" : "Favourites",
+        "recents" : "Recents",
+        "keypad" : "Keypad",
+        "voicemail" : "Voicemail"
         
         
     }

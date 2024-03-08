@@ -78,9 +78,9 @@ import whatsApp from "../assets/apps/whats.png";
 import phoneApp from "../assets/apps/phone.png";
 import ticTacToeApp from "../assets/apps/tic-tac-toe.png";
 import memoryGameApp from "../assets/apps/memory-game.png";
-import Call from "../assets/icons/phone.png";
-import Erase from "../assets/icons/erase.png";
-import EraseHover from "../assets/icons/erase-hover.png";
+import call from "../assets/icons/phone.png";
+import erase from "../assets/icons/erase.png";
+import eraseHover from "../assets/icons/erase-hover.png";
 import keypad from "../assets/icons/keypad.png";
 import keypadBlue from "../assets/icons/keypad-blue.png";
 import contacts from "../assets/icons/contacts.png";
@@ -179,6 +179,9 @@ import photoHTML from "../assets/photosApp/html.png";
 import photoHTML2 from "../assets/photosApp/html2.png";
 import photoPS from "../assets/photosApp/ps.png";
 import photoCSS from "../assets/photosApp/css.png";
+import photoConnect from "../assets/photosApp/connect.png";
+import send from "../assets/icons/send.png";
+import mailAdd from "../assets/icons/mail-add.png";
 
 const iconConfig = {
   startNavigate,
@@ -262,9 +265,9 @@ const iconConfig = {
   phoneApp,
   ticTacToeApp,
   memoryGameApp,
-  Call,
-  Erase,
-  EraseHover,
+  call,
+  erase,
+  eraseHover,
   keypad,
   keypadBlue,
   contacts,
@@ -361,6 +364,9 @@ const iconConfig = {
   photoPS,
   photoHTML2,
   photoCSS,
+  photoConnect,
+  send,
+  mailAdd,
 };
 
 export default iconConfig;

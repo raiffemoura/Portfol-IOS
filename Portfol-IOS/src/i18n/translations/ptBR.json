@@ -198,7 +198,12 @@
         "library" : "Biblioteca",
         "foryou" : "Para você",
         "select" : "Selecionar",
-        "albums" : "Albuns"
+        "albums" : "Albuns",
+
+        "favourites" : "Favoritos",
+        "recents" : "Recentes",
+        "keypad" : "Teclado",
+        "voicemail" : "voicemail"
 
 
 
