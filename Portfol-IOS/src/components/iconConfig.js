@@ -181,6 +181,7 @@ import photoPS from "../assets/photosApp/ps.png";
 import photoCSS from "../assets/photosApp/css.png";
 import photoConnect from "../assets/photosApp/connect.png";
 import send from "../assets/icons/send.png";
+import sendBlue from "../assets/icons/send-blue.png";
 import mailAdd from "../assets/icons/mail-add.png";
 
 const iconConfig = {
@@ -366,6 +367,7 @@ const iconConfig = {
   photoCSS,
   photoConnect,
   send,
+  sendBlue,
   mailAdd,
 };
 

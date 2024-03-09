@@ -203,7 +203,15 @@
         "favourites" : "Favoritos",
         "recents" : "Recentes",
         "keypad" : "Teclado",
-        "voicemail" : "voicemail"
+        "voicemail" : "voicemail",
+
+        "cancel" : "Cancelar",
+        "newMessage" : "Nova mensagem",
+        "to" : "Para:",
+        "from" : "De:",
+        "subject" : "Assunto:",
+        "yourEmail" : "Seu email",
+        "sendFrom" : "Enviado do Portfol-IOS"
 
 
 

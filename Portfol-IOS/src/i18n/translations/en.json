@@ -203,7 +203,15 @@
         "favourites" : "Favourites",
         "recents" : "Recents",
         "keypad" : "Keypad",
-        "voicemail" : "Voicemail"
+        "voicemail" : "Voicemail",
+
+        "cancel" : "Cancel",
+        "newMessage" : "New message",
+        "to" : "To:",
+        "from" : "From:",
+        "subject" : "Subject:",
+        "yourEmail" : "Your email",
+        "sendFrom" : "Sent from Portfol-IOS"
         
         
     }
