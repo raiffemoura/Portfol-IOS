@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import WidgetBinance from "./WidgetBinance.jsx";
 import WidgetStocks from "./WidgetStocks.jsx";
 import "../styles/widget.css";
+import axios from "axios";
 
 const AppsScreen = () => {
   const [isFirstPage, setIsFirstPage] = useState(true);
@@ -25,81 +26,192 @@ const AppsScreen = () => {
     );
   }
 
-  const handleClick = () => {
+  const handleClickPages = () => {
     setIsFirstPage(!isFirstPage);
   };
 
   const handleGoogleMapsClick = () => {
+    clickCounter("googleMaps");
     window.location.reload();
     window.location.href = "/Google-Maps";
+  };
+
+  const clickCounter = (app) => {
+    axios
+      .post("http://localhost:5000/clicks", {
+        appName: app,
+      })
+      .then((res) => {
+        if (app === "instagram" || app === "github" || app === "linkedin") {
+          return;
+        } else {
+          window.location.href = `/${app}`;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <div className="apps-screen">
       <div
-        onClick={handleClick}
+        onClick={handleClickPages}
         className={`apps ${isSlided ? "slide3" : "slide"}`}
         id="APPS"
       >
         <div className="apps-line">
-          <Link to={"/Mail"}>{apps(iconConfig.mailApp, "mail")}</Link>
-          <Link to={"/Calendar"}>
+          <Link
+            onClick={(event) => {
+              clickCounter("mail");
+            }}
+          >
+            {apps(iconConfig.mailApp, "mail")}
+          </Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("calendar");
+            }}
+            to={"/Calendar"}
+          >
             <CalendarApp />
           </Link>
-          <Link to={"/Photos"}>{apps(iconConfig.photosApp, "photos")}</Link>
-          <Link to={"/Camera"}>{apps(iconConfig.cameraApp, "camera")}</Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("photos");
+            }}
+            to={"/Photos"}
+          >
+            {apps(iconConfig.photosApp, "photos")}
+          </Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("camera");
+            }}
+            to={"/Camera"}
+          >
+            {apps(iconConfig.cameraApp, "camera")}
+          </Link>
         </div>
         <div className="apps-line">
-          <Link to={"/FaceTime"}>
+          <Link
+            onClick={(event) => {
+              clickCounter("facetime");
+            }}
+            to={"/FaceTime"}
+          >
             {apps(iconConfig.facetimeApp, "FaceTime")}
           </Link>
-          <Link to={"/Clock"}>{apps(iconConfig.clockApp, "clock")}</Link>
-          <Link to={"/Weather"}>{apps(iconConfig.weatherApp, "weather")}</Link>
-          <Link to={"/Reminders"}>
+          <Link
+            onClick={(event) => {
+              clickCounter("clock");
+            }}
+            to={"/Clock"}
+          >
+            {apps(iconConfig.clockApp, "clock")}
+          </Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("weather");
+            }}
+            to={"/Weather"}
+          >
+            {apps(iconConfig.weatherApp, "weather")}
+          </Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("reminders");
+            }}
+            to={"/Reminders"}
+          >
             {apps(iconConfig.remindersApp, "Reminders")}
           </Link>
         </div>
         <div className="apps-line">
-          <Link to={"/Notes"}>{apps(iconConfig.notesApp, "notes")}</Link>
-          <Link to={"/Stocks"}>{apps(iconConfig.stocksApp, "stocks")}</Link>
-          <Link to={"/AppStore"}>
+          <Link
+            to={"/Notes"}
+            onClick={(event) => {
+              clickCounter("notes");
+            }}
+          >
+            {apps(iconConfig.notesApp, "notes")}
+          </Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("stocks");
+            }}
+            to={"/Stocks"}
+          >
+            {apps(iconConfig.stocksApp, "stocks")}
+          </Link>
+          <Link
+            onClick={(event) => {
+              clickCounter("appStore");
+            }}
+            to={"/AppStore"}
+          >
             {apps(iconConfig.appStoreApp, "App Store")}
           </Link>
-          <Link to={"/Feedback"}>
+          <Link
+            onClick={() => {
+              clickCounter("feedback");
+            }}
+            to={"/Feedback"}
+          >
             {apps(iconConfig.feedbackApp, "Feedback")}
           </Link>
         </div>
         <div className="apps-line">
-          <Link to={"/Calculator"}>
+          <Link
+            onClick={(event) => {
+              clickCounter("calculator");
+            }}
+            to={"/Calculator"}
+          >
             {apps(iconConfig.calculatorApp, "calculator")}
           </Link>
           <div onClick={handleGoogleMapsClick}>
             {apps(iconConfig.googleMapsApp, "Google Maps")}
           </div>
-          <Link to={"/phone/Contacts"}>
+          <Link onClick={(event) => clickCounter("contacts")} to={"/Contacts"}>
             {apps(iconConfig.contactsApp, "contacts")}
           </Link>
-          <Link to={"/Settings"}>
+          <Link onClick={(event) => clickCounter("settings")} to={"/Settings"}>
             {apps(iconConfig.settingsApp, "settings")}
           </Link>
         </div>
         <div className="apps-line">
-          <Link to={"/Spotify/Peregrino"}>
+          <Link
+            onClick={(event) => clickCounter("spotify")}
+            to={"/Spotify/Peregrino"}
+          >
             {apps(iconConfig.spotifyApp, "Spotify")}
           </Link>
-          <Link target="_blank" to={"https://www.linkedin.com/in/raiffemoura/"}>
+          <Link
+            onClick={(event) => clickCounter("linkedin")}
+            target="_blank"
+            to={"https://www.linkedin.com/in/raiffemoura/"}
+          >
             {apps(iconConfig.linkedinApp, "LinkedIn")}
           </Link>
-          <Link target="_blank" to={"http://instagram.com/raiffemoura"}>
+          <Link
+            onClick={(event) => clickCounter("instagram")}
+            target="_blank"
+            to={"http://instagram.com/raiffemoura"}
+          >
             {apps(iconConfig.instagramApp, "Instagram")}
           </Link>
-          <Link target="_blank" to={"https://github.com/raiffemoura"}>
+          <Link
+            onClick={(event) => clickCounter("github")}
+            target="_blank"
+            to={"https://github.com/raiffemoura"}
+          >
             {apps(iconConfig.githubApp, "Github")}
           </Link>
         </div>
       </div>
       <div
-        onClick={handleClick}
+        onClick={handleClickPages}
         className={`apps ${isSlided ? "slide4" : "slide2"}`}
         id="APPS2"
       >
@@ -119,12 +231,12 @@ const AppsScreen = () => {
           {apps(iconConfig.settingsApp, "Settings")}
         </div>
         <div className="apps-line">
-          <Link to={"/Memory-game"}>
+          <Link
+            onClick={(event) => clickCounter("memoryGame")}
+            to={"/Memory-game"}
+          >
             {apps(iconConfig.memoryGame, "Memory Game")}
           </Link>
-          {apps(iconConfig.linkedinApp, "LinkedIn")}
-          {apps(iconConfig.instagramApp, "Instagram")}
-          {apps(iconConfig.githubApp, "Github")}
         </div>
       </div>
     </div>

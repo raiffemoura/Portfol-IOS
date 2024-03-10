@@ -16,7 +16,6 @@ export default function WidgetBinance() {
         );
         if (response.status === 200) {
           setCripto(response.data);
-          console.log("response ==>", response.data);
           setLoading(false);
         } else {
           console.log("Erro ao buscar Cripto: " + response.statusText);

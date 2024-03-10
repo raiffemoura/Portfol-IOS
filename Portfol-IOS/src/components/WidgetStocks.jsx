@@ -15,7 +15,6 @@ export default function WidgetStocks() {
         );
         if (response.status === 200) {
           setStocks(response.data);
-          console.log("response ==>", response.data);
           setLoading(false);
         } else {
           console.log("Erro ao buscar stocks: " + response.statusText);

@@ -52,7 +52,7 @@
     color: #908e96;
 }
 
-textarea{
+.mail-to textarea, .mail-textarea textarea, .mail-screen textarea{
     
     border: none;
     outline: none;
@@ -66,22 +66,35 @@ textarea{
     scrollbar-width: none;
 
 }
-textarea:focus{
+.mail-screen textarea:focus{
     
     outline: none;
     border: none;
 }
 
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+.mail-to input:-webkit-autofill,
+.mail-to input:-webkit-autofill:hover, 
+.mail-to input:-webkit-autofill:focus,
+.mail-to textarea:-webkit-autofill,
+.mail-to textarea:-webkit-autofill:hover
+.mail-to textarea:-webkit-autofill:focus,
+.mail-to select:-webkit-autofill,
+.mail-to select:-webkit-autofill:hover,
+.mail-to select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #1c1d1f inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.mail-textarea input:-webkit-autofill,
+.mail-textarea input:-webkit-autofill:hover, 
+.mail-textarea input:-webkit-autofill:focus,
+.mail-textarea textarea:-webkit-autofill,
+.mail-textarea textarea:-webkit-autofill:hover
+.mail-textarea textarea:-webkit-autofill:focus,
+.mail-textarea select:-webkit-autofill,
+.mail-textarea select:-webkit-autofill:hover,
+.mail-textarea select:-webkit-autofill:focus {
   border: none;
   -webkit-text-fill-color: #fff !important;
   -webkit-box-shadow: 0 0 0px 1000px #1c1d1f inset;

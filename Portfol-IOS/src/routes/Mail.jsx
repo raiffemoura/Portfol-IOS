@@ -95,6 +95,7 @@ export default function Mail() {
             <input type="hidden" name="_next" value="https://localhost:3000" />
             {line()}
             <textarea
+              className="mail-textarea"
               name="message"
               defaultValue="Sent from Portfol-IOS"
               required="required"

@@ -8,7 +8,7 @@ import Peregrino from "./routes/spotify/Peregrino";
 import SpotifyAboutAlessandro from "./routes/spotify/SpotifyAboutAlessandro";
 import Umacoisa from "./routes/spotify/UmaCoisa";
 import SpotifyAboutMorada from "./routes/spotify/SpotifyAboutMorada";
-import Phone from "./routes/Phone";
+import Contacts from "./routes/Contacts";
 import GoogleMaps from "./routes/GoogleMaps";
 import NotesPage from "./routes/NotesPage";
 import Feedback from "./routes/Feedback";
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
     element: <SpotifyAboutMorada />,
   },
   {
-    path: "/phone",
-    element: <Phone />,
+    path: "/Contacts",
+    element: <Contacts />,
   },
   {
     path: "/google-maps",
