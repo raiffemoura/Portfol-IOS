@@ -14,12 +14,14 @@ import NotesPage from "./routes/NotesPage";
 import Feedback from "./routes/Feedback";
 import FeedbackAdd from "./components/feedback/FeedbackAdd";
 import FeedbackStatistics from "./components/feedback/FeedbackStatistics";
+import FeedbackClicks from "./components/feedback/FeedbackClicks.jsx";
 import Stocks from "./routes/Stocks";
 import Settings from "./routes/Settings";
 import Weather from "./routes/Weather";
 import MemoryGame from "./routes/MemoryGame";
 import Photos from "./routes/Photos";
 import Mail from "./routes/Mail";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -69,6 +71,10 @@ const router = createBrowserRouter([
   {
     path: "/statistics",
     element: <FeedbackStatistics />,
+  },
+  {
+    path: "/clicks",
+    element: <FeedbackClicks />,
   },
   {
     path: "/stocks",

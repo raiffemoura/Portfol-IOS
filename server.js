@@ -9,9 +9,7 @@ const clicksRoute = require("./routes/clicksRoute");
 
 const app = express();
 const PORT = 5000;
-
-const uri =
-  "mongodb+srv://raiffemoura:mongoDBportfol-IOS@cluster0.auzmfah.mongodb.net/Feedbacks?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
 mongoose
   .connect(uri)

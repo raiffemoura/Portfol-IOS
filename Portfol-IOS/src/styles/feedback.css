@@ -285,6 +285,17 @@ margin-top: 20px;
     color: #eee;
 }
 
+
+
+/* =========== statistics ================ */
+
+.statistics{
+    height: 703px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
 .statistics-container{
     display: flex;
     flex-direction: column;
@@ -312,13 +323,7 @@ margin-top: 20px;
 font-size: 0.8rem;
 color: #808080 ;
 }
-.statistics{
-    height: 703px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
+
 
 .home-button-feedback{
     display: flex;
@@ -351,4 +356,55 @@ color: #808080 ;
     background-color: #f09a9a;
     /* background-color: #F58181; */
 
+}
+
+
+
+
+/* =========== statistics ================ */
+
+.clicks{
+    height: 703px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #000;
+    
+}
+.clicks-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 15px;
+    height: 603px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    margin-bottom: 100px;
+}
+.clicks-container h4{
+    margin-bottom: 15px;
+}
+.clicks-box{
+    width: 100%;
+    margin:0 auto;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #8080803d;
+    padding: 5px 5px;
+}
+
+
+.clicks-box img{
+    height: 40px;
+    border-radius: 20%;
+}
+.clicks-name{
+    font-size: 1.2rem;
+}
+.clicks-counter{
+font-weight: bold;
+font-size: 1.2rem;
 }

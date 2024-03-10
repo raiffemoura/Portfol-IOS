@@ -105,6 +105,7 @@ import avatar from "../assets/icons/avatar.png";
 import privateChat from "../assets/icons/private-chat.png";
 import statistics from "../assets/icons/statistics.png";
 import feedbackHome from "../assets/icons/feedback-home.png";
+import feedbackClicks from "../assets/icons/feedback-clicks.png";
 import average from "../assets/icons/average.png";
 import more from "../assets/icons/more.png";
 import arrowBackRight from "../assets/icons/arrow-back-right.png";
@@ -292,6 +293,7 @@ const iconConfig = {
   privateChat,
   statistics,
   feedbackHome,
+  feedbackClicks,
   average,
   more,
   bluetoothIcon,
