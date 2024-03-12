@@ -124,7 +124,7 @@ const AppsScreen = () => {
             }}
             to={"/Reminders"}
           >
-            {apps(iconConfig.remindersApp, "Reminders")}
+            {apps(iconConfig.remindersApp, "reminders")}
           </Link>
         </div>
         <div className="apps-line">

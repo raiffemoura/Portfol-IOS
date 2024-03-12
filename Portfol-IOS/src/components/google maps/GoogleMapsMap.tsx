@@ -5,9 +5,9 @@ import iconConfig from '../iconConfig.js'
 import { useTranslation } from 'react-i18next'
 const libraries = ["places"];
 
+
 const GoogleMapsMap = () => {
     const REACT_APP_GOOGLE_MAPS_API_KEY = "AIzaSyACW1wSY6n-H336x5tcVbuAmV1OYIh47o4";
-
 
     const [map, setMap] = useState<google.maps.Map | null>(null);
     const [searchBoxA, setSearchBoxA] = useState<google.maps.places.SearchBox>();

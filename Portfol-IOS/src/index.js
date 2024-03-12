@@ -21,6 +21,7 @@ import Weather from "./routes/Weather";
 import MemoryGame from "./routes/MemoryGame";
 import Photos from "./routes/Photos";
 import Mail from "./routes/Mail";
+import Reminders from "./routes/Reminders";
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
   {
     path: "/mail",
     element: <Mail />,
+  },
+  {
+    path: "/reminders",
+    element: <Reminders />,
   },
   {
     path: "*",

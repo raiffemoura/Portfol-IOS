@@ -222,7 +222,15 @@
         "from" : "From:",
         "subject" : "Subject:",
         "yourEmail" : "Your email",
-        "sendFrom" : "Sent from Portfol-IOS"
+        "sendFrom" : "Sent from Portfol-IOS",
+
+        "pleaseAddReminder" : "Please enter a reminder.",
+        "remindersTitle" : "Reminders",
+        "today" : "Today",
+        "addReminder" : "Add a new reminder",
+        "delete" : "Delete"
+
+
         
         
     }

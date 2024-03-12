@@ -222,7 +222,13 @@
         "from" : "De:",
         "subject" : "Assunto:",
         "yourEmail" : "Seu email",
-        "sendFrom" : "Enviado do Portfol-IOS"
+        "sendFrom" : "Enviado do Portfol-IOS",
+
+        "pleaseAddReminder" : "Por favor, adicione um lembrete.",
+        "remindersTitle" : "Lembretes",
+        "today" : "Hoje",
+        "addReminder" : "Adicione um lembrete",
+        "delete" : "Deletar"
 
 
 

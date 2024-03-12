@@ -184,6 +184,9 @@ import photoConnect from "../assets/photosApp/connect.png";
 import send from "../assets/icons/send.png";
 import sendBlue from "../assets/icons/send-blue.png";
 import mailAdd from "../assets/icons/mail-add.png";
+import remindersMore from "../assets/icons/reminders-more.png";
+import remindersShare from "../assets/icons/reminders-share.png";
+import remindersNewTask from "../assets/icons/reminders-new-task.png";
 
 const iconConfig = {
   startNavigate,
@@ -371,6 +374,9 @@ const iconConfig = {
   send,
   sendBlue,
   mailAdd,
+  remindersMore,
+  remindersShare,
+  remindersNewTask,
 };
 
 export default iconConfig;
