@@ -65,6 +65,7 @@ const AppsScreen = () => {
             onClick={(event) => {
               clickCounter("mail");
             }}
+            to={"/Mail"}
           >
             {apps(iconConfig.mailApp, "mail")}
           </Link>

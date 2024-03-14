@@ -22,6 +22,7 @@ import MemoryGame from "./routes/MemoryGame";
 import Photos from "./routes/Photos";
 import Mail from "./routes/Mail";
 import Reminders from "./routes/Reminders";
+import Clock from "./routes/Clock.jsx";
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
   {
     path: "/reminders",
     element: <Reminders />,
+  },
+  {
+    path: "/clock",
+    element: <Clock />,
   },
   {
     path: "*",

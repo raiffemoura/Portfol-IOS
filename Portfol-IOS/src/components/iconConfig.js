@@ -187,6 +187,14 @@ import mailAdd from "../assets/icons/mail-add.png";
 import remindersMore from "../assets/icons/reminders-more.png";
 import remindersShare from "../assets/icons/reminders-share.png";
 import remindersNewTask from "../assets/icons/reminders-new-task.png";
+import clockStopwatcher from "../assets/icons/clock-stopwatcher.png";
+import clockStopwatcherSelected from "../assets/icons/clock-stopwatcher-selected.png";
+import clockWorldzone from "../assets/icons/clock-worldzone.png";
+import clockWorldzoneSelected from "../assets/icons/clock-worldzone-selected.png";
+import clockTimer from "../assets/icons/clock-timer.png";
+import clockTimerSelected from "../assets/icons/clock-timer-selected.png";
+import clockAlarm from "../assets/icons/clock-alarm.png";
+import clockAlarmSelected from "../assets/icons/clock-alarm-selected.png";
 
 const iconConfig = {
   startNavigate,
@@ -377,6 +385,14 @@ const iconConfig = {
   remindersMore,
   remindersShare,
   remindersNewTask,
+  clockStopwatcher,
+  clockStopwatcherSelected,
+  clockTimer,
+  clockTimerSelected,
+  clockAlarm,
+  clockAlarmSelected,
+  clockWorldzone,
+  clockWorldzoneSelected,
 };
 
 export default iconConfig;
