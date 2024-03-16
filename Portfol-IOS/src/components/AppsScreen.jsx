@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { PageContext } from "../context/PageContext";
 import { Link } from "react-router-dom";
 import CalendarApp from "./CalendarApp";
@@ -15,6 +15,15 @@ const AppsScreen = () => {
 
   const { t } = useTranslation();
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      console.log(
+        "Ei, estou contando com seu comentário no Feedback App! Thanks!"
+      );
+    }, 2000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
   function apps(app, appName) {
     return (
       <div>
@@ -43,6 +52,8 @@ const AppsScreen = () => {
       })
       .then((res) => {
         if (app === "instagram" || app === "github" || app === "linkedin") {
+          return;
+        } else if (app === "spotify") {
           return;
         } else {
           window.location.href = `/${app}`;

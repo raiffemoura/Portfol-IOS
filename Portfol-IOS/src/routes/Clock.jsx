@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import HomeButton from "../components/HomeButton";
 import "../styles/clock.css";
 import iconConfig from "../components/iconConfig";
-import WorldClock from "../components/WorldClock";
 import Stopwatch from "../components/Stopwatch";
 
 export default function Clock() {

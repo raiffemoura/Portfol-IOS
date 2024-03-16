@@ -68,7 +68,12 @@ export default function Mail() {
 
             <div className="mail-to">
               <p>{t("to")}</p>
-              <input type="text" name="to" value="raiffemoura93@icloud.com" />
+              <input
+                type="text"
+                name="to"
+                readOnly
+                value="raiffemoura93@icloud.com"
+              />
               <img src={iconConfig.mailAdd} alt="add" />
             </div>
             {line()}

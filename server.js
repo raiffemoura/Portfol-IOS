@@ -26,7 +26,9 @@ app.use(cors());
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => {});
+db.once("open", () => {
+  console.log("Connected to MongoDB");
+});
 app.use("/feedbacks", feedbackRoute);
 app.use("/clicks", clicksRoute);
 app.listen(PORT, () => {

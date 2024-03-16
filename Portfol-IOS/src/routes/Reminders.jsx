@@ -109,6 +109,7 @@ export default function Reminders() {
                 className="reminders-checkbox"
                 type="checkbox"
                 checked={task.completed}
+                readOnly
               />
               <span
                 className="reminders-checkbox-custom"

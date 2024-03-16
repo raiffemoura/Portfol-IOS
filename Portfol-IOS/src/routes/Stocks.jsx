@@ -16,8 +16,6 @@ const Stocks = () => {
   const monthName = currentDate.toLocaleString("en", { month: "long" });
   const day = currentDate.getDate();
   const translatedMonthName = t(monthName);
-  console.log("translatedMonthName ==>", translatedMonthName);
-  console.log("monthName ==>", monthName);
 
   const formattedDate = `${day} ${translatedMonthName}`;
 
@@ -30,14 +28,11 @@ const Stocks = () => {
         );
         if (response.status === 200) {
           setStocks(response.data);
-          console.log("response ==>", response.data);
           setLoading(false);
         } else {
-          console.log("Erro ao buscar stocks: " + response.statusText);
           setLoading(false);
         }
       } catch (err) {
-        console.log("Erro ao buscar stocks: " + err);
         setLoading(false);
       }
     };

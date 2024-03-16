@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", express.urlencoded({ extended: true }), async (req, res) => {
+router.post("/", async (req, res) => {
   if (!req.body.name || !req.body.description || !req.body.rating) {
     return res
       .status(400)

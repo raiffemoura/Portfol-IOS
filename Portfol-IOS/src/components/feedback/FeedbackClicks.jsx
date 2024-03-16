@@ -20,7 +20,6 @@ const FeedbackClicks = () => {
           return b.clicks - a.clicks;
         });
         setClicks(sortedClicks);
-        console.log(response.data);
       } catch (err) {
         console.log("Erro ao buscar clicks: " + err);
       }
@@ -60,8 +59,12 @@ const FeedbackClicks = () => {
           <div className="clicks">
             <div className="clicks-container">
               <h4 className="tgray">{t("clicksCounter")}</h4>
-              {clicks.map((click) =>
-                listApps(click.appName, click.clicks, click._id)
+              {clicks.length > 0 ? (
+                clicks.map((click) =>
+                  listApps(click.appName, click.clicks, click._id)
+                )
+              ) : (
+                <p>Nenhum dado disponível.</p>
               )}
             </div>
 

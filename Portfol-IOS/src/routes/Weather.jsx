@@ -88,7 +88,6 @@ const Weather = () => {
   };
 
   const handleChange = (e) => {
-    console.log("e.target.value ==>", e.target.value);
     setCity(clearSpecialChars(e.target.value));
     if (e.target.value != "") {
       fetch(
@@ -102,7 +101,6 @@ const Weather = () => {
           }
         })
         .then((data) => {
-          console.log("data ==>", data);
           setDataSuggestions(data);
         });
     }
@@ -111,7 +109,6 @@ const Weather = () => {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      console.log("e.target.value handlekeypress ==>", e.target.value);
       setCity(clearSpecialChars(e.target.value));
       setDataSuggestions([]);
       handleSearch(dataSuggestions[0]?.name);
@@ -134,7 +131,6 @@ const Weather = () => {
         })
         .then((data) => {
           setWeatherForecast(data);
-          console.log("data ==>", data);
           setConditionChanged((prevState) => !prevState);
         });
     }
@@ -404,9 +400,8 @@ const Weather = () => {
                   {dataSuggestions &&
                     dataSuggestions.map((data, index) => {
                       return (
-                        <div className="weather-data-item">
+                        <div className="weather-data-item" key={data.url}>
                           <p
-                            key={index}
                             onClick={() => {
                               handleSearch(data.url);
                               inputRef.current.value =

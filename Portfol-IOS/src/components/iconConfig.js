@@ -195,6 +195,20 @@ import clockTimer from "../assets/icons/clock-timer.png";
 import clockTimerSelected from "../assets/icons/clock-timer-selected.png";
 import clockAlarm from "../assets/icons/clock-alarm.png";
 import clockAlarmSelected from "../assets/icons/clock-alarm-selected.png";
+import cameraBack from "../assets/icons/camera-back.png";
+import cameraFront from "../assets/icons/camera-front.png";
+import cameraDown from "../assets/icons/camera-down.png";
+import cameraUp from "../assets/icons/camera-up.png";
+import cameraExp from "../assets/icons/camera-exp.png";
+import cameraFilter from "../assets/icons/camera-filter.png";
+import cameraFlash from "../assets/icons/camera-flash.png";
+import cameraFlashOff from "../assets/icons/camera-flash-off.png";
+import cameraLive from "../assets/icons/camera-live.png";
+import cameraLiveOff from "../assets/icons/camera-live-off.png";
+import cameraNight from "../assets/icons/camera-night.png";
+import cameraNightOff from "../assets/icons/camera-night-off.png";
+import cameraRaw from "../assets/icons/camera-raw.png";
+import cameraRawOff from "../assets/icons/camera-raw-off.png";
 
 const iconConfig = {
   startNavigate,
@@ -393,6 +407,20 @@ const iconConfig = {
   clockAlarmSelected,
   clockWorldzone,
   clockWorldzoneSelected,
+  cameraBack,
+  cameraFront,
+  cameraDown,
+  cameraUp,
+  cameraExp,
+  cameraFilter,
+  cameraFlash,
+  cameraFlashOff,
+  cameraLive,
+  cameraLiveOff,
+  cameraNight,
+  cameraNightOff,
+  cameraRaw,
+  cameraRawOff,
 };
 
 export default iconConfig;

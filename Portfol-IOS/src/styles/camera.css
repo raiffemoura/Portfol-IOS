@@ -1,0 +1,84 @@
+/* ======== Camera menu top ======== */
+
+
+.cameraApp-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 664px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+    border: 1px solid blue;
+}
+
+
+.cameraApp-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    border: 1px solid green;
+}
+.cameraApp-header img{
+    height: 22px;
+}
+
+.cameraApp-flash img{
+    margin-right: 10px;
+}
+.cameraApp-flash{
+    width:45%;
+}
+
+.cameraApp-up-down{
+
+}
+.cameraApp-live img{
+    margin-left: 10px;
+}
+.cameraApp-live{
+    text-align: end;
+    width:45%;
+}
+
+
+
+.cameraApp-menu{}
+.cameraApp-menu{}
+.cameraApp-menu{}
+/* ======== Camera screen ======== */
+.cameraApp-camera{
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    border: 1px solid red;
+}
+
+/* ======== Camera menu bottom ======== */
+
+.cameraApp-menu{
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    color: #eee;
+}
+
+.cameraApp-buttons{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
