@@ -11,7 +11,7 @@
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     padding: 0px 10px 0px 10px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 
@@ -33,10 +33,6 @@
 .cameraApp-flash{
     width:45%;
 }
-
-.cameraApp-up-down{
-
-}
 .cameraApp-live img{
     margin-left: 10px;
 }
@@ -56,10 +52,6 @@
 }
 
 
-
-.cameraApp-menu{}
-.cameraApp-menu{}
-.cameraApp-menu{}
 /* ======== Camera screen ======== */
 .cameraApp-camera{
     width: 100%;
@@ -78,7 +70,32 @@
     max-width: 100%;
     height: 40%;
     color: #eee;
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 40px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        
+      }
+    
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 40px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+      }
+
+      
     
 }
 
@@ -91,14 +108,29 @@
     height: 50%;
     color: #eee;
     gap: 25px;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    
+    overflow-x: hidden;
+    cursor: pointer;
+
+    font-size: .8rem;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.cameraApp-centerX{
+    scroll-snap-align: center;
+    color: yellow;
+
 }
 .cameraApp-menu-camera::-webkit-scrollbar{
     display: none;
 
+}
+
+.cameraApp-adjust-menu-end{
+    margin-right: 135px;
+}
+.cameraApp-adjust-menu-start{
+    margin-left: 115px;
 }
 
 .cameraApp-buttons{
@@ -106,7 +138,56 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 20px;
     width: 100%;
     height: 100%;
+    padding: 0 5px;
+}
+
+.cameraApp-switch img{
+    margin-top: 12px ;
+    width: 35px;
+}
+
+.cameraApp-shot-outside{
+    
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background-color: #eee;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cameraApp-shot-inside{
+    
+    width: 55px;
+    height: 55px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #eee;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transition: .05s ease-in-out;
+
+}
+.cameraApp-shot-down{
+    transition: .05s ease-in-out;
+    width: 53px;
+    height: 53px;
+    border: 4px solid #000;
+
+}
+
+
+.cameraApp-albuns img{
+    margin-top: 5px;
+    width: 53px;
+    height: 53px;
+
 }
