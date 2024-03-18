@@ -203,7 +203,7 @@ import cameraExp from "../assets/icons/camera-exp.png";
 import cameraFilter from "../assets/icons/camera-filter.png";
 import cameraFlash from "../assets/icons/camera-flash.png";
 import cameraFlashOff from "../assets/icons/camera-flash-off.png";
-import cameraLive from "../assets/icons/camera-live.png";
+import cameraLive from "../assets/icons/camera-live2.png";
 import cameraLiveOff from "../assets/icons/camera-live-off.png";
 import cameraNight from "../assets/icons/camera-night.png";
 import cameraNightOff from "../assets/icons/camera-night-off.png";

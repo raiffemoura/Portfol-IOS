@@ -12,6 +12,7 @@ const Camera = () => {
     <div className="container-calculator">
       <div className="screen ">
         <Header />
+        <div className="cameraApp-icon"></div>
 
         <div className="cameraApp-screen">
           <div className="cameraApp-header">
@@ -77,9 +78,16 @@ const Camera = () => {
               </div>
             )}
           </div>
+
           <div className="cameraApp-camera"></div>
           <div className="cameraApp-menu">
-            <div className="cameraApp-menu-camera">camera/video/protrait</div>
+            <div className="cameraApp-menu-camera">
+              <div>CINEMATIC</div>
+              <div>VIDEO</div>
+              <div>PHOTO</div>
+              <div>PORTRAIT</div>
+              <div>PANO</div>
+            </div>
             <div className="cameraApp-buttons">
               <div className="cameraApp-albuns">albuns</div>
               <div className="cameraApp-shot">shot</div>
